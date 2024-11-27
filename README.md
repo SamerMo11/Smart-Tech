@@ -2,7 +2,7 @@
 | ------------- | ----------- | ------------ | ----------------- | ------------ | ----------- | ----------- | ---------------- | ---------------  | ---------------- |
 | UI & UX       |    Done     |    Done      |    Done           |     Done     |   Done      |    Done     |       Done       |      Done        |     Done         |
 | Front-end     |    Done     |    Done      |    Done           |     Done     |   Done      |             |                  |                  |     Done         |
-| Back -end     |             |    Done      |                   |              |             |             |                  |                  |                  |
+| Back -end     |             |    Done      |    Done           |     Done     |             |             |                  |                  |                  |
 | JavaScript    |             |              |                   |              |             |             |                  |                  |                  |
 | Responsive    |    Done     |    Done      |    Done           |              |             |             |                  |                  |                  |
 | Animation     |    Done     |    Done      |    Done           |              |             |             |                  |                  |                  |
