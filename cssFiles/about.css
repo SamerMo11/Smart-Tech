@@ -82,18 +82,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 .story{
     display: flex;
     justify-content: space-between;
@@ -101,14 +89,15 @@ body {
     flex-direction: column;
     gap: 10vh;
     width: 100%;
-    height: 100vh;
+    height: 110vh;
+    padding-top: 3%;
     background-color: #32384180;
 }
 .story .content{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 5%;
+    gap: 11%;
     width: 80%;
     height: 60vh;
     /* border: 1px solid var(--color1); */
@@ -143,13 +132,14 @@ body {
     border-radius: 15px;
 }
 .story .content .right{
-    width: 50%;
+    padding-top: 25px;
+    width: 52%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: start;
     flex-direction: column;
-    gap: 5%;
+    gap: 2%;
     animation-name: right;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
@@ -161,9 +151,8 @@ body {
 .story .content .right .title{
     text-transform: capitalize;
     font-family: var(--font1);
-    font-size: 25px;
+    font-size: 18px;
     color: var(--color2);
-    -webkit-text-stroke: 1px var(--color3);
     text-shadow: 0 4px 4px var(--shadow1);
 }
 .story .content .right .head{
@@ -182,6 +171,7 @@ body {
     width: 96%;
 }
 .story .content .right a{
+    margin-top: 10px;
     text-decoration: none;
     text-transform: capitalize;
     color: var(--color2);
@@ -230,11 +220,10 @@ body {
     color: var(--color2);
 }
 .story .features .feature span{
-    font-size: 30px;
+    font-size: 40px;
     font-family: var(--font1);
     color: var(--color1);
     text-shadow: var(--shadow1);
-    -webkit-text-stroke: 1px var(--color3);
 }
 /* ------------------- */
 /* ------------------- */
@@ -272,7 +261,6 @@ body {
 .team .heading .title{
     color: var(--color1);
     text-shadow: var(--shadow1);
-    -webkit-text-stroke: 1px var(--color3);
     font-size: 30px;
 }
 .team .heading .head{
@@ -412,7 +400,7 @@ body {
     align-items: center;
     width: 25px;
     height: 25px;
-    background-color: var(--color1);
+    background-color: #2F8587;
     border-radius: 50%;
 }
 .team .content .card .accs a i{
@@ -450,8 +438,7 @@ body {
     text-transform: capitalize;
     color: var(--color1);
     font-family: var(--font1);
-    font-size: 50px;
-    -webkit-text-stroke: 1px var(--color3);
+    font-size: 48px;
     text-shadow: var(--shadow1);
 }
 .blog .heading .head{
@@ -471,7 +458,7 @@ body {
     width: 30%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    gap: 13px;
     align-items: start;
     flex-direction: column;
     border-top-left-radius: 20px;
@@ -497,7 +484,6 @@ body {
 .blog .content .card .head p{
     color:#DEDCDCC7;
     text-transform: capitalize;
-    font-size: 18px;
     font-family: var(--font2);
 }
 
