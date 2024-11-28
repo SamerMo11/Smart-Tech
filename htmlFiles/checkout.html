@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="bootstrap.css"> -->
+    <link rel="stylesheet" href="../cssFiles/style.css">
+    <link rel="stylesheet" href="../cssFiles/checkout.css">
+    <!-- <link rel="icon" href=""> -->
+    <title>CheckOut page</title>
+</head>
+<body>
+    <nav></nav>
+
+<div class="checkout">
+
+    <p>checkOut</p>
+
+<div class="content">
+    <div class="left">
+        <p>billing details</p>
+        <form action="">
+            <div class="input">
+                <input type="text" placeholder="First Name">
+                <span>error message</span>
+            </div>
+            <div class="input">
+                <input type="number" placeholder="Phone Number">
+                <span>error message</span>
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Address">
+                <span>error message</span>
+            </div>
+            <div class="input">
+                <input type="email" placeholder="Email Address">
+                <span>error message</span>
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Coupon Code (optional)">
+                <span>error message</span>
+            </div>
+            <div class="selects">
+                <select name="" id="">
+                    <option value="0">state</option>
+                </select>
+                <select name="" id="">
+                    <option value="0">city</option>
+                </select>
+            </div>
+            
+            <div class="radio">
+                <div class="online">
+                    <div>
+                        <input type="radio" name="payment" id="online" value="">
+                    <label for="online">Online</label>
+                    </div>
+                    <div class="payimgs">
+                        <img src="../payment/1.png" alt="paymentImg" loading="lazy">
+                        <img src="../payment/2.png" alt="paymentImg" loading="lazy">
+                        <img src="../payment/3.png" alt="paymentImg" loading="lazy">
+                        <img src="../payment/4.png" alt="paymentImg" loading="lazy">
+                    </div>
+                </div>
+                <div>
+                    <input type="radio" name="payment" id="cash" value="">
+                    <label for="cash">Cash</label>
+                </div>
+            </div>
+
+            <div class="check">
+                <input type="checkbox" name="" id="check">
+                <label for="check">
+                    Save this information for faster check-out next time
+                </label>
+            </div>
+            <div class="confirm">
+                <input type="submit" value="confirm order">
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+<!-- ---------------------------------------------- -->
+<!-- ---------------------------------------------- -->
+<!-- ---------------------------------------------- -->
+
+
+
+    <div class="right">
+        <div class="products">
+
+            <!-- دا ديف ل المنتج العادي -->
+            <div class="product">
+                <div class="left">
+                    <img src="../products/product4/1.png" alt="">
+                    <p class="name">laptop asus</p>
+                </div>
+                <p class="price">50000 le</p>
+            </div>
+
+
+            <!-- دا ديف ل الكوليكشن -->
+
+            
+            <div class="coll">
+                <div class="left">
+                    <div class="collpro">
+                        <img src="../products/product3/1.png" alt="">
+                        <p class="name">laptop asus</p>
+                    </div>
+                    <div class="collpro">
+                        <img src="../products/product2/1.png" alt="">
+                        <p class="name">laptop asus</p>
+                    </div>
+                </div>
+                <p class="price">50000 le</p>
+            </div>
+        </div>
+
+        <div class="last">
+            <div class="pricing">
+                <p>subtotal:</p>
+                <p>5000 le</p>
+            </div>
+            <div class="pricing">
+                <p>discount:</p>
+                <p>0 le</p>
+            </div>
+            <div class="pricing">
+                <p>total:</p>
+                <p>5000 le</p>
+            </div>
+        </div>
+
+        <form action="">
+            <input type="submit" value="get discount">
+            <p class="error">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                This discount can only be used once
+            </p>
+        </form>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+    <script src="../jsFiles/main.js"></script>
+    <script src="../jsFiles/chcekout.js"></script>
+</body>
+</html>
