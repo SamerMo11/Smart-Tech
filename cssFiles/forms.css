@@ -57,7 +57,7 @@ nav{
 .form .banner{
     width: 40%;
     height: 100%;
-    padding-inline: 10px;
+    padding-inline: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,7 +78,7 @@ nav{
     text-transform: capitalize;
     width: 100%;
     text-align: center;
-    line-height: 50px;
+    line-height: 38px;
 }
 .form .banner p::before{
     content: '';
@@ -87,7 +87,7 @@ nav{
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    top: -16%;
+    top: -7%;
     left: 17%;
 }
 .form .banner p::after{
@@ -97,12 +97,13 @@ nav{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    top: 67%;
+    top: 64%;
     left: 70%;
 }
 .form .banner .robot{
     height: 50%;
     width: 100%;
+    padding-left: 15px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -120,20 +121,20 @@ nav{
 .form .banner .robot span:nth-child(1){
     width: 10px;
     height: 10px;
-    top: 30%;
-    left: 39%;
+    top: 29%;
+    left: 43%;
 }
 .form .banner .robot span:nth-child(2){
     width: 15px;
     height: 15px;
-    top: 26%;
-    left: 36%;
+    top: 25%;
+    left: 39%;
 }
 .form .banner .robot span:nth-child(3){
     width: 20px;
     height: 20px;
-    top: 21%;
-    left: 32%;
+    top: 20%;
+    left: 34%;
 }
 .form .banner .robot span:nth-child(4){
     display: flex;
@@ -212,7 +213,6 @@ nav{
     color: var(--color2);
     text-transform: lowercase;
     font-family: var(--font2);
-    text-shadow: 0px 4px 4px  #00000040;
 }
 .form .login form{
     height: 22%;
@@ -316,13 +316,10 @@ nav{
         text-transform: capitalize;
         color: var(--color2);
         background-color: var(--color4);
-        box-shadow: var(--shadow1),
-                    var(--shadow1),
-                    var(--shadow1),
-                    var(--shadow1);
+        box-shadow: var(--shadow1);
         font-size: 16px;
         font-family: var(--font1);
-        border-radius: 20px;
+        border-radius: 15px;
         border: none;
         cursor: pointer;
     } 
@@ -442,6 +439,7 @@ nav{
     display: none;
 }
 .form .sign form > .terms{
+    padding-left: 17px;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -455,7 +453,7 @@ nav{
 .form .sign form > .terms p{
     font-size: 14px;
     color: var(--color2);
-    font-family: var(--font1);
+    font-family: var(--font2);
 }
 .form .sign form > .terms p span{
     color: var(--color1);
@@ -472,13 +470,10 @@ nav{
     text-transform: capitalize;
     color: var(--color2);
     background-color: var(--color4);
-    box-shadow: var(--shadow1),
-                var(--shadow1),
-                var(--shadow1),
-                var(--shadow1);
+    box-shadow: var(--shadow1);
     font-size: 16px;
     font-family: var(--font1);
-    border-radius: 20px;
+    border-radius: 15px;
     border: none;
     cursor: pointer;
 } 
