@@ -236,7 +236,7 @@ async function getData() {
 }
 getData().then((data) => {
   console.log(data);
-
+  displayProductList(data.productList);
   drawOrderAnalytics(
     orderAnalyticsSeries(data.orderAnalytics),
     orderAnalyticsXAxis(data.orderAnalytics)
@@ -265,4 +265,21 @@ function orderAnalyticsSeries(arr) {
   return Object.entries(obj).map((ele) => {
     return { name: ele[0], data: ele[1] };
   });
+}
+function displayProductList(productList) {
+  const productsDiv = document.querySelector(".products--teble");
+  console.log(productsDiv);
+  let html = "";
+  for (let i = 0; i < productList.length; i++) {
+    const { variantId, name, price, status, qtyLeft } = productList[i];
+    html += `
+    <ul>
+              <li>${variantId}</li>
+              <li>${name}</li>
+              <li>$${price}</li>
+              <li class="status in--stuck"><span>${status}</span></li>
+              <li>${qtyLeft}</li>
+            </ul>`;
+  }
+  productsDiv.insertAdjacentHTML("beforeend", html);
 }
