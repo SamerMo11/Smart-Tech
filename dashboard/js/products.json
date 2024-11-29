@@ -1,0 +1,177 @@
+[
+  {
+    "Id": 1,
+    "Name": "Wireless Mouse",
+    "Category": "camera",
+    "Price": 15.99,
+    "Status": "In Stock"
+  },
+  {
+    "Id": 2,
+    "Name": "Bluetooth Speaker",
+    "Category": "laptop",
+    "Price": 25.49,
+    "Status": "Low Stock"
+  },
+  {
+    "Id": 3,
+    "Name": "Gaming Keyboard",
+    "Category": "Electronics",
+    "Price": 45.0,
+    "Status": "In Stock"
+  },
+  {
+    "Id": 4,
+    "Name": "Smartphone Case",
+    "Category": "Accessories",
+    "Price": 10.5,
+    "Status": "Out of Stock"
+  },
+  {
+    "Id": 5,
+    "Name": "USB-C Cable",
+    "Category": "Electronics",
+    "Price": 7.99,
+    "Status": "In Stock"
+  },
+  {
+    "Id": 6,
+    "Name": "Yoga Mat",
+    "Category": "Fitness",
+    "Price": 20.0,
+    "Status": "Low Stock"
+  },
+  {
+    "Id": 7,
+    "Name": "Water Bottle",
+    "Category": "Fitness",
+    "Price": 12.75,
+    "Status": "In Stock"
+  },
+  {
+    "Id": 8,
+    "Name": "Hiking Backpack",
+    "Category": "Outdoor",
+    "Price": 60.0,
+    "Status": "Out of Stock"
+  },
+  {
+    "Id": 9,
+    "Name": "LED Desk Lamp",
+    "Category": "Home",
+    "Price": 30.99,
+    "Status": "In Stock"
+  },
+  {
+    "Id": 10,
+    "Name": "Notebook Set",
+    "Category": "Stationery",
+    "Price": 8.5,
+    "Status": "Low Stock"
+  },
+  {
+    "Id": 11,
+    "Name": "Wireless Earbuds",
+    "Category": "Electronics",
+    "Price": 35.99,
+    "Status": "In Stock"
+  },
+  {
+    "Id": 12,
+    "Name": "Desk Organizer",
+    "Category": "Home",
+    "Price": 18.99,
+    "Status": "In Stock"
+  },
+  {
+    "Id": 13,
+    "Name": "Wall Clock",
+    "Category": "Home",
+    "Price": 25.5,
+    "Status": "Out of Stock"
+  },
+  {
+    "Id": 14,
+    "Name": "Sunglasses",
+    "Category": "Accessories",
+    "Price": 15.0,
+    "Status": "Low Stock"
+  },
+  {
+    "Id": 15,
+    "Name": "Backpack",
+    "Category": "Accessories",
+    "Price": 40.0,
+    "Status": "In Stock"
+  },
+  {
+    "Id": 16,
+    "Name": "Travel Pillow",
+    "Category": "Travel",
+    "Price": 22.99,
+    "Status": "Low Stock"
+  },
+  {
+    "Id": 17,
+    "Name": "Portable Charger",
+    "Category": "Electronics",
+    "Price": 18.75,
+    "Status": "In Stock"
+  },
+  {
+    "Id": 18,
+    "Name": "Running Shoes",
+    "Category": "Fitness",
+    "Price": 55.0,
+    "Status": "Low Stock"
+  },
+  {
+    "Id": 19,
+    "Name": "Electric Kettle",
+    "Category": "Home",
+    "Price": 28.99,
+    "Status": "In Stock"
+  },
+  {
+    "Id": 20,
+    "Name": "Cookware Set",
+    "Category": "Home",
+    "Price": 80.0,
+    "Status": "Out of Stock"
+  },
+  {
+    "Id": 21,
+    "Name": "Wristwatch",
+    "Category": "Accessories",
+    "Price": 45.99,
+    "Status": "In Stock"
+  },
+  {
+    "Id": 22,
+    "Name": "Laptop Stand",
+    "Category": "Electronics",
+    "Price": 29.99,
+    "Status": "Low Stock"
+  },
+  {
+    "Id": 23,
+    "Name": "Sports Headband",
+    "Category": "Fitness",
+    "Price": 8.99,
+    "Status": "In Stock"
+  },
+  {
+    "Id": 24,
+    "Name": "Camping Tent",
+    "Category": "Outdoor",
+    "Price": 120.0,
+    "Status": "Out of Stock"
+  },
+  {
+    "Id": 25,
+    "Name": "Phone Stand",
+    "Category": "Electronics",
+    "Price": 12.5,
+    "Status": "In Stock"
+  }
+]

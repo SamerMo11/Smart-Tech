@@ -1,0 +1,15 @@
+{
+  "Name": "text",
+  "Description": "textarea",
+  "Mega Pixels": "text",
+  "Lens Type": "text",
+  "Sensor Type": "text",
+  "ISO Range": "text",
+  "Shutter Speed": "text",
+  "Video Resolution": "text",
+  "AutoFocus Points": "number",
+  "Battery Life": "text",
+  "Weight": "text",
+  "Storage": "text",
+  "Connectivity": "textarea"
+}

@@ -1,0 +1,168 @@
+{
+  "totalApprovedOrders": 4,
+  "mostSelling": [
+    {
+      "variantId": 12,
+      "productName": "Sony WH-1000XM5",
+      "saledQuantity": 5,
+      "totalSales": 47500
+    },
+    {
+      "variantId": 6,
+      "productName": "HP Spectre x360",
+      "saledQuantity": 3,
+      "totalSales": 139500
+    },
+    {
+      "variantId": 16,
+      "productName": "HP Spectre x360",
+      "saledQuantity": 2,
+      "totalSales": 24399.98
+    },
+    {
+      "variantId": 8,
+      "productName": "Logitech G502 HERO",
+      "saledQuantity": 2,
+      "totalSales": 3000
+    },
+    {
+      "variantId": 11,
+      "productName": "Sony WH-1000XM5",
+      "saledQuantity": 2,
+      "totalSales": 18000
+    }
+  ],
+  "ordersByCategory": [
+    {
+      "name": "Camera",
+      "numOfSalles": 2,
+      "percentage": "Camera: 13.33"
+    },
+    {
+      "name": "HeadPhone",
+      "numOfSalles": 8,
+      "percentage": "HeadPhone: 53.33"
+    },
+    {
+      "name": "KeyBoard",
+      "numOfSalles": 1,
+      "percentage": "KeyBoard: 6.67"
+    },
+    {
+      "name": "Laptop",
+      "numOfSalles": 4,
+      "percentage": "Laptop: 26.67"
+    }
+  ],
+  "orderAnalytics": [
+    {
+      "month": "Dec(2023)",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Jan(2024)",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Feb(2024)",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Mar(2024)",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Apr(2024)",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "May(2024)",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Jun(2024)",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Jul(2024)",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Aug(2024)",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Sep(2024)",
+      "approvedOrders": 12,
+      "refundOrders": 9,
+      "pendingOrders": 4
+    },
+    {
+      "month": "Oct(2024)",
+      "approvedOrders": 0,
+      "refundOrders": 2,
+      "pendingOrders": 2
+    },
+    {
+      "month": "Nov(2024)",
+      "approvedOrders": 5,
+      "refundOrders": 0,
+      "pendingOrders": 4
+    }
+  ],
+  "productList": [
+    {
+      "variantId": 12,
+      "name": "Sony WH-1000XM5(White)",
+      "price": 9500,
+      "status": "Low Stuck",
+      "qtyLeft": 5
+    },
+    {
+      "variantId": 6,
+      "name": "HP Spectre x360(Silver)",
+      "price": 46500,
+      "status": "In Stuck",
+      "qtyLeft": 3
+    },
+    {
+      "variantId": 16,
+      "name": "HP Spectre x360(Blue)",
+      "price": 12199.99,
+      "status": "Low Stuck",
+      "qtyLeft": 2
+    },
+    {
+      "variantId": 8,
+      "name": "Logitech G502 HERO(Black)",
+      "price": 1500,
+      "status": "In Stuck",
+      "qtyLeft": 2
+    },
+    {
+      "variantId": 11,
+      "name": "Sony WH-1000XM5(Blue)",
+      "price": 9000,
+      "status": "In Stuck",
+      "qtyLeft": 2
+    }
+  ]
+}

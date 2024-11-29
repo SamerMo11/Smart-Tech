@@ -1,0 +1,230 @@
+[
+  {
+    "id": 1,
+    "name": "Phone",
+    "attributes": [
+      {
+        "name": "Screen Size"
+      },
+      {
+        "name": "Resolution"
+      },
+      {
+        "name": "Screen Type"
+      },
+      {
+        "name": "ChipSet"
+      },
+      {
+        "name": "RAM"
+      },
+      {
+        "name": "Storage"
+      },
+      {
+        "name": "Main Camera"
+      },
+      {
+        "name": "Front Camera"
+      },
+      {
+        "name": "Battery"
+      },
+      {
+        "name": "Network Compatibility"
+      },
+      {
+        "name": "Operation System"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Laptop",
+    "attributes": [
+      {
+        "name": "Screen Size"
+      },
+      {
+        "name": "Resolution"
+      },
+      {
+        "name": "RAM"
+      },
+      {
+        "name": "Processor"
+      },
+      {
+        "name": "Storage"
+      },
+      {
+        "name": "Graphics Card"
+      },
+      {
+        "name": "Battery Life"
+      },
+      {
+        "name": "Operation System"
+      },
+      {
+        "name": "Weight"
+      },
+      {
+        "name": "USB-Ports"
+      },
+      {
+        "name": "Connectivity"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Camera",
+    "attributes": [
+      {
+        "name": "Mega Pixels"
+      },
+      {
+        "name": "Len Type"
+      },
+      {
+        "name": "Sensor Type"
+      },
+      {
+        "name": "ISO Range"
+      },
+      {
+        "name": "Shutter Speed"
+      },
+      {
+        "name": "Video Resolution"
+      },
+      {
+        "name": "AutoFocus Point"
+      },
+      {
+        "name": "Battery Life"
+      },
+      {
+        "name": "Weight"
+      },
+      {
+        "name": "Storage"
+      },
+      {
+        "name": "Connectivity"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Mouse",
+    "attributes": [
+      {
+        "name": "DPI"
+      },
+      {
+        "name": "Sensor Type"
+      },
+      {
+        "name": "Connection Type"
+      },
+      {
+        "name": "Battery Life"
+      },
+      {
+        "name": "Buttons"
+      },
+      {
+        "name": "weight"
+      },
+      {
+        "name": "RGP Lighting"
+      },
+      {
+        "name": "Ergonomics"
+      },
+      {
+        "name": "Polling Rate"
+      },
+      {
+        "name": "Material"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "KeyBoard",
+    "attributes": [
+      {
+        "name": "Key Switch Type"
+      },
+      {
+        "name": "Layout"
+      },
+      {
+        "name": "Back Lighting"
+      },
+      {
+        "name": "Connectivity"
+      },
+      {
+        "name": "Key Rollover"
+      },
+      {
+        "name": "Macro Keys"
+      },
+      {
+        "name": "Material"
+      },
+      {
+        "name": "Weight"
+      },
+      {
+        "name": "Ergonomics"
+      },
+      {
+        "name": "Polling Rate"
+      },
+      {
+        "name": "Media Controls"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "HeadPhone",
+    "attributes": [
+      {
+        "name": "Type"
+      },
+      {
+        "name": "Driver Size"
+      },
+      {
+        "name": "Freq Response"
+      },
+      {
+        "name": "Impedance"
+      },
+      {
+        "name": "Connectivity"
+      },
+      {
+        "name": "Battery Life"
+      },
+      {
+        "name": "Noise Cancelation"
+      },
+      {
+        "name": "MicroPhone"
+      },
+      {
+        "name": "Controls"
+      },
+      {
+        "name": "Weight"
+      }
+    ]
+  }
+]

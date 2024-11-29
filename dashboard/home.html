@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo--container">
+          <img src="./images/logo.png" alt="" class="logo" />
+          <i class="fa-solid fa-arrow-left header--arrow"></i>
+        </div>
+        <ul class="links">
+          <li>
+            <i class="fa-regular fa-bell"></i>
+          </li>
+          <li>
+            <img
+              class="user--img"
+              src="./images/user.png"
+              alt="user image"
+              srcset=""
+            />
+          </li>
+        </ul>
+      </header>
+      <nav class="sidebar">
+        <ul class="menu">
+          <li class="active">
+            <a href="./home.html"
+              ><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a
+            >
+          </li>
+          <li>
+            <a href="./products.html"
+              ><i class="fas fa-box"></i><span> Product</span>
+              <i class="fa-solid fa-caret-down dropdown--arrow"></i
+            ></a>
+
+            <ul class="dropdown">
+              <div>
+                <li><a href="./addProduct.html">add product</a></li>
+              </div>
+            </ul>
+          </li>
+          <li>
+            <a href="./orders.html"
+              ><i class="fas fa-shopping-cart"></i> <span> Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="#sales"
+              ><i class="fas fa-chart-line"></i> <span> Sales</span></a
+            >
+          </li>
+          <li>
+            <a href="#reports"
+              ><i class="fas fa-file-alt"></i> <span> Reports</span></a
+            >
+          </li>
+        </ul>
+        <ul class="bottom-menu">
+          <li>
+            <a href="#support"
+              ><i class="fas fa-life-ring"></i> <span> Support</span>
+            </a>
+          </li>
+          <li>
+            <a href="#settings"
+              ><i class="fas fa-cog"></i> <span> Settings</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <div class="total--sales stats">
+          <div class="stats--head">
+            <h2 class="stats--title">
+              <span><img src="./images/check.svg" alt="" srcset="" /></span>
+              Total Sales
+            </h2>
+            <div>
+              <p class="stats--value">$254,14</p>
+              <div class="stats--analysis green">
+                <p class=""><i class="fa-solid fa-arrow-trend-up"></i> 10.2</p>
+                <p class="stat">+1.1% this week</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="chart"
+            id="total-sales-chart"
+            style="width: 100%; min-height: 190px"
+          ></div>
+        </div>
+        <div class="total--orders stats">
+          <div class="stats--head">
+            <h2 class="stats--title">
+              <i class="fas fa-dollar-sign"></i> Total Orders
+            </h2>
+            <div>
+              <p class="stats--value">565</p>
+              <div class="stats--analysis green">
+                <p class=""><i class="fa-solid fa-arrow-trend-up"></i> 10.2</p>
+                <p class="stat">+1.1% this week</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="chart"
+            id="total-orders-chart"
+            style="width: 100%; min-height: 190px"
+          ></div>
+        </div>
+        <div class="total--earnings stats">
+          <div class="stats--head">
+            <h2 class="stats--title">
+              <i class="fas fa-dollar-sign"></i> Total Orders
+            </h2>
+            <div>
+              <p class="stats--value">565</p>
+              <div class="stats--analysis green">
+                <p class=""><i class="fa-solid fa-arrow-trend-up"></i> 10.2</p>
+                <p class="stat">+1.1% this week</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="chart"
+            id="total-earnings-chart"
+            style="width: 100%; min-height: 190px"
+          ></div>
+        </div>
+        <div class="order--analysis">
+          <div class="chart--head">
+            <h1>Order Analytics</h1>
+            <ul>
+              <li class="succsess">Order Complete</li>
+              <li class="return">Returns</li>
+            </ul>
+          </div>
+          <div id="order--ana"></div>
+        </div>
+        <div class="orders--category">
+          <div class="chart--head">
+            <h1>Orders By Category</h1>
+          </div>
+          <div id="ordersByCategory"></div>
+        </div>
+        <div class="product--list">
+          <div class="chart--head">
+            <h1>Product List</h1>
+            <p class="products--numbers">
+              Total <span class="value">2540</span> Products in Stuck
+            </p>
+          </div>
+          <ul role="table" class="products--teble">
+            <ul class="head">
+              <li>id</li>
+              <li>Product Name</li>
+              <li>Price</li>
+              <li>Status</li>
+              <li>QTY LEFT</li>
+            </ul>
+            <ul>
+              <li>2</li>
+              <li>Laptop 251H</li>
+              <li>$225</li>
+              <li class="status in--stuck"><span>In Stuck</span></li>
+              <li>320</li>
+            </ul>
+            <ul>
+              <li>2</li>
+              <li>Laptop 251H</li>
+              <li>$225</li>
+              <li class="status low--stuck"><span>Low Stuck</span></li>
+              <li>320</li>
+            </ul>
+            <ul>
+              <li>2</li>
+              <li>Laptop 251H</li>
+              <li>$225</li>
+              <li class="status out--stuck"><span>Out of Stuck</span></li>
+              <li>320</li>
+            </ul>
+            <ul>
+              <li>2</li>
+              <li>Laptop 251H</li>
+              <li>$225</li>
+              <li class="status"><span>In Stuck</span></li>
+              <li>320</li>
+            </ul>
+            <ul>
+              <li>2</li>
+              <li>Laptop 251H</li>
+              <li>$225</li>
+              <li class="status"><span>In Stuck</span></li>
+              <li>320</li>
+            </ul>
+            <ul>
+              <li>2</li>
+              <li>Laptop 251H</li>
+              <li>$225</li>
+              <li class="status"><span>In Stuck</span></li>
+              <li>320</li>
+            </ul>
+            <ul>
+              <li>2</li>
+              <li>Laptop 251H</li>
+              <li>$225</li>
+              <li class="status"><span>In Stuck</span></li>
+              <li>320</li>
+            </ul>
+          </ul>
+        </div>
+        <div class="top--sales">
+          <div class="chart--head">
+            <h1>Most Selling</h1>
+          </div>
+
+          <div class="products">
+            <div>
+              <img src="./images/product.png" alt="Product image" />
+              <p class="product--title">
+                Labtop Hp <span class="sells--value">Sell:250</span>
+              </p>
+              <p class="product--price">$244,00</p>
+            </div>
+            <div>
+              <img src="./images/product.png" alt="Product image" />
+              <p class="product--title">
+                Labtop Hp <span class="sells--value">Sell:250</span>
+              </p>
+              <p class="product--price">$244,00</p>
+            </div>
+            <div>
+              <img src="./images/product.png" alt="Product image" />
+              <p class="product--title">
+                Labtop Hp <span class="sells--value">Sell:250</span>
+              </p>
+              <p class="product--price">$244,00</p>
+            </div>
+            <div>
+              <img src="./images/product.png" alt="Product image" />
+              <p class="product--title">
+                Labtop Hp <span class="sells--value">Sell:250</span>
+              </p>
+              <p class="product--price">$244,00</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/8004158925.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <script src="./js/home.js" defer type="module"></script>
+    <script src="./js/main.js" type="module" defer></script>
+  </body>
+</html>

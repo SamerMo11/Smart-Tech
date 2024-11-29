@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/addProduct.css" />
+    <title>Products</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo--container">
+          <img src="./images/logo.png" alt="" class="logo" />
+          <i class="fa-solid fa-arrow-left header--arrow"></i>
+        </div>
+        <ul class="links">
+          <li>
+            <i class="fa-regular fa-bell"></i>
+          </li>
+          <li>
+            <img
+              class="user--img"
+              src="./images/user.png"
+              alt="user image"
+              srcset=""
+            />
+          </li>
+        </ul>
+      </header>
+      <nav class="sidebar" aria-expanded="false">
+        <ul class="menu">
+          <li class="active">
+            <a href="./home.html"
+              ><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a
+            >
+          </li>
+          <li>
+            <a href="./products.html"
+              ><i class="fas fa-box"></i><span> Product</span>
+              <i class="fa-solid fa-caret-down dropdown--arrow"></i
+            ></a>
+
+            <ul class="dropdown">
+              <div>
+                <li><a href="./addProduct.html">add product</a></li>
+              </div>
+            </ul>
+          </li>
+          <li>
+            <a href="./orders.html"
+              ><i class="fas fa-shopping-cart"></i> <span> Orders</span>
+              <i class="fa-solid fa-caret-down dropdown--arrow"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#sales"
+              ><i class="fas fa-chart-line"></i> <span> Sales</span></a
+            >
+          </li>
+          <li>
+            <a href="#reports"
+              ><i class="fas fa-file-alt"></i> <span> Reports</span></a
+            >
+          </li>
+        </ul>
+        <ul class="bottom-menu">
+          <li>
+            <a href="#support"
+              ><i class="fas fa-life-ring"></i> <span> Support</span>
+            </a>
+          </li>
+          <li>
+            <a href="#settings"
+              ><i class="fas fa-cog"></i> <span> Settings</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <div class="section--header">
+          <h1 class="section--title">Products</h1>
+        </div>
+        <div>
+          <form action="">
+            <h2 class="form--title">Add Product</h2>
+            <div>
+              <label for="name">Name</label>
+              <input type="text" name="name" id="" required />
+            </div>
+            <div>
+              <label for="">Category</label>
+              <div class="dropdown--container category--input">
+                <i
+                  class="fa-solid fa-caret-down dropdown--arrow"
+                  aria-hidden="true"
+                ></i>
+                <p class="curr--value">
+                  <span class="value">All</span>
+                </p>
+                <ul class="dropdown--menu">
+                  <ul>
+                    <li>All</li>
+                    <li>Pending</li>
+                    <li>Shipping</li>
+                    <li>Processing</li>
+                    <li>Shipped</li>
+                    <li>Delivered</li>
+                  </ul>
+                </ul>
+              </div>
+            </div>
+            <div class="category--form"></div>
+          </form>
+          <div class="img--upload">
+            <h2>Upload Images</h2>
+            <div>
+              <div class="upload--btn">
+                <input type="file" name="upload" id="upload" />
+                <label for="upload"> <i class="fa-solid fa-upload"></i></label>
+              </div>
+              <img src="./images/product.png" alt="" srcset="" />
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="overlay"></div>
+    <script
+      src="https://kit.fontawesome.com/8004158925.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./js/main.js" defer type="module"></script>
+    <script src="./js/addProduct.js" defer type="module"></script>
+  </body>
+</html>

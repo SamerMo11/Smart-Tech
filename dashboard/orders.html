@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/orders.css" />
+
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo--container">
+          <img src="./images/logo.png" alt="" class="logo" />
+          <i class="fa-solid fa-arrow-left header--arrow"></i>
+        </div>
+        <ul class="links">
+          <li>
+            <i class="fa-regular fa-bell"></i>
+          </li>
+          <li>
+            <img
+              class="user--img"
+              src="./images/user.png"
+              alt="user image"
+              srcset=""
+            />
+          </li>
+        </ul>
+      </header>
+      <nav class="sidebar" aria-expanded="false">
+        <ul class="menu">
+          <li class="active">
+            <a href="./home.html"
+              ><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a
+            >
+          </li>
+          <li>
+            <a href="./products.html"
+              ><i class="fas fa-box"></i><span> Products</span>
+              <i class="fa-solid fa-caret-down dropdown--arrow"></i
+            ></a>
+
+            <ul class="dropdown">
+              <div>
+                <li><a href="./addProduct.html">add product</a></li>
+              </div>
+            </ul>
+          </li>
+          <li>
+            <a href="orders.html"
+              ><i class="fas fa-shopping-cart"></i> <span> Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="#sales"
+              ><i class="fas fa-chart-line"></i> <span> Sales</span></a
+            >
+          </li>
+          <li>
+            <a href="#reports"
+              ><i class="fas fa-file-alt"></i> <span> Reports</span></a
+            >
+          </li>
+        </ul>
+        <ul class="bottom-menu">
+          <li>
+            <a href="#support"
+              ><i class="fas fa-life-ring"></i> <span> Support</span>
+            </a>
+          </li>
+          <li>
+            <a href="#settings"
+              ><i class="fas fa-cog"></i> <span> Settings</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <div>
+          <h1 class="section--title">Orders</h1>
+          <div class="table--statistics">
+            <div>
+              <div class="icon">
+                <img src="./images/totalorder.svg" alt="" srcset="" />
+              </div>
+              <div class="info">
+                <p class="value">34</p>
+                <p class="">Total Order</p>
+                <p></p>
+              </div>
+            </div>
+            <div>
+              <div class="icon">
+                <img src="./images/pendingorder.svg" alt="" srcset="" />
+              </div>
+              <div class="info">
+                <p class="value">34</p>
+                <p class="">Pending Order</p>
+                <p></p>
+              </div>
+            </div>
+            <div>
+              <div class="icon">
+                <img src="./images/sucssorder.svg" alt="" srcset="" />
+              </div>
+              <div class="info">
+                <p class="value">34</p>
+                <p class="">Delivered Order</p>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="table--controllers">
+            <div class="dropdown--container status--input">
+              <i
+                class="fa-solid fa-caret-down dropdown--arrow"
+                aria-hidden="true"
+              ></i>
+              <p class="curr--value">Status : <span class="value">All</span></p>
+              <ul class="dropdown--menu">
+                <ul>
+                  <li>All</li>
+
+                  <li>Pending</li>
+                  <li>Shipping</li>
+                  <li>Processing</li>
+                  <li>Shipped</li>
+                  <li>Delivered</li>
+                  <li>Cancelled</li>
+                </ul>
+              </ul>
+            </div>
+            <div class="dropdown--container">
+              <i
+                class="fa-solid fa-caret-down dropdown--arrow"
+                aria-hidden="true"
+              ></i>
+              <p class="curr--value">
+                Payment : <span class="value">All</span>
+              </p>
+              <ul class="dropdown--menu">
+                <ul>
+                  <li>All</li>
+                  <li>Cash</li>
+                  <li>Online</li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+          <div class="table">
+            <ul class="table--head">
+              <li>Id</li>
+              <li>Created Day</li>
+              <li>Payment Method</li>
+              <li>Payment Status</li>
+              <li>Order Status</li>
+              <li>Total</li>
+              <li class="kabab--menu">
+                <ul class="dropdown--menu"></ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="item-detail-view">
+          <div class="order--overview">
+            <p class="order--id skelton">
+              Order #<span id="orderID">3504</span>
+            </p>
+            <button class="colse--btn skelton">
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <span class="order--status skelton">Shipping</span>
+            <span class="date skelton">Placed on Aug 11, 12:45</span>
+          </div>
+          <div class="user--overview">
+            <h3 class="skelton">Customer</h3>
+            <a href="#" class="skelton">Profile</a>
+            <img src="./images/user.png" alt="User Image" class="skelton" />
+            <div class="user--info skelton">
+              <p class="user--name">Ahmed Medhat</p>
+              <p>heamamOhme@gmail.com</p>
+              <p>(+20) 01226687966</p>
+            </div>
+          </div>
+          <div class="order--items">
+            <h3 class="skelton">Order Items</h3>
+            <div class="products skelton">
+              <div>
+                <img src="./images/product.png" alt="Product image" />
+                <p class="product--title">
+                  Labtop Hp <span class="sells--value">$1505</span>
+                </p>
+              </div>
+              <div>
+                <img src="./images/product.png" alt="Product image" />
+                <p class="product--title">
+                  Labtop Hp <span class="sells--value">$1505</span>
+                </p>
+              </div>
+              <div>
+                <img src="./images/product.png" alt="Product image" />
+                <p class="product--title">
+                  Labtop Hp <span class="sells--value">$1505</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="price">
+            <h3 class="skelton">total</h3>
+            <p class="value skelton">$2000.1</p>
+          </div>
+          <div class="controllers">
+            <button class="refund--Btn skelton">
+              <i class="fa-solid fa-reply" aria-hidden="true"></i>
+              <span>Refund</span>
+            </button>
+            <button class="kabab--menu skelton">
+              <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="toast">
+      <i class="fa-regular fa-circle-check icon"></i>
+      <p class="message">Added Product Succesfully</p>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/8004158925.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <script src="./js/main.js" defer type="module"></script>
+    <script src="./js/orders.js" defer type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "Name": "text",
+  "Description": "textarea",
+  "Key Switch Type": "text",
+  "Layout": "text",
+  "Back Lighting": "text",
+  "Connectivity": "text",
+  "Key Rollover": "text",
+  "Macro Keys": "number",
+  "Material": "text",
+  "Weight": "text",
+  "Ergonomics": "textarea",
+  "Polling Rate": "text",
+  "Media Controls": "textarea"
+}

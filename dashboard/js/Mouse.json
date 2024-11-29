@@ -1,0 +1,14 @@
+{
+  "Name": "text",
+  "Description": "textarea",
+  "DPI": "number",
+  "Sensor Type": "text",
+  "Connection Type": "text",
+  "Battery Life": "text",
+  "Buttons": "number",
+  "Weight": "text",
+  "RGB Lighting": "boolean",
+  "Ergonomics": "text",
+  "Polling Rate": "text",
+  "Material": "text"
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Phone",
+    "id": 1
+  },
+  {
+    "name": "Laptop",
+    "id": 5
+  },
+  {
+    "name": "Camera",
+    "id": 6
+  },
+  {
+    "name": "Mouse",
+    "id": 7
+  },
+  {
+    "name": "KeyBoard",
+    "id": 8
+  },
+  {
+    "name": "HeadPhone",
+    "id": 10
+  }
+]

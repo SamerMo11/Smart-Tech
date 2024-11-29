@@ -1,0 +1,15 @@
+{
+  "Name": "text",
+  "Description": "textarea",
+  "Screen Size": "text",
+  "Resolution": "text",
+  "RAM": "text",
+  "Processor": "text",
+  "Storage": "text",
+  "Graphics Card": "text",
+  "Battery Life": "text",
+  "Operation System": "text",
+  "Weight": "text",
+  "USB-Ports": "number",
+  "Connectivity": "text"
+}
