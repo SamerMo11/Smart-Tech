@@ -8,13 +8,13 @@
 | JavaScript    |             |              |                   |              |             |             |                  |                  |                  |            |
 | Responsive    |    Done     |    Done      |    Done           |              |             |             |                  |                  |                  |            |
 | Animation     |    Done     |    Done      |    Done           |              |             |             |                  |      Done        |                  |    ----    |
-| Reem Edit     |    Done     |    Done      |    Done           |              |             |             |                  |                  |                  |            |
+| Reem Edit     |    Done     |    Done      |    Done           |     Done     |             |             |                  |                  |                  |            |
 | Samer ReFront |    Done     |    ----      |    Done           |              |             |             |                  |                  |                  |            |
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
 |     products       |  Laptop  |  SmartWatch  |  Headphones  |  Phones  |  Camera  | AirPods  |  PCs  |  KeyBoard  |  JoyStick  |  PSs  |  Speakers  |
 | ------------------ | -------- | ------------ | ------------ | -------- | -------- | -------- | ----- | ---------  |----------  |------ |----------  |
-|     Found ?        |    Done  |     Done     |    Done      |   Done   |   Done   |  Done    |  Done |    Done    |  Done      | Done  |  Done      |
+|     Found?        |    Done  |     Done     |    Done      |   Done   |   Done   |  Done    |  Done |    Done    |  Done      | Done  |  Done      |
 
 
