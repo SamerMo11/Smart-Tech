@@ -59,12 +59,8 @@ let recognition;
 
 
 
-
-
-
-
-
-
+// ------------------------------------------------
+// ------------------------------------------------
 
 
 
@@ -89,4 +85,40 @@ options.forEach(option => {
         options.forEach(opt => opt.classList.remove("active2"));
         option.classList.add("active2");
     });
+});
+
+
+
+// ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
+
+
+
+
+
+document.querySelectorAll('.item .info .div').forEach(card => {
+  const increaseBtn = card.querySelector('.increace');
+  const decreaseBtn = card.querySelector('.decreace');
+  const quantitySpan = card.querySelector('.quantity');
+  const totalSpan = card.querySelector('.total');
+
+  let quantity = parseInt(quantitySpan.textContent);
+  let unitPrice = parseInt(totalSpan.textContent.replace(/,/g, ''));
+
+  increaseBtn.addEventListener('click', () => {
+    quantity++;
+    updatePrice();
+  });
+
+  decreaseBtn.addEventListener('click', () => {
+    if (quantity > 1) {
+      quantity--;
+      updatePrice();
+    }
+  });
+
+  function updatePrice() {
+    quantitySpan.textContent = quantity;
+    totalSpan.textContent = (quantity * unitPrice).toLocaleString();
+  }
 });
