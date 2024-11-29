@@ -1,26 +1,37 @@
 [
   {
-    "name": "Phone",
-    "id": 1
+    "id": 1,
+    "name": "Mobile Phones",
+    "p_num": 101,
+    "sells": 300,
+    "quantity": 50
   },
   {
-    "name": "Laptop",
-    "id": 5
+    "id": 2,
+    "name": "Laptops",
+    "p_num": 102,
+    "sells": 150,
+    "quantity": 30
   },
   {
-    "name": "Camera",
-    "id": 6
+    "id": 3,
+    "name": "Headphones",
+    "p_num": 103,
+    "sells": 250,
+    "quantity": 75
   },
   {
-    "name": "Mouse",
-    "id": 7
+    "id": 4,
+    "name": "Smart Watches",
+    "p_num": 104,
+    "sells": 180,
+    "quantity": 40
   },
   {
-    "name": "KeyBoard",
-    "id": 8
-  },
-  {
-    "name": "HeadPhone",
-    "id": 10
+    "id": 5,
+    "name": "Televisions",
+    "p_num": 105,
+    "sells": 120,
+    "quantity": 20
   }
 ]

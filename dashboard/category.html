@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/category.css" />
+    <title>Category</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo--container">
+          <img src="./images/logo.png" alt="" class="logo" />
+          <i class="fa-solid fa-arrow-left header--arrow"></i>
+        </div>
+        <ul class="links">
+          <li>
+            <i class="fa-regular fa-bell"></i>
+          </li>
+          <li>
+            <img
+              class="user--img"
+              src="./images/user.png"
+              alt="user image"
+              srcset=""
+            />
+          </li>
+        </ul>
+      </header>
+      <nav class="sidebar" aria-expanded="false">
+        <ul class="menu">
+          <li class="active">
+            <a href="./home.html"
+              ><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a
+            >
+          </li>
+          <li>
+            <a href="./products.html"
+              ><i class="fas fa-box"></i><span> Products</span>
+              <i class="fa-solid fa-caret-down dropdown--arrow"></i
+            ></a>
+
+            <ul class="dropdown">
+              <div>
+                <li><a href="./addProduct.html">add product</a></li>
+              </div>
+            </ul>
+          </li>
+          <li>
+            <a href="orders.html"
+              ><i class="fas fa-shopping-cart"></i> <span> Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="#sales"
+              ><i class="fas fa-chart-line"></i> <span> Sales</span></a
+            >
+          </li>
+          <li>
+            <a href="#reports"
+              ><i class="fas fa-file-alt"></i> <span> Reports</span></a
+            >
+          </li>
+        </ul>
+        <ul class="bottom-menu">
+          <li>
+            <a href="#support"
+              ><i class="fas fa-life-ring"></i> <span> Support</span>
+            </a>
+          </li>
+          <li>
+            <a href="#settings"
+              ><i class="fas fa-cog"></i> <span> Settings</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <div>
+          <div class="section--header">
+            <h1 class="section--title">Category</h1>
+            <button>
+              <i class="fa-solid fa-plus" aria-hidden="true"></i> Add New
+              Category
+            </button>
+          </div>
+          <div class="table">
+            <ul class="table--head">
+              <li>Id</li>
+              <li>Name</li>
+              <li>P.Num</li>
+              <li>Sells</li>
+              <li>Quantity</li>
+              <li class="kabab--menu">
+                <ul class="dropdown--menu"></ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div popover class="popover" id="editPopover">
+          <div class="cate--header">
+            <h1>Category</h1>
+            <button class="add--attribute">Add</button>
+            <div class="input--container">
+              <div>
+                <label for="attributeName">Attribute Name</label
+                ><input type="text" id="attributeName" />
+                <button class="add--attribute" id="confirmAdd">Add</button>
+              </div>
+            </div>
+          </div>
+          <ul class="attribute">
+            <button popovertarget="confirmDelete" attributeID="1">Id</button>
+            <button
+              popovertarget="confirmDelete"
+              attributeID="1"
+              popovertarget="confirmDelete"
+            >
+              Name
+            </button>
+            <button popovertarget="confirmDelete" attributeID="1">Price</button>
+            <button popovertarget="confirmDelete" attributeID="1">Id</button>
+            <button popovertarget="confirmDelete" attributeID="1">Name</button>
+            <button popovertarget="confirmDelete" attributeID="1">Price</button>
+            <button popovertarget="confirmDelete" attributeID="1">Id</button>
+            <button popovertarget="confirmDelete" attributeID="1">Name</button>
+            <button popovertarget="confirmDelete" attributeID="1">Price</button>
+          </ul>
+          <div id="confirmDelete" class="popover" popover>
+            <p>Are you sure you want to delete this attribute?</p>
+            <button class="confirm" id="confirmDelete">Yes, Delete</button>
+            <button class="cancel" id="cancelDelete">Cancel</button>
+          </div>
+        </div>
+        <!-- <div class="item-detail-view show">
+          <h1>SS</h1>
+        </div> -->
+      </main>
+    </div>
+    <div class="overlay"></div>
+
+    <script
+      src="https://kit.fontawesome.com/8004158925.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./js/main.js" defer type="module"></script>
+    <script src="./js/category.js" defer type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+.popover {
+  width: fit-content;
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  width: min(500px, 90%);
+}
+
+ul.attribute > * {
+  border: var(--border);
+  cursor: pointer;
+  padding: 5px;
+  color: var(--color-dark);
+  border-radius: 5px;
+  /* color: #fff; */
+  flex: 1;
+  text-align: center;
+}
+
+ul.attribute {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 25px;
+}
+.cate--header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  .add--attribute {
+    padding: 5px 20px;
+    /* background-color: var(--color-blue); */
+    border: 1px solid var(--color-dark);
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    font-size: 16px;
+    anchor-name: --add-attribute;
+  }
+  .input--container {
+    --padding: 15px;
+    position: absolute;
+    display: grid;
+    border-radius: 10px;
+    grid-template-rows: 0fr;
+    transition: 100ms all;
+    overflow: hidden;
+    top: 100%;
+    right: 0;
+    background-color: var(--color-dark);
+    box-shadow: 0px 0px 4px 0px #0000008f;
+    color: #fff;
+    > div {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    #attributeName {
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      padding: 5px;
+      background: transparent;
+      border: 1px solid var(--color-light-gray);
+      color: var(--color-light-gray);
+    }
+    label {
+      margin-top: var(--padding);
+      font-size: 13px;
+      color: var(--color-light-gray);
+    }
+  }
+  .input--container button#confirmAdd {
+    border: 1px solid var(--color-light-gray);
+    color: var(--color-light-gray);
+    margin-inline: auto;
+    margin-bottom: var(--padding);
+    transition: 100ms all;
+  }
+  button#confirmAdd:hover {
+    background-color: var(--color-light-gray);
+    color: var(--color-dark);
+  }
+  .input--container > div > * {
+    margin-inline: 15px;
+  }
+  .input--container.active {
+    grid-template-rows: 1fr;
+  }
+}
+#attributeInput {
+  position: absolute;
+  position-anchor: --add-attribute;
+  top: anchor(top);
+  right: anchor(right);
+}
+#attributeInput::backdrop {
+  backdrop-filter: none;
+  background-color: transparent;
+}
+div#confirmDelete {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  outline: none;
+  border: none;
+  padding: 25px;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  row-gap: 15px;
+  p {
+    grid-column: span 2;
+  }
+  button {
+    padding: 10px 25px;
+    width: 130px;
+    border-radius: 5px;
+    justify-self: center;
+    font-size: 14px;
+    cursor: pointer;
+    background: var(--color-blue);
+  }
+  .cancel {
+    background-color: var(--color-red);
+  }
+}
+[popovertarget="confirmDelete"] {
+  cursor: url("../images/delete.svg"), auto !important;
+}
