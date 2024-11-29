@@ -15,6 +15,6 @@
 
 |     products       |  Laptop  |  SmartWatch  |  Headphones  |  Phones  |  Camera  | AirPods  |  PCs  |  KeyBoard  |  JoyStick  |  PSs  |  Speakers  |
 | ------------------ | -------- | ------------ | ------------ | -------- | -------- | -------- | ----- | ---------  |----------  |------ |----------  |
-|     Found ?        |    Done  |     Done     |    Done      |          |          |          |       |            |            |       |            |
+|     Found ?        |    Done  |     Done     |    Done      |   Done   |   Done   |  Done    |       |            |   Done     | Done  |  Done      |
 
 
