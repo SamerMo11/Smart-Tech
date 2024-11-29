@@ -91,7 +91,8 @@ drawTopStatsChart(
   "#1edf71"
 );
 
-function drawOrderAnalytics(series) {
+function drawOrderAnalytics(series, xAxis) {
+  console.log(series);
   var options = {
     chart: {
       type: "line",
@@ -112,7 +113,7 @@ function drawOrderAnalytics(series) {
       },
     },
     xaxis: {
-      // categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"], // Month labels
+      categories: xAxis, // Month labels
       title: {
         text: "Month",
       },
@@ -164,16 +165,6 @@ function drawOrderAnalytics(series) {
   var chart = new ApexCharts(document.querySelector("#order--ana"), options);
   chart.render();
 }
-drawOrderAnalytics([
-  {
-    name: "Online Payment",
-    data: [20, 30, 45, 50, 49, 60, 70, 20, 30, 45, 50, 49, 60, 70], // Sample data
-  },
-  {
-    name: "Offline Payment",
-    data: [10, 20, 35, 40, 39, 50, 60, 23, 20, 20, 45, 20, 42, 46], // Sample data
-  },
-]);
 
 function drawOrdersByCategoryChart(labels, values) {
   var options = {
@@ -231,3 +222,47 @@ drawOrdersByCategoryChart(
   ["Cameras", "Headphones", "Keyboard", "Laptop", "Mouse"],
   [42, 47, 52, 58, 65]
 );
+async function getData() {
+  try {
+    const req = await fetch("./js/home.json");
+
+    if (!req.ok) {
+      throw new Error("Can't Load Data");
+    }
+    return await req.json();
+  } catch (e) {
+    throw e;
+  }
+}
+getData().then((data) => {
+  console.log(data);
+
+  drawOrderAnalytics(
+    orderAnalyticsSeries(data.orderAnalytics),
+    orderAnalyticsXAxis(data.orderAnalytics)
+  );
+
+  console.log(orderAnalyticsXAxis(data.orderAnalytics));
+});
+function orderAnalyticsXAxis(orderAnalytics) {
+  return orderAnalytics.map((obj) => obj.month);
+}
+function orderAnalyticsSeries(arr) {
+  const obj = {};
+  arr.map((e) => {
+    for (const [k, v] of Object.entries(e)) {
+      if (k == "month") continue;
+      if (obj[k]) {
+        obj[k].push(v);
+      } else obj[k] = [v];
+    }
+  });
+  console.log(
+    Object.entries(obj).map((ele) => {
+      return { name: ele[0], data: ele[1] };
+    })
+  );
+  return Object.entries(obj).map((ele) => {
+    return { name: ele[0], data: ele[1] };
+  });
+}
