@@ -18,3 +18,24 @@ logBtn.addEventListener('click', function () {
   }
   state = !state; 
 });
+// ----------------
+// ----------------
+const passwordFields = document.querySelectorAll('.password');
+
+    passwordFields.forEach(passwordInput => {
+      const parent = passwordInput.parentElement;
+      const seeIcon = parent.querySelector('.see');
+      const noseeIcon = parent.querySelector('.nosee');
+
+      seeIcon.addEventListener('click', function() {
+        passwordInput.type = 'text';
+        seeIcon.style.display = 'none';
+        noseeIcon.style.display = 'inline';
+      });
+
+      noseeIcon.addEventListener('click', function() {
+        passwordInput.type = 'password';
+        noseeIcon.style.display = 'none';
+        seeIcon.style.display = 'inline';
+      });
+    });
