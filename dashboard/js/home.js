@@ -75,22 +75,6 @@ function drawTopStatsChart(chardId, data, bg) {
   chart.render();
 }
 
-drawTopStatsChart(
-  "total-sales-chart",
-  [31, 40, 28, 51, 42, 109, 100],
-  "#f27d16"
-);
-drawTopStatsChart(
-  "total-orders-chart",
-  [331, 440, 285, 551, 426, 109, 530],
-  "#f22e52"
-);
-drawTopStatsChart(
-  "total-earnings-chart",
-  [3431, 7440, 9285, 5651, 4326, 1609, 5030],
-  "#1edf71"
-);
-
 function drawOrderAnalytics(series, xAxis) {
   console.log(series);
   var options = {
@@ -234,11 +218,11 @@ async function getData() {
 getData().then((data) => {
   displayProductList(data.productList);
   drawOrdersByCategoryChart(...getCategoryChartData(data.ordersByCategory));
-  updateTopStats(
+  updateTopStats([
     data.totalSales,
     data.totalRefundOrders,
-    data.totalApprovedOrders
-  );
+    data.totalApprovedOrders,
+  ]);
   drawOrderAnalytics(
     orderAnalyticsSeries(data.orderAnalytics),
     orderAnalyticsXAxis(data.orderAnalytics)
@@ -284,13 +268,31 @@ function displayProductList(productList) {
   }
   productsDiv.insertAdjacentHTML("beforeend", html);
 }
-function updateTopStats(salesVal, ordersVal, earningsVal) {
+function updateTopStats([salesVal, ordersVal, earningsVal]) {
+  const arr = [salesVal, ordersVal, earningsVal];
   const [totalSales, totalOrders, totalEarnings] = document.querySelectorAll(
     ".stats .stats--value"
   );
-  totalSales.innerHTML = salesVal + "$";
-  totalOrders.innerHTML = ordersVal;
-  totalEarnings.innerHTML = earningsVal + "$";
+  totalSales.innerHTML = salesVal.value + "$";
+  totalOrders.innerHTML = ordersVal.value;
+  totalEarnings.innerHTML = earningsVal.value;
+
+  drawTopStatsChart("total-sales-chart", salesVal.days, "#f27d16");
+  drawTopStatsChart("total-orders-chart", ordersVal.days, "#f22e52");
+  drawTopStatsChart("total-earnings-chart", earningsVal.days, "#1edf71");
+
+  // Update Stats analysis
+  const statsAnalysis = document.querySelectorAll(".stats--head > div");
+  statsAnalysis.forEach((ele, i) => {
+    ele.innerHTML = ` 
+              <p class="stats--value">${arr[i].value}$</p>
+              <div class="stats--analysis green">
+                <p class=""><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> 10.2</p>
+                <p class="stat">+1.1% this week</p>
+              </div>
+            `;
+  });
+  console.log(statsAnalysis);
 }
 function getCategoryChartData(ordersByCategory) {
   const arr = [[], []];
