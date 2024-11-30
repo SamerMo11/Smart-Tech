@@ -1,116 +1,131 @@
 {
-    "totalSales": 34000.99,
-    "totalRefundOrders": 0,
-    "totalApprovedOrders": 3,
-    "mostSelling": [
-        {
-            "variantId": 1,
-            "productName": "Laptop1",
-            "saledQuantity": 3,
-            "totalSales": 36002.97
-        },
-        {
-            "variantId": 2,
-            "productName": "Mouse1",
-            "saledQuantity": 2,
-            "totalSales": 699.98
-        }
-    ],
-    "ordersByCategory": [
-        {
-            "name": "Laptop",
-            "numOfSalles": 2,
-            "percentage": "Laptop: 100"
-        }
-    ],
-    "orderAnalytics": [
-        {
-            "month": "Dec",
-            "approvedOrders": 0,
-            "refundOrders": 0,
-            "pendingOrders": 0
-        },
-        {
-            "month": "Jan",
-            "approvedOrders": 0,
-            "refundOrders": 0,
-            "pendingOrders": 0
-        },
-        {
-            "month": "Feb",
-            "approvedOrders": 0,
-            "refundOrders": 0,
-            "pendingOrders": 0
-        },
-        {
-            "month": "Mar",
-            "approvedOrders": 0,
-            "refundOrders": 0,
-            "pendingOrders": 0
-        },
-        {
-            "month": "Apr",
-            "approvedOrders": 0,
-            "refundOrders": 0,
-            "pendingOrders": 0
-        },
-        {
-            "month": "May",
-            "approvedOrders": 0,
-            "refundOrders": 0,
-            "pendingOrders": 0
-        },
-        {
-            "month": "Jun",
-            "approvedOrders": 0,
-            "refundOrders": 0,
-            "pendingOrders": 0
-        },
-        {
-            "month": "Jul",
-            "approvedOrders": 0,
-            "refundOrders": 0,
-            "pendingOrders": 0
-        },
-        {
-            "month": "Aug",
-            "approvedOrders": 0,
-            "refundOrders": 0,
-            "pendingOrders": 0
-        },
-        {
-            "month": "Sep",
-            "approvedOrders": 0,
-            "refundOrders": 0,
-            "pendingOrders": 0
-        },
-        {
-            "month": "Oct",
-            "approvedOrders": 0,
-            "refundOrders": 0,
-            "pendingOrders": 0
-        },
-        {
-            "month": "Nov",
-            "approvedOrders": 1,
-            "refundOrders": 0,
-            "pendingOrders": 2
-        }
-    ],
-    "productList": [
-        {
-            "variantId": 1,
-            "name": "Laptop1(Black)",
-            "price": 12000.99,
-            "status": "Low Stuck",
-            "qtyLeft": 3
-        },
-        {
-            "variantId": 2,
-            "name": "Mouse1(Blue)",
-            "price": 349.99,
-            "status": "In Stuck",
-            "qtyLeft": 2
-        }
-    ]
+  "totalSales": 34000.99,
+  "totalRefundOrders": 0,
+  "totalApprovedOrders": 3,
+  "mostSelling": [
+    {
+      "variantId": 1,
+      "productName": "Laptop1",
+      "saledQuantity": 3,
+      "totalSales": 36002.97
+    },
+    {
+      "variantId": 2,
+      "productName": "Mouse1",
+      "saledQuantity": 2,
+      "totalSales": 699.98
+    }
+  ],
+  "ordersByCategory": [
+    {
+      "name": "Laptop",
+      "numOfSalles": 12,
+      "percentage": "Laptop: 100"
+    },
+    {
+      "name": "Phone",
+      "numOfSalles": 25,
+      "percentage": "Laptop: 100"
+    },
+    {
+      "name": "Headphones",
+      "numOfSalles": 26,
+      "percentage": "Laptop: 100"
+    },
+    {
+      "name": "Pc",
+      "numOfSalles": 16,
+      "percentage": "Laptop: 100"
+    }
+  ],
+  "orderAnalytics": [
+    {
+      "month": "Dec",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Jan",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Feb",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Mar",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Apr",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "May",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Jun",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Jul",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Aug",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Sep",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Oct",
+      "approvedOrders": 0,
+      "refundOrders": 0,
+      "pendingOrders": 0
+    },
+    {
+      "month": "Nov",
+      "approvedOrders": 1,
+      "refundOrders": 0,
+      "pendingOrders": 2
+    }
+  ],
+  "productList": [
+    {
+      "variantId": 1,
+      "name": "Laptop1(Black)",
+      "price": 12000.99,
+      "status": "Low Stuck",
+      "qtyLeft": 3
+    },
+    {
+      "variantId": 2,
+      "name": "Mouse1(Blue)",
+      "price": 349.99,
+      "status": "In Stuck",
+      "qtyLeft": 2
+    }
+  ]
 }

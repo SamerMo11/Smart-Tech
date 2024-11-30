@@ -218,13 +218,7 @@ function drawOrdersByCategoryChart(labels, values) {
   );
   chart.render();
 }
-drawOrdersByCategoryChart(
-  ["Cameras", "Headphones", "Keyboard", "Laptop", "Mouse"],
-  [42, 47, 52, 58, 65]
-);
-function getCategoryChartData(ordersByCategory) {
-  return ordersByCategory;
-}
+
 async function getData() {
   try {
     const req = await fetch("./js/home.json");
@@ -238,8 +232,8 @@ async function getData() {
   }
 }
 getData().then((data) => {
-  console.log(data);
   displayProductList(data.productList);
+  drawOrdersByCategoryChart(...getCategoryChartData(data.ordersByCategory));
   updateTopStats(
     data.totalSales,
     data.totalRefundOrders,
@@ -249,7 +243,7 @@ getData().then((data) => {
     orderAnalyticsSeries(data.orderAnalytics),
     orderAnalyticsXAxis(data.orderAnalytics)
   );
-  console.log(orderAnalyticsXAxis(data.orderAnalytics));
+  displayMostSelling(data.mostSelling);
 });
 function orderAnalyticsXAxis(orderAnalytics) {
   return orderAnalytics.map((obj) => obj.month);
@@ -297,4 +291,30 @@ function updateTopStats(salesVal, ordersVal, earningsVal) {
   totalSales.innerHTML = salesVal + "$";
   totalOrders.innerHTML = ordersVal;
   totalEarnings.innerHTML = earningsVal + "$";
+}
+function getCategoryChartData(ordersByCategory) {
+  const arr = [[], []];
+  ordersByCategory.map((e, i) => {
+    arr[0].push(e.name);
+    arr[1].push(e.numOfSalles);
+  });
+  return arr;
+}
+function displayMostSelling(arr) {
+  let html = "";
+  const table = document.querySelector(".top--sales .products");
+  table.innerHTML = "";
+  arr.map((ele) => {
+    const { variantId, productName, saledQuantity, totalSales } = ele;
+    html += `
+    <div>
+              <img src="./images/product.png" alt="Product image">
+              <p class="product--title">
+                ${productName} <span class="sells--value">Sell:${saledQuantity}</span>
+              </p>
+              <p class="product--price">$${totalSales}</p>
+            </div>
+            `;
+  });
+  table.insertAdjacentHTML("beforeend", html);
 }
