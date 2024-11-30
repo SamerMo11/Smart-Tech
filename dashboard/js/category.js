@@ -33,7 +33,6 @@ categoryAttributes.forEach((btn) =>
 console.log(categoryAttributes);
 
 async function deleteAttribute(id) {
-  console.log(id);
   const data = {
     id: id,
   };
@@ -81,7 +80,7 @@ function displayCategories(arr) {
               <li>${sells}</li>
               <li>${quantity}</li>
               <li>
-                <button class="edit--btn btn" category="camera" popovertarget="editPopover">
+                <button class="edit--btn btn" categoryId=${id} popovertarget="editPopover">
                   <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
                 </button>
                 <button class="remove--btn btn">
@@ -92,4 +91,30 @@ function displayCategories(arr) {
   }
 
   table.insertAdjacentHTML("beforeend", html);
+  const editBtns = document.querySelectorAll(".edit--btn");
+  editBtns.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      getCategoryAttribute().then((data) => displayCategorieAttribute(data));
+    })
+  );
+}
+async function getCategoryAttribute() {
+  try {
+    const req = await fetch("./js/att.json");
+    if (!req.ok) throw new Error("Something Went Wrong");
+
+    return await req.json();
+  } catch (e) {
+    throw e;
+  }
+}
+function displayCategorieAttribute(arr) {
+  const attributeDiv = document.querySelector(".attribute");
+  attributeDiv.innerHTML = "";
+  let html = "";
+  arr.forEach(
+    (attr) =>
+      (html += `<button popovertarget="confirmDelete" attributeid="${attr.id}">${attr.name}</button>`)
+  );
+  attributeDiv.insertAdjacentHTML("beforeend", html);
 }
