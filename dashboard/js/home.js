@@ -155,7 +155,7 @@ function drawOrderAnalytics(series, xAxis) {
         format: "dd MMM yyyy",
       },
     },
-    colors: ["var(--color-green)", "var(--color-red)"], // Colors for the lines
+    colors: ["var(--color-green)", "var(--color-orange)", "var(--color-red)"], // Colors for the lines
     legend: {
       show: false,
     },
@@ -222,6 +222,9 @@ drawOrdersByCategoryChart(
   ["Cameras", "Headphones", "Keyboard", "Laptop", "Mouse"],
   [42, 47, 52, 58, 65]
 );
+function getCategoryChartData(ordersByCategory) {
+  return ordersByCategory;
+}
 async function getData() {
   try {
     const req = await fetch("./js/home.json");
@@ -237,11 +240,15 @@ async function getData() {
 getData().then((data) => {
   console.log(data);
   displayProductList(data.productList);
+  updateTopStats(
+    data.totalSales,
+    data.totalRefundOrders,
+    data.totalApprovedOrders
+  );
   drawOrderAnalytics(
     orderAnalyticsSeries(data.orderAnalytics),
     orderAnalyticsXAxis(data.orderAnalytics)
   );
-
   console.log(orderAnalyticsXAxis(data.orderAnalytics));
 });
 function orderAnalyticsXAxis(orderAnalytics) {
@@ -282,4 +289,12 @@ function displayProductList(productList) {
             </ul>`;
   }
   productsDiv.insertAdjacentHTML("beforeend", html);
+}
+function updateTopStats(salesVal, ordersVal, earningsVal) {
+  const [totalSales, totalOrders, totalEarnings] = document.querySelectorAll(
+    ".stats .stats--value"
+  );
+  totalSales.innerHTML = salesVal + "$";
+  totalOrders.innerHTML = ordersVal;
+  totalEarnings.innerHTML = earningsVal + "$";
 }
