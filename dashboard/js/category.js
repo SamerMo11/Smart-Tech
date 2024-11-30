@@ -5,13 +5,13 @@ const inputContainer = document.querySelector(".input--container");
 const confirmBtns = document.querySelectorAll("#confirmDelete button");
 const confirmPopover = document.querySelector("#confirmDelete");
 
+let attributeID;
 let categoryId;
 confirmBtns.forEach((btn) =>
   btn.addEventListener("click", () => {
     confirmPopover.hidePopover();
-
     if (btn.id == "confirmDelete") {
-      deleteAttribute(categoryId);
+      deleteAttribute(attributeID);
     }
   })
 );
@@ -27,7 +27,7 @@ const categoryAttributes = document.querySelectorAll(
 categoryAttributes.forEach((btn) =>
   btn.addEventListener(
     "click",
-    (e) => (categoryId = e.currentTarget.getAttribute("attributeID"))
+    (e) => (attributeID = e.currentTarget.getAttribute("attributeID"))
   )
 );
 console.log(categoryAttributes);
@@ -94,15 +94,28 @@ function displayCategories(arr) {
   const editBtns = document.querySelectorAll(".edit--btn");
   editBtns.forEach((btn) =>
     btn.addEventListener("click", () => {
-      getCategoryAttribute().then((data) => displayCategorieAttribute(data));
+      categoryId = btn.getAttribute("categoryid");
+      console.log(categoryId);
+      getCategoryAttribute(btn.getAttribute("categoryid")).then((data) => {
+        displayCategorieAttribute(data);
+      });
     })
   );
 }
-async function getCategoryAttribute() {
-  try {
-    const req = await fetch("./js/att.json");
-    if (!req.ok) throw new Error("Something Went Wrong");
+async function getCategoryAttribute(catId) {
+  const data = {
+    categoryId: catId,
+  };
 
+  try {
+    const req = await fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    if (!req.ok) throw new Error("Something Went Wrong");
     return await req.json();
   } catch (e) {
     throw e;
@@ -117,4 +130,30 @@ function displayCategorieAttribute(arr) {
       (html += `<button popovertarget="confirmDelete" attributeid="${attr.id}">${attr.name}</button>`)
   );
   attributeDiv.insertAdjacentHTML("beforeend", html);
+}
+const confirmAddAttributeBtn = document.querySelector("#confirmAdd");
+confirmAddAttributeBtn.addEventListener("click", () => {
+  const attrName = document.querySelector("#attributeName").value;
+  addNewAttr(attrName);
+});
+async function addNewAttr(name) {
+  const data = {
+    categoryId: categoryId,
+    attrName: name,
+  };
+  console.log(data);
+
+  try {
+    const req = await fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    if (!req.ok) throw new Error("Something Went Wrong");
+    return await req.json();
+  } catch (e) {
+    throw e;
+  }
 }
