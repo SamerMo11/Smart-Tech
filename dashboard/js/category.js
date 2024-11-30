@@ -21,18 +21,9 @@ addAttributeBtn.addEventListener("click", (e) => {
   inputContainer.classList.add("active");
 });
 inputContainer.addEventListener("click", (e) => e.stopPropagation());
-const categoryAttributes = document.querySelectorAll(
-  "[popovertarget='confirmDelete']"
-);
-categoryAttributes.forEach((btn) =>
-  btn.addEventListener(
-    "click",
-    (e) => (attributeID = e.currentTarget.getAttribute("attributeID"))
-  )
-);
-console.log(categoryAttributes);
 
 async function deleteAttribute(id) {
+  console.log(id);
   const data = {
     id: id,
   };
@@ -108,13 +99,7 @@ async function getCategoryAttribute(catId) {
   };
 
   try {
-    const req = await fetch("https://jsonplaceholder.typicode.com/posts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    const req = await fetch("./js/att.json");
     if (!req.ok) throw new Error("Something Went Wrong");
     return await req.json();
   } catch (e) {
@@ -130,6 +115,18 @@ function displayCategorieAttribute(arr) {
       (html += `<button popovertarget="confirmDelete" attributeid="${attr.id}">${attr.name}</button>`)
   );
   attributeDiv.insertAdjacentHTML("beforeend", html);
+  const categoryAttributes = document.querySelectorAll(
+    "[popovertarget='confirmDelete']"
+  );
+
+  categoryAttributes.forEach((btn) =>
+    btn.addEventListener("click", (e) => {
+      console.log(btn);
+      attributeID = e.currentTarget.getAttribute("attributeID");
+      console.log(e.currentTarget.getAttribute("attributeID"));
+      console.log(attributeID);
+    })
+  );
 }
 const confirmAddAttributeBtn = document.querySelector("#confirmAdd");
 confirmAddAttributeBtn.addEventListener("click", () => {
