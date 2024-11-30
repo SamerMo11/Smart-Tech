@@ -431,7 +431,7 @@ button.btn {
   cursor: pointer;
   color: var(--color-white);
 }
-.edit--btn {
+.edit--btn:not(.dropdown--menu .edit--btn) {
   background-color: var(--color-blue);
 }
 .remove--btn {
@@ -493,6 +493,18 @@ button.btn {
 [popover]::backdrop {
   background-color: #282c336b;
   backdrop-filter: blur(1px);
+}
+[data-value="In Stock"] span {
+  border-color: var(--color-green) !important;
+  color: var(--color-green) !important;
+}
+[data-value="Low Stock"] span {
+  border-color: var(--color-orange) !important;
+  color: var(--color-orange) !important;
+}
+[data-value="Out of Stock"] span {
+  border-color: var(--color-red) !important;
+  color: var(--color-red) !important;
 }
 .table ul li:nth-child(4) {
   padding: 0;

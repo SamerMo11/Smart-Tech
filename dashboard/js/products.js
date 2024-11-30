@@ -45,10 +45,27 @@ function itemsClickHandler() {
   });
 }
 
-async function getProducts() {
-  const req = await fetch("./js/products.json");
-  const data = await req.json();
-  return data;
+async function getProducts(filter) {
+  try {
+    const req = await fetch("/js/products.json", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(filter || {}),
+    });
+    console.log(JSON.stringify(filter) ?? "{}");
+
+    const data = await req.json();
+    console.log(data);
+    if (!req.ok) {
+      throw new Error("Cant't Get Products");
+    }
+    return data;
+  } catch (e) {
+    displayToast("error", e.message);
+    throw e;
+  }
 }
 getProducts().then((products) => {
   displayProducts(products);
@@ -58,6 +75,17 @@ getProducts().then((products) => {
 function displayProducts(products) {
   let html = "";
   const table = document.querySelector(".table");
+  table.innerHTML = ` <ul class="table--head">
+              <li>Id</li>
+              <li>Name</li>
+              <li>Category</li>
+              <li>Status</li>
+              <li>Payment</li>
+              <li class="quantity--num">Quantity</li>
+              <li class="sells--num">Sells</li>
+              <li class="price">Price</li>
+              <li>Action</li>
+            </ul>`;
   for (let i = 0; i < products.length; i++) {
     const item = products[i];
     html += `  <ul>
@@ -65,11 +93,11 @@ function displayProducts(products) {
               <li>${item.Name}</li>
               <li>${item.Category}</li>
       
-              <li>${item.Status}</li>
+              <li  data-value = '${item.Status}'><span>${item.Status}</span></li>
+              <li data-value = ${item.PaymentOption}><span>${item.PaymentOption}</span></li>
                       <li class="quantity--num">333</li>
               <li class="sells--num">666</li>
               <li class="price">${item.Price}</li>
-
               <li><button class="edit--btn btn" category =${item.Category} popovertarget="editPopover"><i class="fa-solid fa-pen-to-square"></i></button>
              <button class="remove--btn btn">  <i class="fa-solid fa-trash"></i></button></li>
             </ul>
@@ -93,3 +121,22 @@ function handleEditClick(e) {
     })
     .catch((er) => console.log(er));
 }
+const filters = document.querySelectorAll(
+  ".table--controllers .dropdown--container li"
+);
+filters.forEach((ele) =>
+  ele.addEventListener(
+    "click",
+    () => {
+      const obj = {
+        [ele.parentElement.getAttribute("data-value")]: ele.innerHTML,
+      };
+      console.log(obj);
+      console.log();
+      getProducts(obj).then((products) => {
+        displayProducts(products);
+        itemsClickHandler();
+      });
+    } // add your code here to send the request and display the filterd Products
+  )
+);
