@@ -140,3 +140,20 @@ filters.forEach((ele) =>
     } // add your code here to send the request and display the filterd Products
   )
 );
+async function getProductsStats() {
+  try {
+    const req = await fetch("./js/productStats.json");
+    if (!req.ok) throw new Error("Cant't load Products Stats");
+    return req.json();
+  } catch (e) {
+    throw e;
+  }
+}
+getProductsStats().then((e) => displayStats(e));
+function displayStats(obj) {
+  const { total, instuck, out } = obj;
+  const values = document.querySelectorAll(".table--statistics .value");
+  values[0].innerHTML = total;
+  values[1].innerHTML = instuck;
+  values[2].innerHTML = out;
+}

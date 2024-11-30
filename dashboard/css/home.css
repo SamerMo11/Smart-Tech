@@ -131,6 +131,9 @@ h2.stats--title i {
 .order--analysis li.succsess {
   --_label-color: var(--color-green);
 }
+.order--analysis li.pending {
+  --_label-color: var(--color-orange);
+}
 .order--analysis li.return {
   --_label-color: var(--color-red);
 }
