@@ -175,17 +175,17 @@
 </div>--> 
 
     <div class="login">
-    <p>log in to smartTech </p>
-    <div class="accs">
-        <i class="fa-brands fa-facebook-f"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-google"></i>
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-linkedin"></i>
-    </div>
-    <span>or use our email account ?</span>
+        <p>log in to smartTech </p>
+        <div class="accs">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-google"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <span>or use our email account ?</span>
 
-    <form method="post" asp-controller="Account" asp-action="Login">
+        <form method="post" asp-controller="Account" asp-action="Login">
         <input hidden name="returnUrl" value="@Model.LoginVM.returnUrl"/>
         <div class="input">
             <input asp-for="LoginVM.Email" name="Email" placeholder="Email Address">
@@ -209,12 +209,16 @@
         </div>
     </form>
 
-</div>
+    </div>
 
+    </div>
 
 
 <!-- --------------------------------- -->
 <!-- --------------------------------- -->
+
+
+
 <script src="../jsFiles/main.js"></script>
 <script src="../jsFiles/forms.js"></script>
 </body>
