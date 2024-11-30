@@ -217,7 +217,11 @@ async function getData() {
 }
 getData().then((data) => {
   displayProductList(data.productList);
-  drawOrdersByCategoryChart(...getCategoryChartData(data.ordersByCategory));
+  drawOrdersByCategoryChart(
+    data.ordersByCategory.names,
+    data.ordersByCategory.numOfSalles
+  );
+  console.log(data.names, data.numOfSalles);
   updateTopStats([
     data.totalSales,
     data.totalRefundOrders,
