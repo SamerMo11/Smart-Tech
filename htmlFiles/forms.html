@@ -36,36 +36,76 @@
     
     <div class="sign">
         <p>create account</p>
-        <form action="">
+        <!--<form action="">
+        <div class="input">
+            <input type="text" placeholder="First Name">
+            <span>error message</span>
+        </div>
+        <div class="input">
+            <input type="text" placeholder="Last Name">
+            <span>error message</span>
+        </div>
+        <div class="input">
+            <input type="number" placeholder="Phone">
+            <span>error message</span>
+        </div>
+        <div class="input">
+            <input type="text" placeholder="Address">
+            <span>error message</span>
+        </div>
+        <div class="input">
+            <input type="email" placeholder="Email Address">
+            <span>error message</span>
+        </div>
+        <div class="pass input">
+            <input type="password" placeholder="Password" class="password">
+            <i class="fa-regular fa-eye see"></i>
+            <i class="fa-regular fa-eye-slash nosee"></i>
+            <span>error message</span>
+        </div>-->
+        <!-- <input type="submit" value="send"> -->
+        <!--<div class="terms">
+            <input type="checkbox" name="" id="">
+            <p>
+                I agree to the <span>terms of services</span> & <span> private policy</span>
+            </p>
+        </div>
+        <div class="send">
+            <input type="submit" value="sign up" class="submit">
+        </div>
+    </form>-->
+
+        <form method="post" asp-controller="Account" asp-action="Register">
             <div class="input">
-                <input type="text" placeholder="First Name">
-                <span>error message</span>
+                <input asp-for="RegisterVM.FirstName" name="FirstName" placeholder="First Name">
+                <span asp-validation-for="RegisterVM.FirstName" data-valmsg-for="FirstName"></span>
             </div>
             <div class="input">
-                <input type="text" placeholder="Last Name">
-                <span>error message</span>
+                <input asp-for="RegisterVM.LastName" name="LastName" placeholder="Last Name">
+                <span asp-validation-for="RegisterVM.LastName" data-valmsg-for="LastName"></span>
             </div>
             <div class="input">
-                <input type="number" placeholder="Phone">
-                <span>error message</span>
+                <input asp-for="RegisterVM.Email" name="Email" placeholder="Email Address">
+                <span asp-validation-for="RegisterVM.Email" data-valmsg-for="Email"></span>
             </div>
             <div class="input">
-                <input type="text" placeholder="Address">
-                <span>error message</span>
+                <input asp-for="RegisterVM.Number" name="Number" placeholder="Phone">
+                <span asp-validation-for="RegisterVM.Number" data-valmsg-for="Number"></span>
             </div>
             <div class="input">
-                <input type="email" placeholder="Email Address">
-                <span>error message</span>
+                <input asp-for="RegisterVM.Password" name="Password" placeholder="Password">
+                <span asp-validation-for="RegisterVM.Password" data-valmsg-for="Password"></span>
             </div>
             <div class="pass input">
-                <input type="password" placeholder="Password" class="password">
+                <input asp-for="RegisterVM.ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password">
                 <i class="fa-regular fa-eye see"></i>
                 <i class="fa-regular fa-eye-slash nosee"></i>
-                <span>error message</span>
+                <span asp-validation-for="RegisterVM.ConfirmPassword" data-valmsg-for="ConfirmPassword"></span>
             </div>
             <!-- <input type="submit" value="send"> -->
             <div class="terms">
-                <input type="checkbox" name="" id="">
+                <input asp-for="RegisterVM.Agree" type="checkbox" name="Agree">
+                <span asp-validation-for="RegisterVM.Agree" data-valmsg-for="Agree"></span>
                 <p>
                     I agree to the <span>terms of services</span> & <span> private policy</span>
                 </p>
@@ -74,6 +114,7 @@
                 <input type="submit" value="sign up" class="submit">
             </div>
         </form>
+
         <div class="seperate">
             <span></span>
             <p>or sign up with</p>
@@ -114,6 +155,14 @@
                 <i class="fa-regular fa-eye-slash nosee"></i>
                 <span>error message</span>
             </div>
+
+
+            <!--//  Change is here-->
+            <div class="input">
+                <label for="remember">remember me</label>
+                <input asp-for="LoginVM.RememberMe" type="checkbox" name="RememberMe" id="remember">
+            </div>
+
         </form>
 
         <a href="#" class="forget">Forget your password?</a>
