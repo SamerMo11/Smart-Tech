@@ -9,7 +9,7 @@
     font-family: "Arial Rounded MT Bold" ;
     src: url(../font1/arialroundedmtbold.ttf);
 }
-
+/* ----------------- */
 
 :root{
     --font1: "Arial Rounded MT Bold" ;
@@ -20,6 +20,8 @@
     --color4: #2F8587;
     --shadow1: #00000040 ;
     --shadow2: #000 ;
+    --shadow2: #000 ;
+
 }
 ::selection {
     background-color: var(--color3) ;
