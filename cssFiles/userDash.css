@@ -603,7 +603,7 @@ nav{
     padding-inline: 3%;
     padding-block: 2%;
     gap: 5vh;
-    box-shadow: 0px 4px 4px 0px #000;
+    box-shadow: 0px 1px 4px 0px #000;
     background: linear-gradient(338.82deg, #21252B 0.06%, #323841 50%, #21252B 99.94%);
 }
 .dash .profile .pic{
@@ -614,7 +614,7 @@ nav{
     align-items: center;
     flex-direction: column;
     background: linear-gradient(88.75deg, #373D47 0.93%, #3D4550 50%, #373D47 99.07%);
-    box-shadow: 0px 4px 4px 0px #000;
+    box-shadow: 0px 2px 4px 0px #1f1f1f;
     border-radius: 10px;
 }
 .dash .profile .pic .title,
@@ -625,7 +625,6 @@ nav{
     font-size: 20px;
     width: 100%;
     padding: 10px 10px;
-    text-shadow: 0px 4px 4px #00000040;
     box-shadow: 0px 4px 4px 0px #00000040;
 }
 .dash .profile .pic .content {
@@ -641,7 +640,7 @@ nav{
     /* height: 60%; */
     border-radius: 50%;
     background-color:#c3d5d5;
-    box-shadow: 0px 4px 4px 0px #000;
+    box-shadow: 0px 2px 4px 0px #1f1f1f;
 
 /* box-shadow: 0px 4px 4px 0px #00000040; */
 
@@ -657,8 +656,8 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 4px 4px 0px #000;
-    border-radius: 4px;
+    box-shadow: 0px 2px 4px 0px #1f1f1f;
+    border-radius: 7px;
     padding: 5px;
     }
 .dash .profile .pic .content label input{
@@ -681,7 +680,7 @@ nav{
     width: 70%;
     height: 100%;
     background: linear-gradient(88.75deg, #373D47 0.93%, #3D4550 50%, #373D47 99.07%);
-    box-shadow: 0px 4px 4px 0px #000;
+    box-shadow: 0px 2px 4px 0px #1f1f1f;
     border-radius: 10px;
 }
 .dash .profile .details form{
@@ -722,11 +721,11 @@ nav{
     width: 100%;
     height: 40px;
     background: #5159664A;
-    box-shadow: 0px 4px 4px 0px #000;
+    box-shadow: 0px 2px 4px 0px #1f1f1f;
     padding-left: 10px;
     border: none;
     outline: none;
-    border-radius: 5px;
+    border-radius: 11px;
     color: var(--color2);
 }
 .dash .profile .details form .input:nth-child(2),
@@ -739,11 +738,11 @@ nav{
     border: none;
     text-transform: capitalize;
     color: var(--color2);
-    border-radius: 5px;
+    border-radius: 11px;
     font-family: var(--font1);
     padding: 10px 30px;
     cursor: pointer;
-    box-shadow: 0px 4px 4px 0px #000;
+    box-shadow: 0px 2px 4px 0px #1f1f1f;
 }
 /* ----------------------------- */
 /* ----------------------------- */
