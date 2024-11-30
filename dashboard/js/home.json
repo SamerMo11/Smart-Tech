@@ -22,28 +22,10 @@
       "totalSales": 699.98
     }
   ],
-  "ordersByCategory": [
-    {
-      "name": "Laptop",
-      "numOfSalles": 12,
-      "percentage": "Laptop: 100"
+  "ordersByCategory": {
+        "names": [ "Laptop" , "Mouse" ],
+        "numOfSalles": [ 6 , 4 ]
     },
-    {
-      "name": "Phone",
-      "numOfSalles": 25,
-      "percentage": "Laptop: 100"
-    },
-    {
-      "name": "Headphones",
-      "numOfSalles": 26,
-      "percentage": "Laptop: 100"
-    },
-    {
-      "name": "Pc",
-      "numOfSalles": 16,
-      "percentage": "Laptop: 100"
-    }
-  ],
   "orderAnalytics": [
     {
       "month": "Dec",
