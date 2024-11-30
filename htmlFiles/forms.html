@@ -92,7 +92,6 @@
     <!-- ------------------------- -->
 
 
-    <div class="login">
         <p>log in to smartTech </p>
         <div class="accs">
             <i class="fa-brands fa-facebook-f"></i>
@@ -114,6 +113,13 @@
                 <i class="fa-regular fa-eye-slash nosee"></i>
                 <span>error message</span>
             </div>
+
+
+            <div class="input">
+                <label for="remember">remember me</label>
+                <input asp-for="LoginVM.RememberMe" type="checkbox" name="RememberMe" id="remember">
+            </div>
+
         </form>
 
         <a href="#" class="forget">Forget your password?</a>
@@ -124,6 +130,44 @@
     </div>
 
 
+</div>
+
+    <div class="login">
+    <p>log in to smartTech </p>
+    <div class="accs">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-google"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-linkedin"></i>
+    </div>
+    <span>or use our email account ?</span>
+
+    <form method="post" asp-controller="Account" asp-action="Login">
+        <input hidden name="returnUrl" value="@Model.LoginVM.returnUrl"/>
+        <div class="input">
+            <input asp-for="LoginVM.Email" name="Email" placeholder="Email Address">
+            <span asp-validation-for="LoginVM.Email" data-valmsg-for="Email"></span>
+        </div>
+        <div class="pass input">
+            <input asp-for="RegisterVM.Password" name="Password" placeholder="Password">
+            <i class="fa-regular fa-eye see"></i>
+            <i class="fa-regular fa-eye-slash nosee"></i>
+            <span asp-validation-for="RegisterVM.Password" data-valmsg-for="Password"></span>
+        </div>
+        <div class="input">
+            <label for="remember">remember me</label>
+            <input  asp-for="LoginVM.RememberMe" type="checkbox" name="RememberMe" id="remember">
+        </div>
+
+        <a asp-action="ForgetPassword" asp-controller="Account" class="forget">Forget your password?</a>
+
+        <div class="send">
+            <input type="submit" value="log in" class="submit">
+        </div>
+    </form>
+
+>>>>>>> b082d2e92070d2842000f503d011ffad74cd4104
 </div>
 
 
