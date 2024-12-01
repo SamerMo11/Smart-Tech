@@ -8,13 +8,13 @@ logBtn.addEventListener('click', function () {
   if (!state) {
     form.classList.remove('active2'); 
     form.classList.add('active');
-    welcoming.textContent = 'Dear!!';
-    logBtn.textContent = 'Sign Up';
+    welcoming.textContent = 'Welcome!!';
+    logBtn.textContent = 'Log In';
   } else {
     form.classList.remove('active'); 
     form.classList.add('active2');
-    welcoming.textContent = 'Welcome!!';
-    logBtn.textContent = 'Log In';
+    welcoming.textContent = 'Dear!!';
+    logBtn.textContent = 'Sign Up';
   }
   state = !state; 
 });

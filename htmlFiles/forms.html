@@ -197,12 +197,16 @@
             <i class="fa-regular fa-eye-slash nosee"></i>
             <span asp-validation-for="RegisterVM.Password" data-valmsg-for="Password"></span>
         </div>
-        <div class="input">
-            <label for="remember">remember me</label>
-            <input  asp-for="LoginVM.RememberMe" type="checkbox" name="RememberMe" id="remember">
+
+
+        <div class="last">
+            <div class="input">
+                <input  asp-for="LoginVM.RememberMe" type="checkbox" name="RememberMe" id="remember">
+                <label for="remember">remember me</label>
+            </div>
+            <a asp-action="ForgetPassword" asp-controller="Account" class="forget">Forget your password?</a>
         </div>
 
-        <a asp-action="ForgetPassword" asp-controller="Account" class="forget">Forget your password?</a>
 
         <div class="send">
             <input type="submit" value="log in" class="submit">
