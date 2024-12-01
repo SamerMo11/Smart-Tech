@@ -103,12 +103,12 @@ tracks.forEach((track, index) => {
 // ---------------------------------------------------
 function best() {
   const bestData = [
-    { img: "product1/5.png", title: "headphones" },
-    { img: "product2/1.png", title: "smartwatch" },
-    { img: "product3/1.png", title: "airPods" },
-    { img: "product7/1.png", title: "playstation joystick" },
-    { img: "product4/1.png", title: "lenovo laptop" },
-    { img: "product5/1.png", title: "speakers" },
+    { img: "products/product1/5.png", title: "headphones" },
+    { img: "products/product2/1.png", title: "smartwatch" },
+    { img: "products/product3/1.png", title: "airPods" },
+    { img: "products/product7/1.png", title: "playstation joystick" },
+    { img: "products/product4/1.png", title: "lenovo laptop" },
+    { img: "products/product5/1.png", title: "speakers" },
   ];
 
   const track = document.querySelector(".best .track");
@@ -155,12 +155,12 @@ servs();
 // ---------------------------------------------------
 function colls() {
   const collsData = [
-      { img1: "product3/2", img2: "product2/2", title1: "boAt AirPods", title2: "SM smartwatch", price: "350", align:"self-start" },
-      { img1: "products/1", img2: "products/2", title1: "ps5 hd camera", title2: "access controller", price: "1000", align:"self-end" },
-      { img1: "product4/2", img2: "product5/2", title1: "asus laptop", title2: "speaker", price: "2000", align:"self-start" },
-      { img1: "product3/3", img2: "product6/2", title1: "airpods", title2: "handfree", price: "50", align:"self-end" },
-      { img1: "product1/1", img2: "products/33", title1: "sony headphone", title2: "sony handheld", price: "1200", align:"self-start" },
-      { img1: "products/5", img2: "banners/adv1", title1: "airdrone", title2: "sony airPods", price: "800", align:"self-end" },
+      { img1: "products/product3/2", img2: "products/product2/2", title1: "boAt AirPods", title2: "SM smartwatch", price: "350", align:"self-start" },
+      { img1: "products/product6/1", img2: "products/product3/2", title1: "ps5 hd camera", title2: "access controller", price: "1000", align:"self-end" },
+      { img1: "products/product4/2", img2: "products/product5/2", title1: "asus laptop", title2: "speaker", price: "2000", align:"self-start" },
+      { img1: "products/product3/3", img2: "products/product6/2", title1: "airpods", title2: "handfree", price: "50", align:"self-end" },
+      { img1: "products/product1/1", img2: "products/product7/3", title1: "sony headphone", title2: "sony handheld", price: "1200", align:"self-start" },
+      { img1: "products/product5/5", img2: "banners/adv1", title1: "airdrone", title2: "sony airPods", price: "800", align:"self-end" },
   ];
 
   const content = document.querySelector(".colls .track");
@@ -225,13 +225,13 @@ colls();
 // -------------------
 function deals() {
   const dealsData = [
-    { class: "dimg1" ,  img: "product1/5.png", title: "headphones" },
-    { class: "dimg2" ,  img: "product2/1.png", title: "smartwatch" },
-    { class: "dimg3" ,  img: "product3/1.png", title: "airPods" },
-    { class: "dimg4" ,  img: "product7/1.png", title: "playstation joystick" },
-    { class: "dimg5" ,  img: "product4/1.png", title: "lenovo laptop" },
-    { class: "dimg6" ,  img: "product5/1.png", title: "speakers" },
-    { class: "dimg7" ,  img: "product6/1.png", title: "speakers" },
+    { class: "dimg1" ,  img: "products/product1/5.png", title: "headphones" },
+    { class: "dimg2" ,  img: "products/product2/1.png", title: "smartwatch" },
+    { class: "dimg3" ,  img: "products/product3/1.png", title: "airPods" },
+    { class: "dimg4" ,  img: "products/product7/1.png", title: "playstation joystick" },
+    { class: "dimg5" ,  img: "products/product4/1.png", title: "lenovo laptop" },
+    { class: "dimg6" ,  img: "products/product5/1.png", title: "speakers" },
+    { class: "dimg7" ,  img: "products/product6/1.png", title: "speakers" },
   ];
 
   const track = document.querySelector(".deals .track");
@@ -528,41 +528,41 @@ let imageIndex6 = 0; // مؤشر الصورة الحالي
 
 // مجموعة الصور لتحديثها
 const images1 = [
-  "product1/1.png",
-  "product1/2.png",
-  "product1/3.png",
-  "product1/4.png",
+  "products/product1/1.png",
+  "products/product1/2.png",
+  "products/product1/3.png",
+  "products/product1/4.png",
 ];
 const images2 = [
-    "product2/1.png",
-    "product2/2.png",
-    "product2/3.png",
-    "product2/4.png",
+    "products/product2/1.png",
+    "products/product2/2.png",
+    "products/product2/3.png",
+    "products/product2/4.png",
 ];
 const images3 = [
-  "product3/1.png",
-  "product3/2.png",
-  "product3/3.png",
-  "product3/4.png",
+  "products/product3/1.png",
+  "products/product3/2.png",
+  "products/product3/3.png",
+  "products/product3/4.png",
 ];
 
 const images4 = [
-    "product4/1.png",
-    "product4/2.png",
-    "product4/3.png",
-    "product4/4.png",
+    "products/product4/1.png",
+    "products/product4/2.png",
+    "products/product4/3.png",
+    "products/product4/4.png",
 ];
 const images5 = [
-    "product5/1.png",
-    "product5/2.png",
-    "product5/3.png",
-    "product5/4.png",
+    "products/product5/1.png",
+    "products/product5/2.png",
+    "products/product5/3.png",
+    "products/product5/4.png",
 ];
 const images6 = [
-    "product6/1.png",
-    "product6/2.png",
-    "product6/3.png",
-    "product6/4.png",
+    "products/product6/1.png",
+    "products/product6/2.png",
+    "products/product6/3.png",
+    "products/product6/4.png",
 ];
 
 function updateCountdown() {
