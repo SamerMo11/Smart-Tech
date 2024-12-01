@@ -13,12 +13,11 @@ export function displayFormInputs(inputs, form) {
   console.log(inputs);
   let html = "";
   form.innerHTML = "";
-  for (const [d, values] of Object.entries(inputs)) {
-    const name = values.name;
+  for (const [name, type] of Object.entries(inputs)) {
     console.log(name);
     const div = `<div>
           <label for="${name}">${name}</label>
-          <input type="text" name="${name}" id="${name}" required >
+          <input type="${type}" name="${name}" id="${name}" required >
         </div>`;
     html += div;
   }

@@ -3,6 +3,14 @@ main {
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
+@media screen and (width < 1024px) {
+  main {
+    grid-template-columns: 1fr;
+    > * {
+      grid-column: auto !important;
+    }
+  }
+}
 main > div {
   background-color: var(--color-dark-gray);
   padding: 25px;

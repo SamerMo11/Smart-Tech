@@ -75,22 +75,6 @@ function drawTopStatsChart(chardId, data, bg) {
   chart.render();
 }
 
-drawTopStatsChart(
-  "total-sales-chart",
-  [31, 40, 28, 51, 42, 109, 100],
-  "#f27d16"
-);
-drawTopStatsChart(
-  "total-orders-chart",
-  [331, 440, 285, 551, 426, 109, 530],
-  "#f22e52"
-);
-drawTopStatsChart(
-  "total-earnings-chart",
-  [3431, 7440, 9285, 5651, 4326, 1609, 5030],
-  "#1edf71"
-);
-
 function drawOrderAnalytics(series, xAxis) {
   console.log(series);
   var options = {
@@ -218,13 +202,7 @@ function drawOrdersByCategoryChart(labels, values) {
   );
   chart.render();
 }
-drawOrdersByCategoryChart(
-  ["Cameras", "Headphones", "Keyboard", "Laptop", "Mouse"],
-  [42, 47, 52, 58, 65]
-);
-function getCategoryChartData(ordersByCategory) {
-  return ordersByCategory;
-}
+
 async function getData() {
   try {
     const req = await fetch("./js/home.json");
@@ -238,18 +216,22 @@ async function getData() {
   }
 }
 getData().then((data) => {
-  console.log(data);
   displayProductList(data.productList);
-  updateTopStats(
+  drawOrdersByCategoryChart(
+    data.ordersByCategory.names,
+    data.ordersByCategory.numOfSalles
+  );
+  console.log(data.names, data.numOfSalles);
+  updateTopStats([
     data.totalSales,
     data.totalRefundOrders,
-    data.totalApprovedOrders
-  );
+    data.totalApprovedOrders,
+  ]);
   drawOrderAnalytics(
     orderAnalyticsSeries(data.orderAnalytics),
     orderAnalyticsXAxis(data.orderAnalytics)
   );
-  console.log(orderAnalyticsXAxis(data.orderAnalytics));
+  displayMostSelling(data.mostSelling);
 });
 function orderAnalyticsXAxis(orderAnalytics) {
   return orderAnalytics.map((obj) => obj.month);
@@ -290,11 +272,55 @@ function displayProductList(productList) {
   }
   productsDiv.insertAdjacentHTML("beforeend", html);
 }
-function updateTopStats(salesVal, ordersVal, earningsVal) {
+function updateTopStats([salesVal, ordersVal, earningsVal]) {
+  const arr = [salesVal, ordersVal, earningsVal];
   const [totalSales, totalOrders, totalEarnings] = document.querySelectorAll(
     ".stats .stats--value"
   );
-  totalSales.innerHTML = salesVal + "$";
-  totalOrders.innerHTML = ordersVal;
-  totalEarnings.innerHTML = earningsVal + "$";
+  totalSales.innerHTML = salesVal.value + "$";
+  totalOrders.innerHTML = ordersVal.value;
+  totalEarnings.innerHTML = earningsVal.value;
+
+  drawTopStatsChart("total-sales-chart", salesVal.days, "#f27d16");
+  drawTopStatsChart("total-orders-chart", ordersVal.days, "#f22e52");
+  drawTopStatsChart("total-earnings-chart", earningsVal.days, "#1edf71");
+
+  // Update Stats analysis
+  const statsAnalysis = document.querySelectorAll(".stats--head > div");
+  statsAnalysis.forEach((ele, i) => {
+    ele.innerHTML = ` 
+              <p class="stats--value">${arr[i].value}$</p>
+              <div class="stats--analysis green">
+                <p class=""><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> 10.2</p>
+                <p class="stat">+1.1% this week</p>
+              </div>
+            `;
+  });
+  console.log(statsAnalysis);
+}
+function getCategoryChartData(ordersByCategory) {
+  const arr = [[], []];
+  ordersByCategory.map((e, i) => {
+    arr[0].push(e.name);
+    arr[1].push(e.numOfSalles);
+  });
+  return arr;
+}
+function displayMostSelling(arr) {
+  let html = "";
+  const table = document.querySelector(".top--sales .products");
+  table.innerHTML = "";
+  arr.map((ele) => {
+    const { variantId, productName, saledQuantity, totalSales } = ele;
+    html += `
+    <div>
+              <img src="./images/product.png" alt="Product image">
+              <p class="product--title">
+                ${productName} <span class="sells--value">Sell:${saledQuantity}</span>
+              </p>
+              <p class="product--price">$${totalSales}</p>
+            </div>
+            `;
+  });
+  table.insertAdjacentHTML("beforeend", html);
 }

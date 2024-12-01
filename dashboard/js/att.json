@@ -1,0 +1,53 @@
+[
+  {
+    "id": "1",
+    "name": "Screen Size"
+  },
+
+  { "id": "1", "name": "Resolution" },
+  {
+    "id": "1",
+
+    "name": "Screen Type"
+  },
+  {
+    "id": "1",
+
+    "name": "ChipSet"
+  },
+  {
+    "id": "1",
+
+    "name": "RAM"
+  },
+  {
+    "id": "1",
+
+    "name": "Storage"
+  },
+  {
+    "id": "1",
+
+    "name": "Main Camera"
+  },
+  {
+    "id": "1",
+
+    "name": "Front Camera"
+  },
+  {
+    "id": "1",
+
+    "name": "Battery"
+  },
+  {
+    "id": "1",
+
+    "name": "Network Compatibility"
+  },
+  {
+    "id": "1",
+
+    "name": "Operation System"
+  }
+]
