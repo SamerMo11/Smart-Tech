@@ -329,11 +329,13 @@ nav{
 
 
     .form .login .last{
+        padding-left: 4%;
         width: 100%;
         height: auto;
         display: flex;
-        justify-content: center;
+        /* justify-content: center; */
         align-items: center;
+        /* background-color: rebeccapurple; */
         /* flex-direction: column; */
     }
     .form .login .last .input{
