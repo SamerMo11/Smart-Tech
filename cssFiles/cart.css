@@ -97,6 +97,9 @@ nav{
     0px 4px 4px 0px #00000040,
     0px 4px 4px 0px #00000040;
     border-radius: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 .main .content .row p{
     color: var(--color2);
@@ -128,6 +131,8 @@ nav{
     right: 10px;
     font-size: 20px;
     color: var(--color2);
+    cursor: pointer;
+
 }
 .main .content .product .img {
     width: 20%;
@@ -212,6 +217,7 @@ nav{
     right: 10px;
     font-size: 20px;
     color: var(--color2);
+    cursor: pointer;
 }
 .main .content .coll .imgs {
     display: flex;
@@ -279,3 +285,25 @@ nav{
     font-size: 16px;
     cursor: pointer;
 }
+
+
+
+
+@keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+  }
+  
+  .main .content .card {
+    transition: opacity 1s, transform 1s;
+  }
+  
+  .main .content .card.hide {
+    animation: fadeOut 1s forwards;
+  }
