@@ -3,7 +3,7 @@
 |    pages      |  Home       |  About       |      Contact Us   |  Forms       |  Shop       | Product     |       Cart       |    Chect Out     |  UserDash        | AdminDash  |
 | ------------- | ----------- | ------------ | ----------------- | ------------ | ----------- | ----------- | ---------------- | ---------------  | ---------------- | ---------- |
 | UI & UX       |    Done     |    Done      |    Done           |     Done     |   Done      |    Done     |       Done       |      Done        |     Done         |    ----    |
-| Front-end     |    Done     |    Done      |    Done           |     Done     |   Done      |             |                  |      Done        |     Done         |            |
+| Front-end     |    Done     |    Done      |    Done           |     Done     |   Done      |             |      Done        |      Done        |     Done         |            |
 | Back -end     |    Done     |    Done      |    Done           |     Done     |             |             |                  |      Done        |                  |            |
 | JavaScript    |             |              |                   |              |             |             |                  |                  |                  |            |
 | Responsive    |    Done     |    Done      |    Done           |              |   Done      |             |                  |                  |                  |            |
@@ -15,6 +15,6 @@
 
 |     products       |  Laptop  |  SmartWatch  |  Headphones  |  Phones  |  Camera  | AirPods  |  PCs  |  KeyBoard  |  JoyStick  |  PSs  |  Speakers  |
 | ------------------ | -------- | ------------ | ------------ | -------- | -------- | -------- | ----- | ---------  |----------  |------ |----------  |
-|     Found?        |    Done  |     Done     |    Done      |   Done   |   Done   |  Done    |  Done |    Done    |  Done      | Done  |  Done      |
+|     Found?         |    Done  |     Done     |    Done      |   Done   |   Done   |  Done    |  Done |    Done    |  Done      | Done  |  Done      |
 
 
