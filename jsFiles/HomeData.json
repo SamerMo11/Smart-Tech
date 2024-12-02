@@ -1,0 +1,74 @@
+{
+    "bestSales": [
+        {
+            "variantId": 1,
+            "img": "1.png",
+            "title": "Laptop1"
+        },
+        {
+            "variantId": 2,
+            "img": "2.png",
+            "title": "Mouse1"
+        },
+        {
+            "variantId": 3,
+            "img": "3.png",
+            "title": "Phone1"
+        }
+    ],
+    "dealsoftheday": [
+        {
+            "id": 1,
+            "title": "Laptop1",
+            "img": "1.png",
+            "rating": 1,
+            "description": "Description Description Description Description Description Description",
+            "originalPrice": 12000.99,
+            "discount": 15
+        },
+        {
+            "id": 2,
+            "title": "Mouse1",
+            "img": "2.png",
+            "rating": 1,
+            "description": "Mouse Mouse Mouse Mouse Mouse Mouse Mouse ",
+            "originalPrice": 349.99,
+            "discount": 10
+        },
+        {
+            "id": 3,
+            "title": "Phone1",
+            "img": "3.png",
+            "rating": 1,
+            "description": "Phone1 Phone1 Phone1 Phone1 ",
+            "originalPrice": 9999.99,
+            "discount": 8
+        }
+    ],
+    "offers": [
+        {
+            "offerId": 1,
+            "img1": "1.png",
+            "img2": "2.png",
+            "title1": "Laptop1",
+            "title2": "Mouse1",
+            "price": 10000
+        },
+        {
+            "offerId": 1,
+            "img1": "1.png",
+            "img2": "2.png",
+            "title1": "Laptop1",
+            "title2": "Mouse1",
+            "price": 10000
+        },
+        {
+            "offerId": 1,
+            "img1": "1.png",
+            "img2": "2.png",
+            "title1": "Laptop1",
+            "title2": "Mouse1",
+            "price": 10000
+        }
+    ]
+}
