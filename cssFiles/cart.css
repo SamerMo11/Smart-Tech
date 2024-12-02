@@ -307,3 +307,63 @@ nav{
   .main .content .card.hide {
     animation: fadeOut 1s forwards;
   }
+/* ------------------- */
+.main .check{
+    width: 90%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.main .check .content{
+    width: 25%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+}
+.main .check .content p{
+    text-transform: capitalize;
+    color: var(--color1);
+    font-size: 20px;
+    font-family: var(--font1);
+}
+.main .check .content p span{
+    color: var(--color2);
+}
+.main .check .content > a{
+    height: 2px;
+    width: 120px;
+    background-color: #5491a4;
+    position: relative;
+
+    align-self: flex-end;
+    box-shadow: 0px 4px 4px 0px #00000040,
+    0px 4px 4px 0px #00000040,
+    0px 4px 4px 0px #00000040;
+}
+.main .check .content > a::before{
+    content: 'checkOut';
+    position: absolute;
+    top: -20px;
+    left: 40%;
+    transform: translateX(-50%);
+    text-transform: capitalize;
+    color: #E7E7E7CC;
+    font-family: var(--font2);
+    font-size: 15px;
+}
+.main .check .content > a::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    transform: translateY(-50%) rotate(45deg);
+    border-top: 2px solid #5491A4;
+    border-right: 2px solid #5491A4;
+
+
+}
