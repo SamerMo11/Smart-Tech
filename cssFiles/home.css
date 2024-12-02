@@ -1046,9 +1046,9 @@ title:
 
 }
 .colls .track .coll .prods .prod img{
-    width: 45%;
+    width: 30%;
     height: 100%;
-    transform: scaleX(1.5) scaleY(1.4);
+    /* transform: scaleX(1.5) scaleY(1.4); */
 }
 .colls .track .coll .prods .prod p{
     font-size: 19px;
