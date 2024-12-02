@@ -18,7 +18,7 @@
 // ---------------------------------------------------
 // ---------------------------------------------------
 // ---------------------------------------------------
-let searchIcon = document.getElementById('searchIcon');
+let searchIcon = document.getElementById("searchIcon");
 
 searchIcon.addEventListener("click", function () {
   // const cardDetails = document.getElementById("card-details");
@@ -27,51 +27,50 @@ searchIcon.addEventListener("click", function () {
     qsearch.classList.add("show");
     qsearch.classList.remove("hide");
   }, 10);
-})
+});
 // ---------------------------------------------------
 // ---------------------------------------------------
 // ---------------------------------------------------
-  let nextButton = document.getElementById('after');
-let prevButton = document.getElementById('before');
-let carousel = document.querySelector('.carousel');
-let listHTML = document.querySelector('.carousel .list .items');
-let spans = document.querySelectorAll('.carousel .list .arrows span');
+let nextButton = document.getElementById("after");
+let prevButton = document.getElementById("before");
+let carousel = document.querySelector(".carousel");
+let listHTML = document.querySelector(".carousel .list .items");
+let spans = document.querySelectorAll(".carousel .list .arrows span");
 let currentSpanIndex = 0;
 
-nextButton.onclick = function() {
-    showSlider('after');
+nextButton.onclick = function () {
+  showSlider("after");
 };
 
-prevButton.onclick = function() {
-    showSlider('before');
+prevButton.onclick = function () {
+  showSlider("before");
 };
 
 const updateSpanHighlight = () => {
-    spans.forEach((span, index) => {
-        span.classList.remove('active');
-    });
-    spans[currentSpanIndex].classList.add('active');
+  spans.forEach((span, index) => {
+    span.classList.remove("active");
+  });
+  spans[currentSpanIndex].classList.add("active");
 };
 
 const showSlider = (type) => {
-    carousel.classList.remove('after', 'before');
-    let items = document.querySelectorAll('.carousel .list .items .item');
+  carousel.classList.remove("after", "before");
+  let items = document.querySelectorAll(".carousel .list .items .item");
 
-    if (type === 'after') {
-        listHTML.appendChild(items[0]);
-        carousel.classList.add('after');
-        currentSpanIndex = (currentSpanIndex + 1) % spans.length; 
-    } else {
-        listHTML.prepend(items[items.length - 1]);
-        carousel.classList.add('before');
-        currentSpanIndex = (currentSpanIndex - 1 + spans.length) % spans.length;
-    }
+  if (type === "after") {
+    listHTML.appendChild(items[0]);
+    carousel.classList.add("after");
+    currentSpanIndex = (currentSpanIndex + 1) % spans.length;
+  } else {
+    listHTML.prepend(items[items.length - 1]);
+    carousel.classList.add("before");
+    currentSpanIndex = (currentSpanIndex - 1 + spans.length) % spans.length;
+  }
 
-    updateSpanHighlight(); 
+  updateSpanHighlight();
 };
 
 updateSpanHighlight();
-
 
 // ---------------------------------------------------
 // ---------------------------------------------------
@@ -87,13 +86,13 @@ tracks.forEach((track, index) => {
     next.addEventListener("click", () => {
       track.scrollTo({
         left: track.scrollLeft + track.firstElementChild.offsetWidth,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     });
     prev.addEventListener("click", () => {
       track.scrollTo({
         left: track.scrollLeft - track.firstElementChild.offsetWidth,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     });
   }
@@ -101,45 +100,59 @@ tracks.forEach((track, index) => {
 // ---------------------------------------------------
 // ---------------------------------------------------
 // ---------------------------------------------------
-function best() {
-  const bestData = [
-    { img: "products/product1/5.png", title: "headphones" },
-    { img: "products/product2/1.png", title: "smartwatch" },
-    { img: "products/product3/1.png", title: "airPods" },
-    { img: "products/product7/1.png", title: "playstation joystick" },
-    { img: "products/product4/1.png", title: "lenovo laptop" },
-    { img: "products/product5/1.png", title: "speakers" },
-  ];
+function best(bestData) {
+  // const bestData = [
+  //   { img: "products/product1/5.png", title: "headphones" },
+  //   { img: "products/product2/1.png", title: "smartwatch" },
+  //   { img: "products/product3/1.png", title: "airPods" },
+  //   { img: "products/product7/1.png", title: "playstation joystick" },
+  //   { img: "products/product4/1.png", title: "lenovo laptop" },
+  //   { img: "products/product5/1.png", title: "speakers" },
+  // ];
 
   const track = document.querySelector(".best .track");
-  
+
   bestData.forEach((best) => {
     track.innerHTML += `
-    <div class="cat">
+    <a class="cat" href="../htmlFiles/product.html?variantid=${best.id}">
     <img src="${best.img}" alt="categorImg" loading="lazy">
     <p>${best.title}</p>
-    </div>
+    </a>
     `;
   });
 }
-best();
-
+// best();
+async function getDate() {
+  try {
+    const req = await fetch("./jsFiles/HomeData.json");
+    return await req.json();
+  } catch (e) {
+    throw e;
+  }
+}
+getDate().then((data) => {
+  console.log(data);
+  best(data.bestSales);
+  deals(data.dealsoftheday);
+  colls(data.offers);
+  console.log(data.bestSales);
+});
 // ---------------------------------------------------
 // ---------------------------------------------------
 // ---------------------------------------------------
 function servs() {
   const servsData = [
-      { img: "main/1.png", title: "safe delivery" },
-      { img: "main/2.png", title: "quality service" },
-      { img: "main/3.png", title: "service & technology" },
-      { img: "main/4.png", title: "experienced team" },
-      { img: "main/5.png", title: "best price guarantee" },
+    { img: "main/1.png", title: "safe delivery" },
+    { img: "main/2.png", title: "quality service" },
+    { img: "main/3.png", title: "service & technology" },
+    { img: "main/4.png", title: "experienced team" },
+    { img: "main/5.png", title: "best price guarantee" },
   ];
 
   const content = document.querySelector(".servs .content");
 
   servsData.forEach((serv) => {
-      content.innerHTML += `
+    content.innerHTML += `
       <div class="serv">
             <p>${serv.title}</p>
             <p>Lorem Ipsum has been the industry's  standard. Lorem Ipsum has <br> been the industry's that <br> standard.</p>
@@ -153,20 +166,11 @@ servs();
 // ---------------------------------------------------
 // ---------------------------------------------------
 // ---------------------------------------------------
-function colls() {
-  const collsData = [
-      { img1: "products/product3/2", img2: "products/product2/2", title1: "boAt AirPods", title2: "SM smartwatch", price: "350", align:"self-start" },
-      { img1: "products/product6/1", img2: "products/product3/2", title1: "ps5 hd camera", title2: "access controller", price: "1000", align:"self-end" },
-      { img1: "products/product4/2", img2: "products/product5/2", title1: "asus laptop", title2: "speaker", price: "2000", align:"self-start" },
-      { img1: "products/product3/3", img2: "products/product6/2", title1: "airpods", title2: "handfree", price: "50", align:"self-end" },
-      { img1: "products/product1/1", img2: "products/product7/3", title1: "sony headphone", title2: "sony handheld", price: "1200", align:"self-start" },
-      { img1: "products/product5/5", img2: "banners/adv1", title1: "airdrone", title2: "sony airPods", price: "800", align:"self-end" },
-  ];
-
+function colls(collsData) {
   const content = document.querySelector(".colls .track");
 
   collsData.forEach((coll) => {
-      content.innerHTML += `
+    content.innerHTML += `
       <div class="coll" style="align-self: ${coll.align} ;">
             <div class="prods">
                 <div class="prod">
@@ -186,8 +190,6 @@ function colls() {
       `;
   });
 }
-colls();
-
 
 // --------------------------------
 // --------------------------------
@@ -203,7 +205,6 @@ colls();
 //     card.classList.toggle("active", index === currentIndex);
 //   });
 
-
 // }
 
 // nextdeal.addEventListener("click", () => {
@@ -218,24 +219,13 @@ colls();
 //   updateActiveCard();
 // });
 
-
 // updateActiveCard();
 
 // -------------------
 // -------------------
-function deals() {
-  const dealsData = [
-    { class: "dimg1" ,  img: "products/product1/5.png", title: "headphones" },
-    { class: "dimg2" ,  img: "products/product2/1.png", title: "smartwatch" },
-    { class: "dimg3" ,  img: "products/product3/1.png", title: "airPods" },
-    { class: "dimg4" ,  img: "products/product7/1.png", title: "playstation joystick" },
-    { class: "dimg5" ,  img: "products/product4/1.png", title: "lenovo laptop" },
-    { class: "dimg6" ,  img: "products/product5/1.png", title: "speakers" },
-    { class: "dimg7" ,  img: "products/product6/1.png", title: "speakers" },
-  ];
-
+function deals(dealsData) {
   const track = document.querySelector(".deals .track");
-  
+
   // إضافة الكروت للتراك
   dealsData.forEach((deal) => {
     track.innerHTML += `
@@ -283,15 +273,13 @@ function deals() {
       </div>
     `;
   });
-
 }
-deals();
 
 // let dealstrack = document.querySelectorAll('.deals .content .track');
 // let items = document.querySelectorAll('.deals .content .track .card');
 //     let next = document.getElementById('nextdeal');
 //     let prev = document.getElementById('prevdeal');
-    
+
 //     let active = 1;
 //     function loadShow(){
 //         let stt = 0;
@@ -326,15 +314,10 @@ deals();
 //         });
 //     }
 
-
 // let dealsitems = document.querySelectorAll('.dealstrack .card');
 //     let nextdeal = document.getElementById('nextdeal');
 //     let prevdeal = document.getElementById('prevdeal');
-    
 
-
-
-    
 //     let active = 3;
 //     function loadShow(){
 //         let stt = 0;
@@ -345,7 +328,7 @@ deals();
 //         for(var i = active + 1; i < dealsitems.length; i++){
 //             stt++;
 //             dealsitems[i].style.transform = ` scale(${1 - 0.2*stt}) perspective(16px) rotateY(-1deg)`;
-            
+
 //             // dealsitems[i].style.transform = `translateX(${120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(-1deg)`;
 //             // dealsitems[i].style.zIndex = -stt;
 //             // dealsitems[i].style.filter = 'blur(5px)';
@@ -370,7 +353,6 @@ deals();
 //         active = active - 1 >= 0 ? active - 1 : active;
 //         loadShow();
 //     }
-
 
 // const dealstrack = document.querySelector('.deals .content .track');
 // const dealscards = document.querySelectorAll('.deals .content .track .card');
@@ -470,7 +452,6 @@ deals();
 
 // ---------------------
 
-
 const dealstrack = document.querySelector(".deals .content .track");
 const nextdeal = document.querySelector("#nextdeal");
 const prevdeal = document.querySelector("#prevdeal");
@@ -479,12 +460,12 @@ if (dealstrack) {
   // إضافة active للعنصر الأول عند تحميل الصفحة
   const items = dealstrack.children;
   if (items.length > 0) {
-    items[1].classList.add("active2");  // إضافة active للعنصر الذي يحمل index 1
+    items[1].classList.add("active2"); // إضافة active للعنصر الذي يحمل index 1
   }
 
   nextdeal.addEventListener("click", () => {
     const activeItem = dealstrack.querySelector(".active2");
-    const nextItem = activeItem.nextElementSibling || items[0];  // إذا كان العنصر الأخير، نرجع للأول
+    const nextItem = activeItem.nextElementSibling || items[0]; // إذا كان العنصر الأخير، نرجع للأول
 
     // إزالة الـ active من العنصر الحالي
     activeItem.classList.remove("active2");
@@ -499,7 +480,8 @@ if (dealstrack) {
 
   prevdeal.addEventListener("click", () => {
     const activeItem = dealstrack.querySelector(".active2");
-    const prevItem = activeItem.previousElementSibling || items[items.length - 1];  // إذا كان العنصر الأول، نرجع لآخر عنصر
+    const prevItem =
+      activeItem.previousElementSibling || items[items.length - 1]; // إذا كان العنصر الأول، نرجع لآخر عنصر
 
     // إزالة الـ active من العنصر الحالي
     activeItem.classList.remove("active2");
@@ -513,10 +495,7 @@ if (dealstrack) {
   });
 }
 
-
-
-
-// // -----------------TIMER---------------- 
+// // -----------------TIMER----------------
 
 let count = new Date("november 14, 2024 22:03:").getTime(); // تاريخ الهدف الأولي
 let imageIndex1 = 0; // مؤشر الصورة الحالي
@@ -534,10 +513,10 @@ const images1 = [
   "products/product1/4.png",
 ];
 const images2 = [
-    "products/product2/1.png",
-    "products/product2/2.png",
-    "products/product2/3.png",
-    "products/product2/4.png",
+  "products/product2/1.png",
+  "products/product2/2.png",
+  "products/product2/3.png",
+  "products/product2/4.png",
 ];
 const images3 = [
   "products/product3/1.png",
@@ -547,22 +526,22 @@ const images3 = [
 ];
 
 const images4 = [
-    "products/product4/1.png",
-    "products/product4/2.png",
-    "products/product4/3.png",
-    "products/product4/4.png",
+  "products/product4/1.png",
+  "products/product4/2.png",
+  "products/product4/3.png",
+  "products/product4/4.png",
 ];
 const images5 = [
-    "products/product5/1.png",
-    "products/product5/2.png",
-    "products/product5/3.png",
-    "products/product5/4.png",
+  "products/product5/1.png",
+  "products/product5/2.png",
+  "products/product5/3.png",
+  "products/product5/4.png",
 ];
 const images6 = [
-    "products/product6/1.png",
-    "products/product6/2.png",
-    "products/product6/3.png",
-    "products/product6/4.png",
+  "products/product6/1.png",
+  "products/product6/2.png",
+  "products/product6/3.png",
+  "products/product6/4.png",
 ];
 
 function updateCountdown() {
@@ -574,35 +553,35 @@ function updateCountdown() {
   let mins = Math.floor((dis % (1000 * 60 * 60)) / (1000 * 60));
   let secs = Math.floor((dis % (1000 * 60)) / 1000);
 
-  document.querySelectorAll(".days").forEach(element => {
+  document.querySelectorAll(".days").forEach((element) => {
     element.innerHTML = days;
   });
 
-  document.querySelectorAll(".hours").forEach(element => {
+  document.querySelectorAll(".hours").forEach((element) => {
     element.innerHTML = hours;
   });
 
-  document.querySelectorAll(".mins").forEach(element => {
+  document.querySelectorAll(".mins").forEach((element) => {
     element.innerHTML = mins;
   });
 
-  document.querySelectorAll(".secs").forEach(element => {
+  document.querySelectorAll(".secs").forEach((element) => {
     element.innerHTML = secs;
   });
 
   // إذا كان العد التنازلي قد انتهى
   if (dis < 0) {
     // تعيين كل القيم إلى "00"
-    document.querySelectorAll(".days").forEach(element => {
+    document.querySelectorAll(".days").forEach((element) => {
       element.innerHTML = "00";
     });
-    document.querySelectorAll(".hours").forEach(element => {
+    document.querySelectorAll(".hours").forEach((element) => {
       element.innerHTML = "00";
     });
-    document.querySelectorAll(".mins").forEach(element => {
+    document.querySelectorAll(".mins").forEach((element) => {
       element.innerHTML = "00";
     });
-    document.querySelectorAll(".secs").forEach(element => {
+    document.querySelectorAll(".secs").forEach((element) => {
       element.innerHTML = "00";
     });
 
@@ -638,19 +617,8 @@ function updateImage() {
 }
 
 // تعيين فاصل لتحديث العد التنازلي كل ثانية
-let interval = setInterval(updateCountdown, 1000);
 
 // تهيئة العد التنازلي عند تحميل الصفحة
-updateCountdown();
-
-
-
-
-
-
-
-
-
 
 // const items = document.querySelectorAll(".deals .track .card");
 // let currentIndex = 0;
@@ -680,17 +648,6 @@ updateCountdown();
 //   }
 // });
 
-
-
-
-
-
-
-
-
-
-
-
 // const cards = document.querySelectorAll('.card');
 // let currentIndex = 1; // الكارت الأوسط يكون في البداية عند 1
 
@@ -704,7 +661,7 @@ updateCountdown();
 // // عند الضغط على السهم التالي
 // document.getElementById('nextdeal').addEventListener('click', () => {
 //     currentIndex = (currentIndex + 1) % cards.length;
-    
+
 //     updateCards();
 // });
 
