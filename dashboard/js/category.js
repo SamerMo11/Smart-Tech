@@ -1,10 +1,12 @@
 import { displayToast } from "./main.js";
 
-const addAttributeBtn = document.querySelector(".add--attribute");
-const inputContainer = document.querySelector(".input--container");
+const addAttributeBtns = document.querySelectorAll(
+  ".add--attribute:not(#confirmAdd)"
+);
+const inputContainers = document.querySelectorAll(".input--container");
 const confirmBtns = document.querySelectorAll("#confirmDelete button");
 const confirmPopover = document.querySelector("#confirmDelete");
-
+const newCategoryAttr = document.querySelector("#newCategory #confirmAdd");
 let attributeID;
 let categoryId;
 confirmBtns.forEach((btn) =>
@@ -15,12 +17,18 @@ confirmBtns.forEach((btn) =>
     }
   })
 );
-addAttributeBtn.addEventListener("click", (e) => {
-  console.log("click");
-  e.stopPropagation();
-  inputContainer.classList.add("active");
-});
-inputContainer.addEventListener("click", (e) => e.stopPropagation());
+addAttributeBtns.forEach((btn) =>
+  btn.addEventListener("click", (e) => {
+    console.log("click");
+    e.stopPropagation();
+    e.target.parentElement
+      .querySelector(".input--container")
+      .classList.add("active");
+  })
+);
+inputContainers.forEach((cont) =>
+  cont.addEventListener("click", (e) => e.stopPropagation())
+);
 
 async function deleteAttribute(id) {
   console.log(id);
@@ -148,6 +156,47 @@ async function addNewAttr(name) {
       },
       body: JSON.stringify(data),
     });
+    if (!req.ok) throw new Error("Something Went Wrong");
+    return await req.json();
+  } catch (e) {
+    throw e;
+  }
+}
+const newCategoryForm = document.querySelector("#newCategory .attributes");
+console.log(newCategoryForm);
+const submitNewCategoryForm = document.querySelector("#submitNewCategoryForm");
+newCategoryAttr.addEventListener("click", (e) => {
+  const newAttrVal =
+    e.target.parentElement.querySelector("#attributeName").value;
+
+  const input = `
+  <input class="attr" type="text" value = ${newAttrVal}>
+    `;
+  e.target.parentElement.querySelector("#attributeName").value = "";
+  console.log(e.target.parentElement.parentElement);
+
+  e.target.parentElement.parentElement.classList.remove("active");
+  newCategoryForm.insertAdjacentHTML("beforeend", input);
+});
+submitNewCategoryForm.addEventListener("click", () => {
+  const name = newCategoryForm.querySelector("#nCategoryname").value;
+  const inputsText = Array.from(newCategoryForm.querySelectorAll(".attr"));
+  const result = {
+    name: name,
+    attributes: inputsText.map((e) => e.value),
+  };
+  addNewCategory(result);
+});
+async function addNewCategory(data) {
+  try {
+    const req = await fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
     if (!req.ok) throw new Error("Something Went Wrong");
     return await req.json();
   } catch (e) {

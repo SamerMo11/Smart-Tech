@@ -81,7 +81,7 @@
         <div>
           <div class="section--header">
             <h1 class="section--title">Category</h1>
-            <button>
+            <button popovertarget="newCategory">
               <i class="fa-solid fa-plus" aria-hidden="true"></i> Add New
               Category
             </button>
@@ -112,27 +112,37 @@
             </div>
           </div>
           <ul class="attribute">
-            <button popovertarget="confirmDelete" attributeID="1">Id</button>
-            <button
-              popovertarget="confirmDelete"
-              attributeID="1"
-              popovertarget="confirmDelete"
-            >
-              Name
+            <button popovertarget="confirmDelete" attributeid="${attr.id}">
+              ${attr.name}
             </button>
-            <button popovertarget="confirmDelete" attributeID="1">Price</button>
-            <button popovertarget="confirmDelete" attributeID="1">Id</button>
-            <button popovertarget="confirmDelete" attributeID="1">Name</button>
-            <button popovertarget="confirmDelete" attributeID="1">Price</button>
-            <button popovertarget="confirmDelete" attributeID="1">Id</button>
-            <button popovertarget="confirmDelete" attributeID="1">Name</button>
-            <button popovertarget="confirmDelete" attributeID="1">Price</button>
           </ul>
           <div id="confirmDelete" class="popover" popover>
             <p>Are you sure you want to delete this attribute?</p>
             <button class="confirm" id="confirmDelete">Yes, Delete</button>
             <button class="cancel" id="cancelDelete">Cancel</button>
           </div>
+        </div>
+        <div popover class="popover" id="newCategory">
+          <div class="cate--header">
+            <h1>New Category</h1>
+            <button class="add--attribute">Add</button>
+            <div class="input--container">
+              <div>
+                <label for="attributeName">Attribute Name</label
+                ><input type="text" id="attributeName" />
+                <button class="add--attribute" id="confirmAdd">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class="attributes">
+            <input
+              type="text"
+              name="nCategoryname"
+              id="nCategoryname"
+              placeholder="Name"
+            />
+          </div>
+          <button id="submitNewCategoryForm">Add</button>
         </div>
         <!-- <div class="item-detail-view show">
           <h1>SS</h1>

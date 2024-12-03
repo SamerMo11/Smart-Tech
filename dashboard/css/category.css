@@ -128,3 +128,32 @@ div#confirmDelete {
 [popovertarget="confirmDelete"] {
   cursor: url("../images/delete.svg"), auto !important;
 }
+#newCategory > .attributes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  font-size: 14px;
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  > * {
+    background-color: transparent;
+    outline: none;
+    text-align: center;
+    border: var(--border);
+    border-radius: 5px;
+    padding: 5px 5px;
+  }
+}
+button#submitNewCategoryForm {
+  padding: 10px;
+  color: var(--color-light-gray);
+  background-color: var(--color-dark);
+  border-radius: 5px;
+  font-size: 16px;
+  width: min(120px, 100%);
+  justify-self: flex-end;
+  cursor: pointer;
+}
