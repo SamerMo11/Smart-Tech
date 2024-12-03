@@ -15,10 +15,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="bootstrap.css"> -->
     <link rel="stylesheet" href="../cssFiles/style.css">
     <link rel="stylesheet" href="../cssFiles/checkout.css">
-    <!-- <link rel="icon" href=""> -->
     <title>CheckOut page</title>
 </head>
 <body>
@@ -28,10 +26,10 @@
 
     <p>checkOut</p>
 
-<div class="content">
+<form class="content">
     <div class="left">
         <p>billing details</p>
-        <form action="">
+        <div class="content">
             <div class="input">
                 <input type="text" placeholder="First Name">
                 <span>error message</span>
@@ -48,10 +46,7 @@
                 <input type="email" placeholder="Email Address">
                 <span>error message</span>
             </div>
-            <div class="input">
-                <input type="text" placeholder="Coupon Code (optional)">
-                <span>error message</span>
-            </div>
+            
             <div class="selects">
                 <select name="" id="">
                     <option value="0">state</option>
@@ -61,24 +56,7 @@
                 </select>
             </div>
             
-            <div class="radio">
-                <div class="online">
-                    <div>
-                        <input type="radio" name="payment" id="online" value="">
-                    <label for="online">Online</label>
-                    </div>
-                    <div class="payimgs">
-                        <img src="../payment/1.png" alt="paymentImg" loading="lazy">
-                        <img src="../payment/2.png" alt="paymentImg" loading="lazy">
-                        <img src="../payment/3.png" alt="paymentImg" loading="lazy">
-                        <img src="../payment/4.png" alt="paymentImg" loading="lazy">
-                    </div>
-                </div>
-                <div>
-                    <input type="radio" name="payment" id="cash" value="">
-                    <label for="cash">Cash</label>
-                </div>
-            </div>
+            
 
             <div class="check">
                 <input type="checkbox" name="" id="check">
@@ -86,10 +64,8 @@
                     Save this information for faster check-out next time
                 </label>
             </div>
-            <div class="confirm">
-                <input type="submit" value="confirm order">
-            </div>
-        </form>
+            
+        </div>
     </div>
 
 
@@ -102,17 +78,17 @@
 
 
 
-    <div class="right">
+    <div  class="right">
         <div class="products">
 
             <!-- دا ديف ل المنتج العادي -->
-            <div class="product">
-                <div class="left">
-                    <img src="../products/product4/1.png" alt="">
-                    <p class="name">laptop asus</p>
+                <div class="product">
+                    <div class="left">
+                        <img src="../products/product4/1.png" alt="">
+                        <p class="name">laptop asus</p>
+                    </div>
+                    <p class="price">50000 le</p>
                 </div>
-                <p class="price">50000 le</p>
-            </div>
 
 
             <!-- دا ديف ل الكوليكشن -->
@@ -124,6 +100,7 @@
                         <img src="../products/product3/1.png" alt="">
                         <p class="name">laptop asus</p>
                     </div>
+                    <span>+</span>
                     <div class="collpro">
                         <img src="../products/product2/1.png" alt="">
                         <p class="name">laptop asus</p>
@@ -131,10 +108,11 @@
                 </div>
                 <p class="price">50000 le</p>
             </div>
-        </div>
 
-        <div class="last">
-            <div class="pricing">
+        </div>
+<!-- --------------------------- -->
+<div class="last">
+    <div class="pricing">
                 <p>subtotal:</p>
                 <p>5000 le</p>
             </div>
@@ -147,20 +125,51 @@
                 <p>5000 le</p>
             </div>
         </div>
+        
+        <!-- --------------------------- -->
+        <div class="radio">
+            <div class="online">
+                <div>
+                    <input type="radio" name="payment" id="online" value="">
+                    <label for="online">Online</label>
+                </div>
+                <div class="payimgs">
+                    <img src="../payment/1.png" alt="paymentImg" loading="lazy">
+                    <img src="../payment/2.png" alt="paymentImg" loading="lazy">
+                    <img src="../payment/3.png" alt="paymentImg" loading="lazy">
+                    <img src="../payment/4.png" alt="paymentImg" loading="lazy">
+                </div>
+            </div>
+            <div>
+                <input type="radio" name="payment" id="cash" value="">
+                <label for="cash">Cash on delivery</label>
+            </div>
+        </div>
+        <!-- --------------------------- -->
+        
+        
 
-        <form action="">
-            <input type="submit" value="get discount">
-            <p class="error">
-                <i class="fa-solid fa-triangle-exclamation"></i>
-                This discount can only be used once
-            </p>
-        </form>
-
+        
+        <div class="last2">
+            <div class="discount">
+                <input type="text" placeholder="Coupon Code (optional)">
+                <span>
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    This discount can only be used once
+                </span>
+                <a href="#">get discount</a>
+            </div>
+            <input type="submit" value="confirm order">
+            
+        </div>
+        <!-- --------------------------- -->
+        
+        
     </div>
 
 
 
-</div>
+</form>
 
 
 
