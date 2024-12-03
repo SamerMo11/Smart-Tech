@@ -145,5 +145,21 @@
       "userCountRating": 1,
       "isFavourite": false
     }
-  ]
+  ],
+    "review": [
+        {
+            "date": "11/20/2024",
+            "image": "ec816f7a-7ae5-442b-91d3-eaffc8aa222a_p4.png",
+            "message": "Very good",
+            "rateValue": 3,
+            "userName": "Ahmed Medhat"
+        },
+        {
+            "date": "11/20/2024",
+            "image": "8ec522f7-81a0-4260-b364-d049094d4750_person1.jpg",
+            "message": "awesome",
+            "rateValue": 5,
+            "userName": "MedhatFares"
+        }
+    ]
 }
