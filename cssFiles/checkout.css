@@ -67,7 +67,7 @@ nav{
     justify-content: center;
     align-items: start;
     flex-direction: column;
-    gap: 10vh;
+    gap: 5vh;
 }
 .checkout > p{
     width: fit-content;
@@ -97,13 +97,13 @@ nav{
     0px 4px 4px 0px #00000040,
     0px 4px 4px 0px #00000040;
 }
-.checkout .content{
+.checkout > .content{
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-inline: 5%;
+    align-items: start;
+    padding-inline: 7%;
 
 }
 .checkout .content > .left{
@@ -113,13 +113,14 @@ nav{
     flex-direction: column;
     width: 30%;
     height: 100%;
-    gap: 10px;
+    gap: 40px;
     animation-name: left;
     animation-duration: 1s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
     animation-delay: .3s;
     opacity: 0;
+    margin-top: 50px;
 }
 .checkout .content > .left > p{
     width: 100%;
@@ -133,16 +134,16 @@ nav{
     0px 4px 4px  #00000040,
     0px 4px 4px  #00000040;
 }
-.checkout .content > .left form{
+.checkout .content > .left > .content{
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: start;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
-.checkout .content > .left form .input{
+.checkout .content > .left > .content .input{
     width: 100%;
     height: 40px;
     background: #5159664A;
@@ -152,7 +153,7 @@ nav{
     0px 4px 4px 0px #00000040,
     0px 4px 4px 0px #00000040;
 }
-.checkout .content > .left form .input span{
+.checkout .content > .left > .content .input span{
     position: absolute;
     bottom: -50%;
     left: 10px;
@@ -162,7 +163,7 @@ nav{
     font-family: var(--font2);
     display: none;
 }
-.checkout .content > .left form .input input{
+.checkout .content > .left > .content .input input{
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -174,112 +175,54 @@ nav{
     color: var(--color2);
     font-size: 14px;
 }
-.checkout .content > .left form .input input:focus{
+.checkout .content > .left > .content .input input:focus{
     border: 1px solid var(--color4);
     outline: none;
 }
-.checkout .content > .left form .selects{
+.checkout .content > .left > .content .selects{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.checkout .content > .left form .selects select{
+.checkout .content > .left > .content .selects select{
     width: 45%;
     height: 36px;
     background: #5159664A;
     border-radius: 10px;
     color: var(--color2);
+    padding-inline: 10px;
     border: 1px solid transparent;
     transition: .5s;
     box-shadow: 
     0px 4px 4px 0px #00000040,
     0px 4px 4px 0px #00000040;
 }
-.checkout .content > .left form .selects select:focus{
+.checkout .content > .left > .content .selects select:focus{
     outline: none;
     border: 1px solid var(--color4);
 }
-.checkout .content > .left form .radio{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    flex-direction: column;
-    gap: 5px;
-}
-.checkout .content > .left form .radio .online{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.checkout .content > .left form .radio .online > div:nth-child(1){
-    width: 20%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 10px;
-}
-.checkout .content > .left form .radio .online > div:nth-child(1) input{
-    accent-color: var(--color4);
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-}
-.checkout .content > .left form .radio .online > div:nth-child(1) label{
-    color: var(--color2);
-    font-family: var(--font1);
-    font-size: 16px;
-    cursor: pointer;
-}
-.checkout .content > .left form .radio .online .payimgs{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 10px;
-}
-.checkout .content > .left form .radio .online  .payimgs img{
-    width: 15%;
-}
-.checkout .content > .left form .radio > div:nth-child(2) {
-    width: 20%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 10px;
-}
-.checkout .content > .left form .radio > div:nth-child(2) input{
-    accent-color: var(--color4);
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-}
-.checkout .content > .left form .radio > div:nth-child(2) label{
-    color: var(--color2);
-    font-family: var(--font1);
-    font-size: 16px;
-    cursor: pointer;
-}
 
-.checkout .content > .left form .check{
+
+.checkout .content > .left > .content .check{
     width: 100%;
     display: flex;
     justify-content: start;
     align-items: center;
     gap: 20px;
 }
-.checkout .content > .left form .check input {
+.checkout .content > .left > .content .check input {
     accent-color: var(--color4);
     width: 14px;
     height: 14px;
 }
-.checkout .content > .left form .check label{
+.checkout .content > .left > .content .check label{
         color: var(--color2);
         font-size: 14px;
         font-family: var(--font2);
+        width: 100%;
 }
-.checkout .content > .left form input[type="submit"]{
+.checkout .content > .left > .content input[type="submit"]{
     font-size: 16px;
     font-family: var(--font1);
     text-transform: capitalize;
@@ -295,7 +238,7 @@ nav{
     position: relative;
     transition: .5s;
 }
-.checkout .content > .left form input[type="submit"]:hover{
+.checkout .content > .left > .content input[type="submit"]:hover{
     color: var(--color4);
     background-color: var(--color2);
 }
@@ -304,12 +247,12 @@ nav{
 /* ---------------------------------------- */
 .checkout .content .right{
     width: 40%;
-    height: 100%;
+    height: auto;
     display: flex;
     justify-content: start;
     align-items: center;
     flex-direction: column;
-    gap: 5vh;
+    gap: 25px;
     animation-name: right;
     animation-duration: 1s;
     animation-timing-function: linear;
@@ -322,15 +265,12 @@ nav{
     justify-content: start;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     width: 100%;
     height: 40%;
     overflow: auto;
     padding-inline: 10px;
-    box-shadow: 
-    0px 4px 4px 0px #00000040,
-    0px 4px 4px 0px #00000040;
-    border-radius: 10px;
+
 }
 .checkout .content .right .products::-webkit-scrollbar{
     width: 5px;
@@ -343,7 +283,6 @@ nav{
     width: 100%;
     height: 100%;
     flex: 0 0 45%;
-    /* border: 1px solid var(--color4); */
 }
 .checkout .content .right .products .product .left{
     width: 50% ;
@@ -353,8 +292,8 @@ nav{
     align-items: center;
 }
 .checkout .content .right .products .product .left img{
-    width: 45%;
-    height: 100%;
+    width: 100px;
+    height:  100px;
     object-fit: contain;
 }
 .checkout .content .right .products .product .left .name{
@@ -386,8 +325,13 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
     position: relative;
+}
+.checkout .content .right .products .coll .left span{
+    color: var(--color2);
+    font-size: 40px;
+    font-family: var(--font1);
 }
 .checkout .content .right .products .coll .left .collpro{
     width: 100% ;
@@ -395,20 +339,12 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
 }
-.checkout .content .right .products .coll .left::after{
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 100%;
-    height: 2px;
-    background-color: var(--color2);
-}
+
 .checkout .content .right .products .coll .left .collpro img{
-    width: 30%;
-    height: 100%;
+    width:100px ;
+    height: 100px ;
     object-fit: contain;
 }
 .checkout .content .right .products .coll .left .collpro .name{
@@ -436,7 +372,7 @@ nav{
     justify-content: start;
     align-items: center;
     flex-direction: column;
-    gap: 50px;
+    gap: 30px;
     width: 100%;
     height: auto;
 }
@@ -473,17 +409,124 @@ nav{
 }
 
 
-.checkout .content .right form{
+
+
+
+.checkout .content > .right .radio{
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
+    align-items: start;
+    flex-direction: column;
+    gap: 5px;
 }
-.checkout .content .right form input{
+.checkout .content > .right .radio .online{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.checkout .content > .right .radio .online > div:nth-child(1){
+    width: 20%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+.checkout .content > .right .radio .online > div:nth-child(1) input{
+    accent-color: var(--color4);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.checkout .content > .right .radio .online > div:nth-child(1) label{
+    color: var(--color2);
+    font-family: var(--font1);
+    font-size: 16px;
+    cursor: pointer;
+}
+.checkout .content > .right .radio .online .payimgs{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+.checkout .content > .right .radio .online  .payimgs img{
+    width: 15%;
+}
+.checkout .content > .right .radio > div:nth-child(2) {
+    width: 40%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+.checkout .content > .right .radio > div:nth-child(2) input{
+    accent-color: var(--color4);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.checkout .content > .right .radio > div:nth-child(2) label{
+    color: var(--color2);
+    font-family: var(--font1);
+    font-size: 16px;
+    cursor: pointer;
+    width: 70%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.checkout .content .right .last2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+.checkout .content .right .last2 .discount{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+.checkout .content .right .last2 input[type="text"]{
+    width: 100%;
+    height: 100%;
+    color: var(--color2);
+    background: #5159664A;
+    border: 2px solid var(--color1);
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position: relative;
+    padding-left: 10px;
+    box-shadow: 0px 4px 4px 0px #00000040, 0px 4px 4px 0px #00000040;
+}
+.checkout .content .right .last2 input[type="text"]:focus{
+    border: 2px solid var(--color1);
+    outline: none;
+    border-right: none;
+
+}
+.checkout .content .right .last2 input[type="submit"],
+.checkout .content .right .last2 a{
     font-size: 16px;
     font-family: var(--font1);
     text-transform: capitalize;
+    text-decoration: none;
     color: var(--color2);
     background-color: var(--color4);
     padding: 10px 20px;
@@ -495,18 +538,102 @@ nav{
     cursor: pointer;
     position: relative;
     transition: .5s;
+    text-align: center;
+    height: 100%;
 }
-.checkout .content .right form input:hover{
+.checkout .content .right .last2 a{
+    border-radius: 0;
+    height: 100%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 5px 20px;
+
+}
+.checkout .content .right .last2 input[type="submit"]:hover,
+.checkout .content .right .last2 a:hover{
     color: var(--color4);
     background-color: var(--color2);
 }
-.checkout .content .right form p{
+.checkout .content .right .last2 span{
     color: #DEDCDC;
     font-size: 15px;
     font-family: var(--font2);
+    position: absolute;
+    bottom: -30px;
 }
-.checkout .content .right form i{
+.checkout .content .right .last2 span i{
     background-image: linear-gradient(to bottom, #ffd800,#fa7400);
     background-clip: text;
     color: transparent;
+}
+
+@media  (max-width:767px) {
+    .checkout > .content {
+        flex-direction: column;
+        padding-inline: 0;
+    }
+    .checkout .content > .left {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .checkout > p {
+        font-size: clamp(1rem, 10vw, 3rem);
+    }
+    .checkout .content > .left > p {
+        font-size: clamp(1rem, 8vw, 3rem);
+    }
+    .checkout .content > .left > .content .input input {
+        font-size: clamp(1rem, 3vw, 3rem);
+    }
+    .checkout .content > .left > .content .check label {
+        font-size: clamp(.5rem, 3.5vw, 3rem);
+    }
+    .checkout .content .right {
+        width: 100%;
+    }
+    .checkout .content .right .products .product .left {
+        flex-direction: column;
+    }
+    .checkout .content .right .products .product .left .name {
+        font-size: clamp(1rem, 4vw, 3rem);
+    }
+    .checkout .content .right .products .product .price {
+        font-size: clamp(1rem, 6vw, 3rem);
+    }
+    .checkout .content .right .products .coll .left {
+        width: 50%;
+        flex-direction: column;
+    }
+    
+    .checkout .content .right .products .coll .left span {
+        font-size: clamp(1rem, 10vw, 3rem);
+    }
+    .checkout .content .right .products .coll .left .collpro .name {
+        font-size: clamp(1rem, 4vw, 3rem);
+    }
+    .checkout .content .right .products .coll .price {
+        font-size: clamp(1rem, 6vw, 3rem);
+    }
+    .checkout .content .right .last .pricing p:nth-child(1) {
+        font-size: clamp(1rem, 6vw, 3rem);
+    }
+    .checkout .content .right .last .pricing p:nth-child(2) {
+        font-size: clamp(1rem, 7vw, 3rem);
+    }
+    .checkout .content > .right .radio .online > div:nth-child(1) {
+        width: 30%;
+    }
+    .checkout .content > .right .radio > div:nth-child(2) {
+        width: 100%;
+    }
+
+    .checkout .content .right .last2 input[type="submit"], .checkout .content .right .last2 a {
+        font-size: clamp(.8rem, 3vw, 3rem);
+        padding: 10px;
+    }
+    .checkout .content .right .last2 span {
+        font-size: clamp(.5rem, 3vw, 3rem);
+        bottom: -25px;
+        width: 100%;
+    }
 }
