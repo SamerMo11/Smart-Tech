@@ -1,0 +1,190 @@
+/* Global Style */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+i {
+  font-size: inherit;
+  color: inherit;
+}
+h1 {
+}
+button:focus {
+  outline: 1px solid #277072;
+}
+.pb15 {
+  padding-bottom: 15px;
+}
+body {
+  font-family: "Albert Sans", sans-serif;
+}
+section {
+  margin-bottom: 85px;
+}
+.container {
+  width: min(1550px, 90vw);
+  margin: 0 auto;
+}
+/* Start Nav Styleing */
+nav {
+  transform: translateY(0%);
+  position: sticky;
+  top: -85px;
+  width: 100%;
+  z-index: 999;
+  transition: 200ms all;
+}
+nav.show {
+  box-shadow: 2px 2px 20px #eeeeee80;
+
+  transform: translateY(100%);
+  background-color: #fff;
+}
+
+nav .container {
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+}
+nav .links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  color: #000;
+  font-size: 17px;
+  font-weight: 500;
+}
+nav .lines {
+  display: none;
+}
+nav .links .exit {
+  display: none;
+}
+nav .profile--actions {
+  display: flex;
+  gap: 20px;
+}
+nav .profile--actions button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 19px;
+  cursor: pointer;
+}
+/* Start Styilng Nav Responsive */
+@media screen and (width < 1060px) {
+  nav .lines {
+    display: block;
+    order: -1;
+  }
+
+  nav .container .links {
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-height: 100vh;
+    transform: translateX(-110%);
+    width: min(350px, 100%);
+    padding: 25px;
+    flex-direction: column;
+    box-shadow: 3px 2px 17px #00000030;
+    background-color: #fff;
+    transition: 250ms transform;
+  }
+  nav .links .exit {
+    display: inline-block;
+    width: fit-content;
+  }
+
+  nav .container .links.active {
+    z-index: 445676878;
+    transform: translateX(0);
+  }
+
+  nav .container .links li {
+    border-bottom: 1px solid #000;
+    padding: 10px 0;
+  }
+  nav .profile--icon,
+  nav .search-input {
+    display: none;
+  }
+}
+/* End Styilng Nav Responsive */
+.overlay {
+  position: fixed;
+  display: none;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+.overlay.active {
+  display: flex !important;
+  animation: overlayShow 0.7s forwards;
+}
+.overlay.active > * {
+  transition: display 0.25s, opacity 0.25s, transform 0.25s;
+  transition-behavior: allow-discrete;
+}
+.overlay.active--nav {
+  z-index: 998;
+}
+.overlay.active > .active {
+  animation: smoothEnter 500ms forwards;
+}
+.overlay.active > :not(.active) {
+  display: none;
+}
+
+@keyframes smoothEnter {
+  from {
+    display: none;
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    display: flex;
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.overlay > .closing {
+  animation: smoothOut 400ms forwards;
+}
+@keyframes smoothOut {
+  from {
+    display: flex;
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    display: none;
+    transform: translateX(50%);
+    opacity: 0;
+  }
+}
+@keyframes overlayShow {
+  100% {
+    background-color: #00000069;
+  }
+}
+body:has(.overlay.active) {
+  /* overflow: hidden; */
+}
+
+fieldset {
+  border: none;
+}
+/* ------------------ */

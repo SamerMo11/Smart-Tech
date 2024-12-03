@@ -1,0 +1,149 @@
+{
+  "main_Id": 4,
+  "name": "HP Spectre x360",
+  "description": "A sleek and powerful 2-in-1 laptop, perfect for both work and entertainment.",
+  "totalRating": 4,
+  "userCountRating": 414,
+  "price": 150,
+  "category": {
+    "id": 5,
+    "name": "Laptop"
+  },
+  "details": {
+    "id": 6,
+    "color": "Silver",
+    "price": 46500,
+    "discount": 8,
+    "isFavourite": false,
+    "quantity": 136,
+    "totalRating": 4,
+    "userCountRating": 136
+  },
+  "sendedId": 6,
+  "images": ["cate3.webp", "Screen.png"],
+  "colors": [
+    {
+      "id": 6,
+      "color": "Silver"
+    },
+    {
+      "id": 8,
+      "color": "#fff"
+    }
+  ],
+  "specifications": [
+    {
+      "key": "Screen Size",
+      "value": "15.6 inches"
+    },
+    {
+      "key": "Resolution",
+      "value": "15.6 inches"
+    },
+    {
+      "key": "RAM",
+      "value": "16GB DDR4"
+    },
+    {
+      "key": "Processor",
+      "value": "Intel Core i7 11th Gen"
+    },
+    {
+      "key": "Storage",
+      "value": "512GB SSD"
+    },
+    {
+      "key": "Graphics Card",
+      "value": "NVIDIA GeForce GTX 1650"
+    },
+    {
+      "key": "Battery Life",
+      "value": "10 hours"
+    },
+    {
+      "key": "Operation System",
+      "value": "Windows 11 Home"
+    },
+    {
+      "key": "Weight",
+      "value": "1.8 kg"
+    },
+    {
+      "key": "USB-Ports",
+      "value": "3 (USB 3.0, USB-C)"
+    },
+    {
+      "key": "Connectivity",
+      "value": "Wi-Fi 6, Bluetooth 5.0"
+    }
+  ],
+  "combinedAttributes": {
+    "RAM": [
+      {
+        "id": 6,
+        "value": "16GB DDR4"
+      },
+      {
+        "id": 14,
+        "value": "64GB DDR4"
+      }
+    ],
+    "Storage": [
+      {
+        "id": 6,
+        "value": "512GB SSD"
+      },
+      {
+        "id": 15,
+        "value": "1028GB SSD"
+      }
+    ]
+  },
+  "realtedProducts": [
+    {
+      "id": 6,
+      "name": "HP Spectre x360",
+      "price": 150,
+      "image": "cate3.webp",
+      "totalRating": 1,
+      "userCountRating": 1,
+      "isFavourite": false
+    },
+    {
+      "id": 6,
+      "name": "HP Spectre x360",
+      "price": 150,
+      "image": "cate3.webp",
+      "totalRating": 5,
+      "userCountRating": 1,
+      "isFavourite": false
+    },
+    {
+      "id": 6,
+      "name": "HP Spectre x360",
+      "price": 150,
+      "image": "cate3.webp",
+      "totalRating": 1,
+      "userCountRating": 1,
+      "isFavourite": false
+    },
+    {
+      "id": 6,
+      "name": "HP Spectre x360",
+      "price": 150,
+      "image": "cate3.webp",
+      "totalRating": 1,
+      "userCountRating": 1,
+      "isFavourite": false
+    },
+    {
+      "id": 6,
+      "name": "HP Spectre x360",
+      "price": 150,
+      "image": "cate3.webp",
+      "totalRating": 1,
+      "userCountRating": 1,
+      "isFavourite": false
+    }
+  ]
+}
