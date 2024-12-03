@@ -541,11 +541,11 @@ nav .links,
     background-color: #eee;
   }
   .product--contollers .wishlist--btn > div {
-    mask: url(./images/wishlist.svg) no-repeat center;
+    mask: url(../products/wishlist.svg) no-repeat center;
     mask-size: 50%;
   }
   .product--contollers .Quick--view > div {
-    mask: url(./images/quickView.svg) no-repeat center;
+    mask: url(../products/quickView.svg) no-repeat center;
     mask-size: 20px;
   }
   .product--price {
