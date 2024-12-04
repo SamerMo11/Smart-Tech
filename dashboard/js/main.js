@@ -93,24 +93,25 @@ export function handleItemDetailsCloseBtn() {
     if (activeItem) activeItem.classList.remove("active");
   }
 }
-const dropdownsContainers = document.querySelectorAll(".dropdown--container");
-console.log(dropdownsContainers);
-dropdownsContainers.forEach((div) => {
-  const dropdownItems = div.querySelectorAll(".dropdown--menu ul li");
-  const currValue = div.querySelector(".value");
-  dropdownItems.forEach((item) => {
-    item.addEventListener("click", (e) => {
+export function dropdownsClick() {
+  const dropdownsContainers = document.querySelectorAll(".dropdown--container");
+  dropdownsContainers.forEach((div) => {
+    const dropdownItems = div.querySelectorAll(".dropdown--menu ul li");
+    const currValue = div.querySelector(".value");
+    dropdownItems.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currValue.innerHTML = item.innerHTML;
+        div.classList.remove("active");
+      });
+    });
+    div.addEventListener("click", (e) => {
       e.stopPropagation();
-      currValue.innerHTML = item.innerHTML;
-      div.classList.remove("active");
+      e.currentTarget.classList.toggle("active");
     });
   });
-  div.addEventListener("click", (e) => {
-    console.log(e);
-    e.stopPropagation();
-    e.currentTarget.classList.toggle("active");
-  });
-});
+}
+
 document.body.addEventListener("click", (e) => {
   const activeElements = document.querySelectorAll(
     ".active:not(.table ul):not(.toast)"

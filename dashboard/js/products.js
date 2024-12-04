@@ -3,6 +3,7 @@ import {
   handleKababMenus,
   handleItemClicked,
   tableViewContainer,
+  dropdownsClick,
   displayFormInputs,
 } from "./main.js";
 const form = document.querySelector("form");
@@ -46,14 +47,15 @@ function itemsClickHandler() {
 }
 
 async function getProducts(filter) {
+  // , {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(filter || {}),
+  //   }
   try {
-    const req = await fetch("/js/products.json", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(filter || {}),
-    });
+    const req = await fetch("./js/products.json");
     console.log(JSON.stringify(filter) ?? "{}");
 
     const data = await req.json();
@@ -70,6 +72,7 @@ async function getProducts(filter) {
 getProducts().then((products) => {
   displayProducts(products);
   itemsClickHandler();
+  dropdownsClick();
 });
 
 function displayProducts(products) {

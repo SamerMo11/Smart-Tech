@@ -4,6 +4,7 @@ import {
   handleItemClicked,
   tableViewContainer,
   handleItemDetailsCloseBtn,
+  dropdownsClick,
   activeItem,
   closeViewBtn,
 } from "./main.js";
@@ -24,6 +25,7 @@ async function getOrders() {
 getOrders()
   .then((orders) => {
     displayOrders(orders);
+    dropdownsClick();
     const ordersDivs = document.querySelectorAll(
       ".table > ul:not(.table--head)"
     );

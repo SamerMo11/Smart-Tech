@@ -410,6 +410,8 @@ main > *:nth-child(1) > * {
 .section--header {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 25px;
   a,
   button {
     background-color: var(--color-blue);
@@ -507,9 +509,9 @@ button.btn {
   color: var(--color-red) !important;
 }
 .table ul li:nth-child(4) {
-  padding: 0;
+  /* padding: 0;
   text-align: center;
-  height: 100%;
+  height: 100%; */
   span {
     padding: 5px 20px;
     border-radius: 5px;
@@ -541,6 +543,9 @@ button.btn {
   border-bottom: var(--border);
 }
 .dropdown--container {
+  --_bg-color: var(--color-dark-gray);
+  --_color: var(--color-light-gray);
+  --_curr--color: var(--color-white);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -557,15 +562,15 @@ button.btn {
   }
 }
 p.curr--value {
-  background-color: var(--color-dark-gray);
+  background-color: var(--_bg-color);
   height: 100%;
   border-radius: inherit;
-  color: var(--color-light-gray);
+  color: var(--_color);
   font-size: 13px;
   padding: 15px 15px;
 }
 .value {
-  color: var(--color-white);
+  color: var(--_curr--color);
   font-size: 1.1em;
 }
 ul.dropdown--menu {
@@ -574,7 +579,7 @@ ul.dropdown--menu {
   display: grid;
   grid-template-rows: 0fr;
   overflow: hidden;
-  background-color: var(--color-dark-gray);
+  background-color: var(--_bg-color);
   border-radius: inherit;
 
   transition: 100ms grid-template-rows;
@@ -582,6 +587,7 @@ ul.dropdown--menu {
     overflow: hidden;
     /* padding: 10px 15px; */
     display: flex;
+    color: var(--_color);
     flex-direction: column;
     li {
       padding: 10px 15px;
