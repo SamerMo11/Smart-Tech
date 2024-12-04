@@ -1,1 +1,35 @@
-{"userId":"f44cd529-a5ff-4d96-bfe1-f5d53e36fd8c","userName":"Ahmed Medhat","email":"af213124@gmail.com","phone":"01221489832","userImage":null,"orderDetailsItem":[{"variantId":1,"name":"Laptop1","image":"/product1/1.png","quantity":1,"price":12000.99}],"orderDetailsOffer":[{"variantId":1,"name":"Offer1","quantity":1,"price":10000,"images":["/product1/1.png","/product1/2.png"],"names":["Laptop1","Mouse1"]}],"total":22000.99}
+{
+    "userId": "f44cd529-a5ff-4d96-bfe1-f5d53e36fd8c",
+    "userName": "Ahmed Medhat",
+    "email": "af213124@gmail.com",
+    "phone": "01221489832",
+    "userImage": null,
+    "createdAt": "2024-29-11",
+    "orderStatus": "Pending",
+    "orderDetailsItem": [
+        {
+            "variantId": 1,
+            "name": "Laptop1",
+            "image": "/product1/1.png",
+            "quantity": 1,
+            "price": 12000.99
+        }
+    ],
+    "orderDetailsOffer": [
+        {
+            "variantId": 1,
+            "name": "Offer1",
+            "quantity": 1,
+            "price": 10000,
+            "images": [
+                "/product1/1.png",
+                "/product1/2.png"
+            ],
+            "names": [
+                "Laptop1",
+                "Mouse1"
+            ]
+        }
+    ],
+    "total": 22000.99
+}
