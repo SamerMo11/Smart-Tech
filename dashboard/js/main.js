@@ -93,19 +93,45 @@ export function handleItemDetailsCloseBtn() {
     if (activeItem) activeItem.classList.remove("active");
   }
 }
+const filters = document.querySelectorAll(
+  ".table--controllers .dropdown--container"
+);
+filters.forEach((filter) => {
+  const dropdownItems = filter.querySelectorAll(".dropdown--menu ul li");
+  const currValue = filter.querySelector(".value");
+  dropdownItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      console.log(e);
+      e.stopPropagation();
+      currValue.innerHTML = item.innerHTML;
+      filter.classList.remove("active");
+    });
+  });
+  filter.addEventListener("click", (e) => {
+    console.log(e);
+
+    e.stopPropagation();
+    e.currentTarget.classList.toggle("active");
+  });
+});
 export function dropdownsClick() {
-  const dropdownsContainers = document.querySelectorAll(".dropdown--container");
+  const dropdownsContainers = document.querySelectorAll(
+    ".dropdown--container:not(.table--controllers .dropdown--container)"
+  );
   dropdownsContainers.forEach((div) => {
     const dropdownItems = div.querySelectorAll(".dropdown--menu ul li");
     const currValue = div.querySelector(".value");
     dropdownItems.forEach((item) => {
       item.addEventListener("click", (e) => {
+        console.log(e);
         e.stopPropagation();
         currValue.innerHTML = item.innerHTML;
         div.classList.remove("active");
       });
     });
     div.addEventListener("click", (e) => {
+      console.log(e);
+
       e.stopPropagation();
       e.currentTarget.classList.toggle("active");
     });
@@ -116,11 +142,10 @@ document.body.addEventListener("click", (e) => {
   const activeElements = document.querySelectorAll(
     ".active:not(.table ul):not(.toast)"
   );
-
   activeElements.forEach((ele) => {
-    if (e.currentTarget == ele) return;
-    console.log(e.currentTarget == ele);
-    ele.classList.remove("active");
+    if (!ele.contains(e.target)) {
+      ele.classList.remove("active");
+    }
   });
 });
 const headerArrow = document.querySelector(".header--arrow");
