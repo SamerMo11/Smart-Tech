@@ -9,9 +9,18 @@ select {
   border: none;
   border-radius: 5px;
 }
-
-.table ul li.paid {
+.dropdown--menu {
+  --_bg-color: var(--color-dark-gray);
+}
+.table ul li.paid,
+.table ul li.Delivered {
   --_custom-color: var(--color-green);
+}
+.table ul li.Shipped {
+  --_custom-color: var(--color-blue);
+}
+.table ul li.Pending {
+  --_custom-color: var(--color-orange);
 }
 .table ul li.not-paid {
   --_custom-color: var(--color-red);
@@ -34,6 +43,10 @@ select {
 
 .sells--value {
   color: var(--color-white) !important;
+  span {
+    font-size: 0.8em;
+    color: #eeeeee7a;
+  }
 }
 .order--overview {
   display: grid;
