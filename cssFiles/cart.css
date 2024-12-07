@@ -58,7 +58,7 @@ nav{
     width: 100%;
     text-align: left;
     color: var(--color1);
-    font-size: 35px;
+    font-size: 32px;
     text-transform: capitalize;
     font-family: var(--font1);
     position: relative;
@@ -75,12 +75,12 @@ nav{
     bottom: -10%;
     left: 5px;
     height: 2px;
-    width: 11.3%;
+    width: 10.3%;
     background-color: var(--color1);
-    box-shadow: 
-    0px 4px 4px 0px #00000040,
-    0px 4px 4px 0px #00000040,
-    0px 4px 4px 0px #00000040;
+    box-shadow: 0px 4px 4px 0px #00000040,
+                0px 4px 4px 0px #00000040;
+    border-radius: 5px;            
+                
 }
 .main .content{
     width: 90%;
@@ -89,7 +89,7 @@ nav{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 5vh;
+    gap: 4vh;
 }
 .main .content .row{
     width: 100%;
@@ -99,10 +99,9 @@ nav{
     align-items: center;
     padding-inline: 5%;
     background: linear-gradient(90deg, #373D47 0%, #323841 50%, #373D47 100%);
-    box-shadow: 
-    0px 4px 4px 0px #00000040,
-    0px 4px 4px 0px #00000040;
-    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     position: sticky;
     top: 0;
     z-index: 2;
@@ -116,7 +115,7 @@ nav{
 .main .content .row p{
     color: var(--color2);
     text-transform: capitalize;
-    font-size: 20px;
+    font-size: 22px;
     font-family: var(--font1);
 }
 
@@ -131,9 +130,7 @@ nav{
     /* padding-inline: 5% ; */
     padding-block: 5px;
     background: linear-gradient(89.75deg, #373D47 0.1%, #3D4550 50%, #373D47 99.9%);
-    box-shadow: 
-    0px 4px 4px 0px #00000040,
-    0px 4px 4px 0px #00000040;
+    box-shadow: 0px 4px 4px 0px #00000040;
     border-radius: 10px;
     position: relative;
     opacity:0;
@@ -166,7 +163,7 @@ nav{
 .main .content .product > p{
     color: var(--color1);
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: 24px;
     font-family: var(--font1);
     width: 15%;
     text-align: left;
@@ -176,7 +173,7 @@ nav{
 }
 
 .main .content .product .quantity{
-    width: 17%;
+    width: 16.5%;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -185,14 +182,12 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90px;
-    height: 60%;
+    width: 86px;
+    height: 55px;
     padding: 10px 5px 10px 15px;
     border: 2px solid var(--color2);
     border-radius: 5px;
-    box-shadow:
-    0px 4px 4px 0px #00000040,
-    0px 4px 4px 0px #00000040;
+    box-shadow: 0px 4px 4px 0px #00000040;
 }
 .main .content .product  .quantity .qty span{
     color: var(--color1);
@@ -223,9 +218,7 @@ nav{
     /* padding-inline: 1% ; */
     padding-block: 5px;
     background: linear-gradient(89.75deg, #373D47 0.1%, #3D4550 50%, #373D47 99.9%);
-    box-shadow: 
-    0px 4px 4px 0px #00000040,
-    0px 4px 4px 0px #00000040;
+    box-shadow: 0px 4px 4px 0px #00000040;
     border-radius: 10px;
     position: relative;
     opacity:0;
@@ -263,7 +256,7 @@ nav{
 .main .content .coll > p{
     color: var(--color1);
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: 24px;
     font-family: var(--font1);
     width: 15%;
     text-align: left;
@@ -272,7 +265,7 @@ nav{
     width: 12%;
 }
 .main .content .coll .quantity{
-    width: 17%;
+    width: 16.5%;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -281,14 +274,12 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90px;
-    height: 60%;
+    width: 86px;
+    height: 55px;
     padding: 10px 5px 10px 15px;
     border: 2px solid var(--color2);
     border-radius: 5px;
-    box-shadow:
-    0px 4px 4px 0px #00000040,
-    0px 4px 4px 0px #00000040;
+    box-shadow: 0px 4px 4px 0px #00000040;
 }
 .main .content .coll .quantity .qty span{
     color: var(--color1);
