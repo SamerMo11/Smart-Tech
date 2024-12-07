@@ -5,7 +5,7 @@
 | UI & UX       |    Done     |    Done      |    Done           |     Done     |   Done      |    Done     |       Done       |      Done        |     Done         |    ----    |
 | Front-end     |    Done     |    Done      |    Done           |     Done     |   Done      |    Done     |       Done       |      Done        |     Done         |    Done    |
 | Back -end     |    Done     |    Done      |    Done           |     Done     |             |    Done     |       Done       |      Done        |     Done         |            |
-| JavaScript    |             |              |                   |              |             |    Done     |                  |                  |                  |    Done    |
+| JavaScript    |    Done     |              |                   |              |             |    Done     |                  |                  |                  |    Done    |
 | Responsive    |    Done     |    Done      |    Done           |              |   Done      |    Done     |       Done       |      Done        |                  |    Done    |
 | Animation     |    Done     |    Done      |    Done           |              |   Done      |    Done     |       Done       |      Done        |                  |    ----    |
 | Reem Edit     |    Done     |    Done      |    Done           |     Done     |   Done      |             |                  |                  |     Done         |            |
