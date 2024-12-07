@@ -1,6 +1,6 @@
 {
   "customerName": "Ahmed Medhat",
-  "email": "heaman0hme@gmail.com",
+  "email": "Ahmedss@gmail.com",
   "phone": "+20 01226887966",
   "orders": [
     {
@@ -18,11 +18,11 @@
         },
         {
           "name": "Laptop Hp",
-          "price": 1505,
+          "price": 15205,
           "quantity": 1
         }
       ],
-      "total": 2000.1,
+      "total": 20030.1,
       "orderDate": "2024-11-22",
       "status": "Shipping"
     }

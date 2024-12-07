@@ -43,10 +43,11 @@ form,
   label {
     color: var(--color-white);
   }
-  input {
-    background-color: var(--color-light-gray);
-    color: var(--color-dark);
-    border: 2px solid transparent;
+  input,
+  .category--input .curr--value {
+    background-color: var(--color-dark-gray) !important;
+    color: #e6e6e7;
+    border: 2px solid #d2cbcb47;
     transition: 100ms border-color;
   }
   input:user-invalid {
@@ -105,10 +106,9 @@ form,
 .dropdown--container {
   max-width: none;
   .curr--value {
-    background-color: var(--color-light-gray);
-    color: var(--color-dark);
+    color: var(--color-light-gray);
     span {
-      color: var(--color-dark);
+      color: var(--color-light-gray);
     }
   }
   .dropdown--arrow {

@@ -185,6 +185,8 @@ submitNewCategoryForm.addEventListener("click", () => {
     name: name,
     attributes: inputsText.map((e) => e.value),
   };
+  console.log(result);
+
   addNewCategory(result);
 });
 async function addNewCategory(data) {

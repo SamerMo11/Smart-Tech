@@ -1,19 +1,19 @@
-import { displayFormInputs, displayToast } from "./main.js";
+import { displayFormInputs, displayToast, dropdownsClick } from "./main.js";
 const uploadBtn = document.querySelector("input[type=file]");
 const imgContainer = document.querySelector(".img--upload > div");
 const categoryForm = document.querySelector(".category--form");
 const Form = document.querySelector("form");
-function displayUploadedImg(name) {
+function displayUploadedImg(file) {
   const img = document.createElement("img");
-  img.src = "./images/" + name;
-  img.alt = "product Image";
+  img.src = URL.createObjectURL(file); // Use a temporary URL for preview
+  img.alt = "Product Image";
   imgContainer.appendChild(img);
 }
-console.log(uploadBtn);
 uploadBtn.addEventListener("change", (e) => {
-  displayUploadedImg(uploadBtn.files[0].name);
+  displayUploadedImg(uploadBtn.files[0]);
+  console.log(uploadBtn.files);
 });
-
+dropdownsClick();
 async function getCategoriesAttributes(cat) {
   try {
     const req = await fetch(`./js/${cat}.json`);
@@ -26,14 +26,25 @@ async function getCategoriesAttributes(cat) {
     displayToast("error", e.message);
   }
 }
-console.log("Form");
-
 Form.addEventListener("submit", (e) => {
   e.preventDefault();
   const inputs = Form.querySelectorAll("input");
-  inputs.forEach((input) => console.log(input.checkValidity()));
+  const productInfo = new FormData();
+  inputs.forEach((input) => {
+    console.log(productInfo.has([input.getAttribute("name")]));
 
-  console.log(Form);
+    productInfo.append([input.getAttribute("name")], input.value);
+    console.log(productInfo.has([input.getAttribute("name")]));
+
+    productInfo.has([input.getAttribute("name")]);
+  });
+
+  Array.from(uploadBtn.files).forEach((file) => {
+    productInfo.append("images", file);
+  });
+
+  sendProductInfo(productInfo);
+  console.log(productInfo);
 });
 async function getCategories() {
   try {
@@ -89,3 +100,17 @@ getCategories().then((data) => {
   console.log(data);
   displayCategroiesArr(data);
 });
+async function sendProductInfo(product) {
+  try {
+    const req = await fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      body: product,
+    });
+    if (!req.ok) throw new Error("Can't Add Product");
+    displayToast("succes", "Product Added Correctly!");
+    return await req.json();
+  } catch (e) {
+    displayToast("error", e.message);
+    throw e;
+  }
+}

@@ -9,7 +9,7 @@ import {
 const form = document.querySelector("form");
 async function getFormInputs(cat) {
   try {
-    const req = await fetch(`/js/${cat}.json`);
+    const req = await fetch(`./js/${cat}.json`);
     if (!req.ok) {
       throw new Error(`Can't Load Category Inputs`);
     }
