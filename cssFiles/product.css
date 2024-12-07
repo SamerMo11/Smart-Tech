@@ -39,7 +39,7 @@ nav .links,
       color: #30b6b9;
       font-weight: 700;
     }
-    > *:not(:last-child)::after {
+    *:not(:last-child)::after {
       content: ">";
       position: absolute;
       right: -17.5px;
@@ -82,7 +82,7 @@ nav .links,
       position: relative;
       overflow-y: scroll;
       height: fit-content;
-      img {
+      Dimg {
         display: grid;
         place-items: center;
         background-color: #e7e7e7;
