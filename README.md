@@ -9,7 +9,7 @@
 | Responsive    |    Done     |    Done      |    Done        |              |   Done      |    Done     |       Done       |      Done        |                  |    Done    |
 | Animation     |    Done     |    Done      |    Done        |              |   Done      |    Done     |       Done       |      Done        |                  |    ----    |
 | Reem Edit     |    Done     |    Done      |    Done        |     Done     |   Done      |             |       Done       |      Done        |     Done         |    ----    |
-| Samer ReFront |    Done     |    ----      |    Done        |     Done     |   Done      |    ----     |       ----       |      Done        |     -----        |            |
+| Samer ReFront |    Done     |    ----      |    Done        |     Done     |   Done      |             |       ----       |      Done        |     -----        |    ----    |
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
