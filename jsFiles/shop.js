@@ -110,13 +110,19 @@ function handleQuantityInput(card) {
   }
 }
 async function getDate(filter) {
+  console.log(filter);
+  // , {
+  //   method: "POST",
+  //   body: JSON.stringify(filter || {}),
+  // }
   const req = await fetch("/jsFiles/shop.json");
-  return await req.json();
-}
-getDate().then((data) => {
+  const data = await req.json();
   displayProductsCard(data);
-});
+  return data;
+}
+getDate();
 function displayProductsCard(products) {
+  console.log(products);
   const itemsContainer = document.querySelector(".items");
   itemsContainer.innerHTML = "";
   let html = "";
@@ -156,3 +162,11 @@ function displayProductsCard(products) {
     .querySelectorAll(".item .info .div")
     .forEach((card) => handleQuantityInput(card));
 }
+const categories = document.querySelectorAll(".filter .options li");
+categories.forEach((cat) =>
+  cat.addEventListener("click", () => getDate({ category: cat.innerHTML }))
+);
+const priceRange = document.querySelector("#rangeInput");
+priceRange.addEventListener("mouseup", (e) => {
+  getDate({ price: e.target.value });
+});
