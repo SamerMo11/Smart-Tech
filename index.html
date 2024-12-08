@@ -26,6 +26,7 @@
 
 <!-- -----------------Search Div----------- -->
 <div class="qsearch" id="qsearch">
+<div class="content">
     <i class="fa-solid fa-x" onclick="hideQsearch()"></i>
 
     <div class="search">
@@ -65,7 +66,7 @@
     <div class="prods">
 
         <div class="prod">
-            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <img src="products/product1/4.png" alt="productImg" loading="lazy">
             <div class="info">
                 <p class="title">smart watch 1</p>
                 <p>Lorem Ipsum has been the industry's standard.</p>
@@ -73,7 +74,7 @@
             </div>
         </div>
         <div class="prod">
-            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <img src="products/product2/3.png" alt="productImg" loading="lazy">
             <div class="info">
                 <p class="title">smart watch 1</p>
                 <p>Lorem Ipsum has been the industry's standard.</p>
@@ -81,7 +82,7 @@
             </div>
         </div>
         <div class="prod">
-            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <img src="products/product3/7.png" alt="productImg" loading="lazy">
             <div class="info">
                 <p class="title">smart watch 1</p>
                 <p>Lorem Ipsum has been the industry's standard.</p>
@@ -89,7 +90,7 @@
             </div>
         </div>
         <div class="prod">
-            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <img src="products/product4/1.png" alt="productImg" loading="lazy">
             <div class="info">
                 <p class="title">smart watch 1</p>
                 <p>Lorem Ipsum has been the industry's standard.</p>
@@ -97,7 +98,7 @@
             </div>
         </div>
         <div class="prod">
-            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <img src="products/product5/1.png" alt="productImg" loading="lazy">
             <div class="info">
                 <p class="title">smart watch 1</p>
                 <p>Lorem Ipsum has been the industry's standard.</p>
@@ -105,7 +106,7 @@
             </div>
         </div>
         <div class="prod">
-            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <img src="products/product6/1.png" alt="productImg" loading="lazy">
             <div class="info">
                 <p class="title">smart watch 1</p>
                 <p>Lorem Ipsum has been the industry's standard.</p>
@@ -113,7 +114,7 @@
             </div>
         </div>
         <div class="prod">
-            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <img src="products/product7/1.png" alt="productImg" loading="lazy">
             <div class="info">
                 <p class="title">smart watch 1</p>
                 <p>Lorem Ipsum has been the industry's standard.</p>
@@ -121,7 +122,7 @@
             </div>
         </div>
         <div class="prod">
-            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <img src="products/product8/1.png" alt="productImg" loading="lazy">
             <div class="info">
                 <p class="title">smart watch 1</p>
                 <p>Lorem Ipsum has been the industry's standard.</p>
@@ -130,6 +131,7 @@
         </div>
 
     </div>
+</div>
 
 
 </div>
@@ -187,10 +189,8 @@
     const qsearch = document.getElementById("qsearch");
     qsearch.classList.add("hide");
     qsearch.classList.remove("show");
+    searchIcon.classList.remove("color");
 
-    setTimeout(() => {
-        qsearch.style.display = "none";
-    }, 10);
 }
 
 </script>
@@ -223,17 +223,19 @@
         </div>
         <div class="links">
             <a href="index.html">home</a>
-            <a href="htmlFiles/shop.html">shop</a>
-            <a href="htmlFiles/checkout.html">checkout</a>
-            <a href="htmlFiles/cart.html">cart</a>
-            <a href="htmlFiles/forms.html">login & sign</a>
             <a href="htmlFiles/about.html">about us</a>
             <a href="htmlFiles/contact.html">contact us</a>
+            <a href="htmlFiles/shop.html">shop</a>
+            <!-- <a href="htmlFiles/checkout.html">FAQ</a> -->
+            <!-- <a href="htmlFiles/cart.html">cart</a> -->
+            <!-- <a href="htmlFiles/forms.html">login & sign</a> -->
         </div>
         <div class="icons">
             <i class="fa-regular fa-magnifying-glass" id="searchIcon"></i>
            <a href="htmlFiles/userDash.html"><i class="fa-solid fa-user"></i></a>
-            <a href="htmlFiles/cart.html"><i class="fa-regular fa-cart-shopping"></i></a>
+            <a href="htmlFiles/cart.html">
+                <span>5</span>
+                <i class="fa-regular fa-cart-shopping"></i></a>
         </div>
     </nav>
     <!-- -------------------------------------------------------------------------- -->
@@ -268,6 +270,24 @@
     
                 <div class="item">
                     <img src="products/product5/1.png" loading="lazy">
+                </div>
+                <div class="item">
+                    <img src="products/product6/1.png" loading="lazy">
+                </div>
+                <div class="item">
+                    <img src="products/product7/1.png" loading="lazy">
+                </div>
+                <div class="item">
+                    <img src="products/product8/1.png" loading="lazy">
+                </div>
+                <div class="item">
+                    <img src="products/product9/1.png" loading="lazy">
+                </div>
+                <div class="item">
+                    <img src="products/product10/1.png" loading="lazy">
+                </div>
+                <div class="item">
+                    <img src="products/product11/1.png" loading="lazy">
                 </div>
             </div>
 
@@ -335,11 +355,7 @@
 
     </div>
 </div>
-<!-- <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="jsFiles/jquery.hislide.js"></script>
-<script>
-    $('.dealstrack').hslide();
-</script> -->
+
 <!-- ------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------ -->
 
@@ -433,15 +449,15 @@
 
 <div class="div2">
     <div class="col">
-        <h1>links</h1>
+        <p>links</p>
         <div class="links">
-            <a href="">home page</a>
+            <a href="">home</a>
         <a href="">about us</a>
         <a href="">shop</a>
         </div>
     </div>
     <div class="col">
-        <h1>help</h1>
+        <p>help</p>
         <div class="links">
             <a href="">contact</a>
         <a href="">our services</a>
@@ -449,7 +465,7 @@
         </div>
     </div>
     <div class="col">
-        <h1>support</h1>
+        <p>support</p>
         <div class="links">
             <a href="">help center</a>
         <a href="">my account</a>
@@ -457,7 +473,7 @@
         </div>
     </div>
     <div class="col">
-        <h1>contact us</h1>
+        <p>contact us</p>
         <div class="links">
             <p>
                 <i class="fa-solid fa-envelope"></i>
@@ -470,14 +486,22 @@
         </div>
     </div>
 
-    <div class="news">
-        
-    </div>
+    <form class="news">
+        <p>newsletter</p>
+        <p>Get exclusive deals by signing up to our Newsletter.</p>
+        <input type="email" name="" id="" placeholder="Email">
+        <button>
+            <i class="fa-light fa-envelope"></i>
+            sign up
+        </button>
+    </form>
 
 
 </div>
 
-
+<p class="copy">
+    CopyRight @ All Rights Reserved Created By  <span> SmartTech</span>
+</p>
 </footer>
 
 
@@ -487,7 +511,6 @@
 
 
 
-<!-- <script src="bootstrap.js"></script> -->
 <script src="jsFiles/main.js"></script>
 <script src="jsFiles/home.js"></script>
 </body>

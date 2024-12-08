@@ -56,10 +56,12 @@
             "title": "keboards"
         }
     ],
+
+    
     "dealsoftheday": [
         {
-            "id": 1,
-            "title": "Laptop1",
+            "id": 0,
+            "title": "touchscreen <br> laptop",
             "img": "products/product1/1.png",
             "rating": 1,
             "description": "Description Description Description Description Description Description",
@@ -67,9 +69,18 @@
             "discount": 15
         },
         {
+            "id": 1,
+            "title": "touchscreen <br> laptop",
+            "img": "banners/adv2.png",
+            "rating": 1,
+            "description": "Description Description Description Description Description Description",
+            "originalPrice": 12000.99,
+            "discount": 15
+        },
+        {
             "id": 2,
-            "title": "Mouse1",
-            "img": "products/product2/2.png",
+            "title": "red <br> headphone",
+            "img": "products/product1/2.png",
             "rating": 1,
             "description": "Mouse Mouse Mouse Mouse Mouse Mouse Mouse ",
             "originalPrice": 349.99,
@@ -77,14 +88,98 @@
         },
         {
             "id": 3,
-            "title": "Phone1",
+            "title": "balck <br> smartWatch",
+            "img": "products/product2/7.png",
+            "rating": 1,
+            "description": "Phone1 Phone1 Phone1 Phone1 ",
+            "originalPrice": 9999.99,
+            "discount": 8
+        },
+        {
+            "id": 4,
+            "title": "ITEL <br> airPods",
             "img": "products/product3/3.png",
             "rating": 1,
             "description": "Phone1 Phone1 Phone1 Phone1 ",
             "originalPrice": 9999.99,
             "discount": 8
+        },
+        {
+            "id": 5,
+            "title": "jbl <br> speaker",
+            "img": "products/product5/9.png",
+            "rating": 1,
+            "description": "Phone1 Phone1 Phone1 Phone1 ",
+            "originalPrice": 9999.99,
+            "discount": 8
+        },
+        {
+            "id": 6,
+            "title": "playstation5 <br> console",
+            "img": "products/product6/2.png",
+            "rating": 1,
+            "description": "Phone1 Phone1 Phone1 Phone1 ",
+            "originalPrice": 9999.99,
+            "discount": 8
+        },
+        {
+            "id":7,
+            "title": "xbox <br> joystick",
+            "img": "products/product7/2.2.png",
+            "rating": 1,
+            "description": "Phone1 Phone1 Phone1 Phone1 ",
+            "originalPrice": 9999.99,
+            "discount": 8
+        },
+        {
+            "id": 8,
+            "title": "iphone 13<br> pro max",
+            "img": "products/product8/6.png",
+            "rating": 1,
+            "description": "Phone1 Phone1 Phone1 Phone1 ",
+            "originalPrice": 9999.99,
+            "discount": 8
+        },
+        {
+            "id": 9,
+            "title": "vR<br> camera",
+            "img": "products/product9/1.png",
+            "rating": 1,
+            "description": "Phone1 Phone1 Phone1 Phone1 ",
+            "originalPrice": 9999.99,
+            "discount": 8
+        },
+        {
+            "id": 10,
+            "title": "gaming<br>pc",
+            "img": "products/product10/2.png",
+            "rating": 1,
+            "description": "Phone1 Phone1 Phone1 Phone1 ",
+            "originalPrice": 9999.99,
+            "discount": 8
+        },
+        {
+            "id": 11,
+            "title": "gaming <br> keyboard",
+            "img": "products/product11/3.png",
+            "rating": 1,
+            "description": "Phone1 Phone1 Phone1 Phone1 ",
+            "originalPrice": 9999.99,
+            "discount": 8
+        },
+        {
+            "id": 12,
+            "title": "Phone1",
+            "img": "products/product12/3.png",
+            "rating": 1,
+            "description": "Phone1 Phone1 Phone1 Phone1 ",
+            "originalPrice": 9999.99,
+            "discount": 8
         }
+        
     ],
+
+
     "offers": [
         {
             "offerId": 1,
@@ -92,23 +187,54 @@
             "img2": "products/product1/2.png",
             "title1": "Laptop1",
             "title2": "Mouse1",
-            "price": 10000
+            "price": 10000,
+            "align":"start"
         },
         {
-            "offerId": 1,
+            "offerId": 2,
             "img1": "products/product1/1.png",
             "img2": "products/product1/2.png",
             "title1": "Laptop1",
             "title2": "Mouse1",
-            "price": 10000
+            "price": 10000,
+            "align":"end"
         },
         {
-            "offerId": 1,
+            "offerId": 3,
             "img1": "products/product1/1.png",
             "img2": "products/product1/2.png",
             "title1": "Laptop1",
             "title2": "Mouse1",
-            "price": 10000
+            "price": 10000,
+            "align":"start"
+        },
+        {
+            "offerId": 4,
+            "img1": "products/product1/1.png",
+            "img2": "products/product1/2.png",
+            "title1": "Laptop1",
+            "title2": "Mouse1",
+            "price": 10000,
+            "align":"end"
+        },
+        {
+            "offerId": 5,
+            "img1": "products/product1/1.png",
+            "img2": "products/product1/2.png",
+            "title1": "Laptop1",
+            "title2": "Mouse1",
+            "price": 10000,
+            "align":"start"
+        },
+        {
+            "offerId": 6,
+            "img1": "products/product1/1.png",
+            "img2": "products/product1/2.png",
+            "title1": "Laptop1",
+            "title2": "Mouse1",
+            "price": 10000,
+            "align":"end"
+
         }
     ]
 }
