@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Lenovo Ideapad",
+    "description": "Slim 3, Intel Core i3 10th Gen",
+    "price": 20000,
+    "currency": "LE",
+    "image": "path/to/image1.jpg",
+    "rating": 4.5,
+    "quantity": 1
+  },
+  {
+    "id": 2,
+    "name": "Dell Inspiron",
+    "description": "Slim 5, Intel Core i5 11th Gen",
+    "price": 25000,
+    "currency": "LE",
+    "image": "path/to/image2.jpg",
+    "rating": 4.7,
+    "quantity": 1
+  },
+  {
+    "id": 3,
+    "name": "HP Pavilion",
+    "description": "Gaming, AMD Ryzen 5",
+    "price": 22000,
+    "currency": "LE",
+    "image": "path/to/image3.jpg",
+    "rating": 4.8,
+    "quantity": 1
+  },
+  {
+    "id": 4,
+    "name": "Acer Aspire",
+    "description": "Slim 7, Intel Core i7 11th Gen",
+    "price": 30000,
+    "currency": "LE",
+    "image": "path/to/image4.jpg",
+    "rating": 4.6,
+    "quantity": 1
+  },
+  {
+    "id": 5,
+    "name": "ASUS ROG",
+    "description": "Gaming, Intel Core i9 12th Gen",
+    "price": 45000,
+    "currency": "LE",
+    "image": "path/to/image5.jpg",
+    "rating": 4.9,
+    "quantity": 1
+  },
+  {
+    "id": 6,
+    "name": "MacBook Air",
+    "description": "M1 Chip, 8GB RAM",
+    "price": 50000,
+    "currency": "LE",
+    "image": "path/to/image6.jpg",
+    "rating": 4.9,
+    "quantity": 1
+  },
+  {
+    "id": 7,
+    "name": "Lenovo ThinkPad",
+    "description": "Business, Intel Core i5 11th Gen",
+    "price": 27000,
+    "currency": "LE",
+    "image": "path/to/image7.jpg",
+    "rating": 4.5,
+    "quantity": 1
+  },
+  {
+    "id": 8,
+    "name": "Microsoft Surface",
+    "description": "2-in-1, Intel Core i7 12th Gen",
+    "price": 40000,
+    "currency": "LE",
+    "image": "path/to/image8.jpg",
+    "rating": 4.7,
+    "quantity": 1
+  },
+  {
+    "id": 9,
+    "name": "Samsung Galaxy Book",
+    "description": "Slim 3, Intel Core i5 11th Gen",
+    "price": 23000,
+    "currency": "LE",
+    "image": "path/to/image9.jpg",
+    "rating": 4.6,
+    "quantity": 1
+  },
+  {
+    "id": 10,
+    "name": "LG Gram",
+    "description": "Ultra Lightweight, Intel Core i7 12th Gen",
+    "price": 35000,
+    "currency": "LE",
+    "image": "path/to/image10.jpg",
+    "rating": 4.8,
+    "quantity": 1
+  }
+]
