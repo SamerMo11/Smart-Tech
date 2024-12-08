@@ -2,57 +2,57 @@
     "bestSales": [
         {
             "variantId": 1,
-            "img": "../products/product1/1.png",
+            "img": "products/product1/1.png",
             "title": "headphones"
         },
         {
             "variantId": 2,
-            "img": "../products/product2/2.png",
+            "img": "products/product2/2.png",
             "title": "smartWatchs"
         },
         {
             "variantId": 3,
-            "img": "../products/product3/4.png",
+            "img": "products/product3/4.png",
             "title": "airPods"
         },
         {
             "variantId": 4,
-            "img": "../products/product4/1.png",
+            "img": "products/product4/1.png",
             "title": "laptops"
         }
         ,{
             "variantId": 5,
-            "img": "../products/product5/12.png",
+            "img": "products/product5/12.png",
             "title": "speakers"
         }
         ,{
             "variantId": 6,
-            "img": "../products/product6/2.png",
+            "img": "products/product6/2.png",
             "title": "plastation"
         }
         ,{
             "variantId": 7,
-            "img": "../products/product7/1.png",
+            "img": "products/product7/1.png",
             "title": "joysticks"
         }
         ,{
             "variantId": 8,
-            "img": "../products/product8/6.png",
+            "img": "products/product8/6.png",
             "title": "smartPhones"
         }
         ,{
             "variantId": 9,
-            "img": "../products/product9/1.png",
+            "img": "products/product9/1.png",
             "title": "cameras"
         }
         ,{
             "variantId": 10,
-            "img": "../products/product10/8.png",
+            "img": "products/product10/8.png",
             "title": "pCs"
         }
         ,{
             "variantId": 11,
-            "img": "../products/product11/1.png",
+            "img": "products/product11/1.png",
             "title": "keboards"
         }
     ],
@@ -60,7 +60,7 @@
         {
             "id": 1,
             "title": "Laptop1",
-            "img": "../products/product1/1.png",
+            "img": "products/product1/1.png",
             "rating": 1,
             "description": "Description Description Description Description Description Description",
             "originalPrice": 12000.99,
@@ -69,7 +69,7 @@
         {
             "id": 2,
             "title": "Mouse1",
-            "img": "../products/product2/2.png",
+            "img": "products/product2/2.png",
             "rating": 1,
             "description": "Mouse Mouse Mouse Mouse Mouse Mouse Mouse ",
             "originalPrice": 349.99,
@@ -78,7 +78,7 @@
         {
             "id": 3,
             "title": "Phone1",
-            "img": "../products/product3/3.png",
+            "img": "products/product3/3.png",
             "rating": 1,
             "description": "Phone1 Phone1 Phone1 Phone1 ",
             "originalPrice": 9999.99,
@@ -88,24 +88,24 @@
     "offers": [
         {
             "offerId": 1,
-            "img1": "../products/product1/1.png",
-            "img2": "../products/product1/2.png",
+            "img1": "products/product1/1.png",
+            "img2": "products/product1/2.png",
             "title1": "Laptop1",
             "title2": "Mouse1",
             "price": 10000
         },
         {
             "offerId": 1,
-            "img1": "../products/product1/1.png",
-            "img2": "../products/product1/2.png",
+            "img1": "products/product1/1.png",
+            "img2": "products/product1/2.png",
             "title1": "Laptop1",
             "title2": "Mouse1",
             "price": 10000
         },
         {
             "offerId": 1,
-            "img1": "../products/product1/1.png",
-            "img2": "../products/product1/2.png",
+            "img1": "products/product1/1.png",
+            "img2": "products/product1/2.png",
             "title1": "Laptop1",
             "title2": "Mouse1",
             "price": 10000
