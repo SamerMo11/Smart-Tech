@@ -101,14 +101,7 @@ tracks.forEach((track, index) => {
 // ---------------------------------------------------
 // ---------------------------------------------------
 function best(bestData) {
-  // const bestData = [
-  //   { img: "products/product1/5.png", title: "headphones" },
-  //   { img: "products/product2/1.png", title: "smartwatch" },
-  //   { img: "products/product3/1.png", title: "airPods" },
-  //   { img: "products/product7/1.png", title: "playstation joystick" },
-  //   { img: "products/product4/1.png", title: "lenovo laptop" },
-  //   { img: "products/product5/1.png", title: "speakers" },
-  // ];
+
 
   const track = document.querySelector(".best .track");
 
@@ -193,36 +186,7 @@ function colls(collsData) {
 
 // --------------------------------
 // --------------------------------
-// const track = document.querySelector(".deals .content .track");
-// const cards = document.querySelectorAll(".deals .content .track .card");
-// const nextdeal = document.querySelector("#nextdeal");
-// const prevdeal = document.querySelector("#prevdeal");
 
-// let currentIndex = 1;
-
-// function updateActiveCard() {
-//   cards.forEach((card, index) => {
-//     card.classList.toggle("active", index === currentIndex);
-//   });
-
-// }
-
-// nextdeal.addEventListener("click", () => {
-//   currentIndex = (currentIndex + 1) % cards.length;
-
-//   updateActiveCard();
-// });
-
-// prevdeal.addEventListener("click", () => {
-//   currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-
-//   updateActiveCard();
-// });
-
-// updateActiveCard();
-
-// -------------------
-// -------------------
 function deals(dealsData) {
   const track = document.querySelector(".deals .track");
 
