@@ -980,7 +980,7 @@ nav .icons a span{
 .deals .content .track {
     height: 100%;
     
-    width: 80%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     overflow-x: auto;
@@ -989,7 +989,7 @@ nav .icons a span{
     scrollbar-width: none;
     scroll-behavior: smooth;
     position: relative;
-    gap: 7px;
+    gap: 50px;
     transition: 1s;
     animation-name: bottom;
     animation-timing-function: linear;
