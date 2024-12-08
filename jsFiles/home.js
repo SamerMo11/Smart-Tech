@@ -21,12 +21,10 @@
 let searchIcon = document.getElementById("searchIcon");
 
 searchIcon.addEventListener("click", function () {
-  // const cardDetails = document.getElementById("card-details");
-  qsearch.style.display = "flex";
-  setTimeout(() => {
+
     qsearch.classList.add("show");
     qsearch.classList.remove("hide");
-  }, 10);
+    searchIcon.classList.add("color");
 });
 // ---------------------------------------------------
 // ---------------------------------------------------
@@ -100,9 +98,8 @@ tracks.forEach((track, index) => {
 // ---------------------------------------------------
 // ---------------------------------------------------
 // ---------------------------------------------------
+
 function best(bestData) {
-
-
   const track = document.querySelector(".best .track");
 
   bestData.forEach((best) => {
@@ -167,12 +164,12 @@ function colls(collsData) {
       <div class="coll" style="align-self: ${coll.align} ;">
             <div class="prods">
                 <div class="prod">
-                    <img src="${coll.img1}.png" alt="collImg" loading="lazy">
+                    <img src="${coll.img1}" alt="collImg" loading="lazy">
                     <p>${coll.title1}</p>
                 </div>
                 <span>+</span>
                 <div class="prod">
-                    <img src="${coll.img2}.png" alt="collImg" loading="lazy">
+                    <img src="${coll.img2}" alt="collImg" loading="lazy">
                     <p>${coll.title2}</p>
                 </div>
             </div>
@@ -189,6 +186,9 @@ function colls(collsData) {
 
 function deals(dealsData) {
   const track = document.querySelector(".deals .track");
+  window.onload = () => {
+    track.scrollLeft = track.children[1].offsetLeft;
+  };
 
   // إضافة الكروت للتراك
   dealsData.forEach((deal) => {
@@ -215,23 +215,23 @@ function deals(dealsData) {
         <p class="para">hurry up offer ends in</p>
         <div class="timer">
           <div class="time">
-            <span class="days" ></span>
-            <span>days</span>
+          <span>days</span>
+          <span class="days" ></span>
           </div>
           <span>:</span>
           <div class="time">
-            <span class="hours" ></span>
-            <span>hrs</span>
+          <span>hrs</span>
+          <span class="hours" ></span>
           </div>
           <span>:</span>
           <div class="time">
-            <span class="mins"></span>
-            <span>mins</span>
+          <span>mins</span>
+          <span class="mins"></span>
           </div>
           <span>:</span>
           <div class="time">
-            <span class="secs"></span>
-            <span>secs</span>
+          <span>secs</span>
+          <span class="secs"></span>
           </div>
         </div>
       </div>
@@ -461,7 +461,7 @@ if (dealstrack) {
 
 // // -----------------TIMER----------------
 
-let count = new Date("november 14, 2024 22:03:").getTime(); // تاريخ الهدف الأولي
+let count = new Date("december 14, 2024 22:03:00").getTime(); // تاريخ الهدف الأولي
 let imageIndex1 = 0; // مؤشر الصورة الحالي
 let imageIndex2 = 0; // مؤشر الصورة الحالي
 let imageIndex3 = 0; // مؤشر الصورة الحالي
