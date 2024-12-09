@@ -1,5 +1,5 @@
-let recognition;
-let isRecording = false;
+// let recognition;
+// let isRecording = false;
 
 // التحقق من دعم المتصفح لميزة التعرف على الصوت وإنشاء كائن recognition
 if ("webkitSpeechRecognition" in window) {
@@ -153,7 +153,7 @@ function displayProductsCard(products) {
                         <i class="fa-sharp fa-solid fa-star"></i>
                         <i class="fa-sharp fa-solid fa-star"></i>
                     </div>
-                    <button>add to cart</button>
+                    <button  isfav = ${isfav} itemId =${id}>add to cart</button>
                 </div>
             </div>
         </div>`;
@@ -175,7 +175,21 @@ function displayProductsCard(products) {
       else this.setAttribute("isfav", "true");
     });
   }
+
+  console.log(favBtns);
+  async function addToCart() {
+    this.removeEventListener("click", fav);
+    handleAddToCart({
+      itemId: this.getAttribute("itemId"),
+    }).then((data) => {
+      const cart = document.querySelector("nav a[href='cart.html'] span");
+      cart.innerHTML = data.num;
+      console.log(cart);
+    });
+  }
   favBtns.forEach((btn, i) => btn.addEventListener("click", fav));
+  const addToCartBtns = Array.from(document.querySelectorAll(".item button"));
+  addToCartBtns.forEach((btn) => btn.addEventListener("click", addToCart));
   document
     .querySelectorAll(".item .info .div")
     .forEach((card) => handleQuantityInput(card));
@@ -196,3 +210,12 @@ async function handleFavBtn(obj) {
   });
   return await req.json();
 }
+async function handleAddToCart(obj) {
+  const req = await fetch("https://jsonplaceholder.typicoddde.com/posts", {
+    method: "POST",
+    body: JSON.stringify(obj),
+  });
+  return await req.json();
+}
+
+console.log(cart);
