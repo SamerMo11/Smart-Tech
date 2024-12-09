@@ -1628,12 +1628,7 @@ footer .copy span{
 
 
 @media  (max-width:767px) {
-    nav{
-        display: none;
-    }
-    footer{
-        display: none;
-    }
+    
 
     .carousel{
         height: 100vh;
