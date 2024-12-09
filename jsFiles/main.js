@@ -129,36 +129,13 @@ function rotate() {
 
 
 // ---------------------------------------------------
-// ----------------EXAMPLE-OF-FUNCTION----------------
 // ---------------------------------------------------
+// ---------------------------------------------------
+let searchIcon = document.getElementById("searchIcon");
 
-// let btn = document.getElementsByClassName('btn');
-// let box = document.getElementsByClassName('box');
+searchIcon.addEventListener("click", function () {
 
-
-// for(let i = 0 ; i < btn.length; i++){
-//     btn[i].onclick = function(){
-//         box[i].style.cssText = `
-//         opacity:0;
-//         `;
-//     }
-// }
-
-// ---------------------------------------------------------------
-// ---------------------DARK-LIGHT-MODES--------------------------
-// ---------------------------------------------------------------
-
-// let moon = document.getElementById('moon');
-// let sun = document.getElementById('sun');
-
-// moon.addEventListener('click', function(){
-//     document.body.classList.remove('light');
-//     this.style.display='none';
-//     sun.style.display='block';
-// })
-
-// sun.addEventListener('click', function(){
-//     document.body.classList.add('light');
-//     this.style.display='none';
-//     moon.style.display='block';
-// })
+    qsearch.classList.add("show");
+    qsearch.classList.remove("hide");
+    searchIcon.classList.add("color");
+});

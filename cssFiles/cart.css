@@ -33,16 +33,7 @@ body {
     /* gap: 10vh; */
 }
 
-nav{
-    height: 10vh;
-    width: 100%;
-    /* position: fixed; */
-    top: 0;
-    left: 0;
-    background-color: transparent;
-    z-index: 99999999;
-    border-bottom: 1px solid var(--color2);
-}
+
 .main{
     display: flex;
     justify-content: start;
@@ -50,8 +41,8 @@ nav{
     flex-direction: column;
     width: 90%;
     height: auto;
-    min-height: 80vh;
-    margin-top: 10vh;
+    min-height: 85vh;
+    margin-top: 15vh;
     gap: 10vh;
 }
 .main .head{

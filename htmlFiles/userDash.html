@@ -16,12 +16,234 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../cssFiles/userDash.css">
+    <link rel="stylesheet" href="../cssFiles/style.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
     <title>Dashboard</title>
 </head>
 <body>
-    <!--Reem--> 
-    <nav></nav>
+
+
+<!-- -----------------Search Div----------- -->
+<div class="qsearch" id="qsearch">
+    <div class="content">
+        <i class="fa-solid fa-x" onclick="hideQsearch()"></i>
+    
+        <div class="search">
+            <div class="input">
+                <input type="text" name="" id="textInput" placeholder="search">
+                <i class="fa-regular fa-magnifying-glass"></i>
+            </div>
+            <i class="fa-solid fa-microphone" id="startButton" onclick="startRecording()"></i>
+            <i class="fa-solid fa-microphone-slash" id="stopButton" onclick="stopRecording()" style="display: none;"></i>
+        </div>
+    
+        <div class="recent">
+            <p>recent searchs</p>
+    
+            <div class="recents">
+                <div class="rec">
+                    <p>laptops</p>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="rec">
+                    <p>laptops</p>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="rec">
+                    <p>laptops</p>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="rec">
+                    <p>laptops</p>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+            </div>
+            
+        </div>
+    
+    
+        <div class="prods">
+    
+            <div class="prod">
+                <img src="products/product1/4.png" alt="productImg" loading="lazy">
+                <div class="info">
+                    <p class="title">smart watch 1</p>
+                    <p>Lorem Ipsum has been the industry's standard.</p>
+                    <p class="price">price: <span>1000 l.e</span> </p>
+                </div>
+            </div>
+            <div class="prod">
+                <img src="products/product2/3.png" alt="productImg" loading="lazy">
+                <div class="info">
+                    <p class="title">smart watch 1</p>
+                    <p>Lorem Ipsum has been the industry's standard.</p>
+                    <p class="price">price: <span>1000 l.e</span> </p>
+                </div>
+            </div>
+            <div class="prod">
+                <img src="products/product3/7.png" alt="productImg" loading="lazy">
+                <div class="info">
+                    <p class="title">smart watch 1</p>
+                    <p>Lorem Ipsum has been the industry's standard.</p>
+                    <p class="price">price: <span>1000 l.e</span> </p>
+                </div>
+            </div>
+            <div class="prod">
+                <img src="products/product4/1.png" alt="productImg" loading="lazy">
+                <div class="info">
+                    <p class="title">smart watch 1</p>
+                    <p>Lorem Ipsum has been the industry's standard.</p>
+                    <p class="price">price: <span>1000 l.e</span> </p>
+                </div>
+            </div>
+            <div class="prod">
+                <img src="products/product5/1.png" alt="productImg" loading="lazy">
+                <div class="info">
+                    <p class="title">smart watch 1</p>
+                    <p>Lorem Ipsum has been the industry's standard.</p>
+                    <p class="price">price: <span>1000 l.e</span> </p>
+                </div>
+            </div>
+            <div class="prod">
+                <img src="products/product6/1.png" alt="productImg" loading="lazy">
+                <div class="info">
+                    <p class="title">smart watch 1</p>
+                    <p>Lorem Ipsum has been the industry's standard.</p>
+                    <p class="price">price: <span>1000 l.e</span> </p>
+                </div>
+            </div>
+            <div class="prod">
+                <img src="products/product7/1.png" alt="productImg" loading="lazy">
+                <div class="info">
+                    <p class="title">smart watch 1</p>
+                    <p>Lorem Ipsum has been the industry's standard.</p>
+                    <p class="price">price: <span>1000 l.e</span> </p>
+                </div>
+            </div>
+            <div class="prod">
+                <img src="products/product8/1.png" alt="productImg" loading="lazy">
+                <div class="info">
+                    <p class="title">smart watch 1</p>
+                    <p>Lorem Ipsum has been the industry's standard.</p>
+                    <p class="price">price: <span>1000 l.e</span> </p>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    
+    
+    </div>
+    
+    <script>
+        let recognition;
+        let isRecording = false;
+    
+        // التحقق من دعم المتصفح لميزة التعرف على الصوت وإنشاء كائن recognition
+        if ('webkitSpeechRecognition' in window) {
+          recognition = new webkitSpeechRecognition();
+          recognition.lang = 'en-US'; // تعيين اللغة إلى الإنجليزية
+          recognition.interimResults = false;
+          recognition.maxAlternatives = 1;
+    
+          // التعامل مع النتيجة النهائية للنص
+          recognition.onresult = function(event) {
+            const transcript = event.results[0][0].transcript;
+            document.getElementById("textInput").value = transcript;
+            console.log("Recognized text:", transcript);
+          };
+    
+          // معالجة الخطأ أثناء التسجيل
+          recognition.onerror = function(event) {
+            console.error("Recognition error:", event.error);
+          };
+        } else {
+          alert("Sorry, your browser does not support speech recognition.");
+        }
+    
+        // بدء التسجيل
+        function startRecording() {
+          if (recognition && !isRecording) {
+            recognition.start();
+            isRecording = true;
+            console.log("Recording started...");
+            document.getElementById("startButton").style.display = "none";
+            document.getElementById("stopButton").style.display = "flex";
+          }
+        }
+    
+        // إنهاء التسجيل
+        function stopRecording() {
+          if (recognition && isRecording) {
+            recognition.stop();
+            isRecording = false;
+            console.log("Recording stopped.");
+                    document.getElementById("startButton").style.display = "flex";
+            document.getElementById("stopButton").style.display = "none";
+          }
+        }
+    
+    
+        function hideQsearch() {
+        const qsearch = document.getElementById("qsearch");
+        qsearch.classList.add("hide");
+        qsearch.classList.remove("show");
+        searchIcon.classList.remove("color");
+    
+    }
+    
+    </script>
+    
+    
+    
+    <!-- -------------------------------------- -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <!-- ----------------------ARROW----------------------------------------------- -->
+        <!-- <a href="#home">
+            <svg xmlns="http://www.w3.org/2000/svg" id="arrow" class="arrow" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+            </svg>
+        </a> -->
+        <!-- -------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------- -->
+        <nav>
+            <div class="logo">
+                <img src="../main/logo.png" alt="">
+                <p>smartTech</p>
+            </div>
+            <div class="links">
+                <a href="../index.html">home</a>
+                <a href="about.html">about us</a>
+                <a href="contact.html">contact us</a>
+                <a href="shop.html">shop</a>
+                <!-- <a href="htmlFiles/checkout.html">FAQ</a> -->
+                <!-- <a href="htmlFiles/cart.html">cart</a> -->
+                <!-- <a href="htmlFiles/forms.html">login & sign</a> -->
+            </div>
+            <div class="icons">
+                <i class="fa-regular fa-magnifying-glass" id="searchIcon"></i>
+               <a href="userDash.html"><i class="fa-solid fa-user"></i></a>
+                <a href="cart.html">
+                    <span>5</span>
+                    <i class="fa-regular fa-cart-shopping"></i></a>
+            </div>
+        </nav>
+
+
+
+
+
+<!-- ----------------------------- -->
+<!-- ----------------------------- -->
     <div class="dash">
 
         <div class="bar">
@@ -457,7 +679,7 @@
     <div class="pic">
         <p class="title">profile picture</p>
         <div class="content">
-            <img src="../products/about/t4.png" alt="profilePicture">
+            <img src="../about/t4.png" alt="profilePicture">
         <span>JPG or PNG no longer than 5 MB</span>
         <label for="">
             <input type="file" name="" id="">
@@ -528,5 +750,6 @@
 
 
     <script src="../jsFiles/userDash.js"></script>
+    <script src="../jsFiles/main.js"></script>
 </body>
 </html>

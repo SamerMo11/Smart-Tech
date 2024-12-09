@@ -32,21 +32,12 @@ body {
     position: relative;
 }
 
-nav{
-    height: 10vh;
-    width: 100%;
-    /* position: fixed; */
-    top: 0;
-    left: 0;
-    background-color: transparent;
-    z-index: 99999999;
-    border-bottom: 1px solid var(--color2);
-}
+
 
 .dash{
     width: 100%;
     height: 100vh;
-    /* margin-top: 11vh; */
+    margin-top: 15vh;
     display: flex;
     justify-content: center;
     align-items: start;
@@ -67,8 +58,23 @@ nav{
     background-color: var(--color4);
     border-radius: 10px;
     box-shadow: 0px 2px 4px 0px #000;
+    opacity: 0;
+    animation-name: bar;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-delay: .3s;
+}
+@keyframes bar {
+    from{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 
-
+        opacity: 0;
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        opacity: 1;
+    }
 }
 .dash .bar h1{
     color: var(--color2);
@@ -710,6 +716,7 @@ nav{
     text-transform: capitalize;
     font-family: var(--font2);
     font-size: 14px;
+    width: 100%;
     display: none;
 }
 .dash .profile .details form .input label{
@@ -924,13 +931,344 @@ nav{
 
 .dash .profile, 
 .dash .myorders,
-.dash .account
+.dash .account,
 .dash .whish{
-    display: none;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    opacity: 0;
+}   
+@keyframes active2 {
+    from{
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+        opacity: 0 ;
+    }
+    to{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        opacity: 1 ;
+    }
 }
 .dash .mainCard.active2{
     display: flex;
+    animation-name: active2;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: .3s;
 }
+
 .dash .mainCard.hide2{
     display: none;
+    opacity: 0;
+
+}
+/* ------------------ */
+/* ------------------ */
+@media  (max-width:767px) {
+    
+    .dash{
+        height: auto;
+        width: 90%;
+        flex-direction: column;
+        gap: 10vh;
+    }
+    .dash .bar {
+        width: 100%;
+        gap: 5vh;
+    }
+    .dash .bar .items {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-left: 0;
+        gap: 25px 0;
+    }
+    .dash .bar .items .item {
+        width: 50%;
+        flex-direction: column;
+        padding-inline: 0px;
+        gap: 10px;
+        padding: 0px 0px 10px 0px;
+    }
+    .dash .bar .items .item .info p:nth-child(1) {
+        font-size: clamp(.5rem, 5vw, 3rem);
+    }
+    .dash .bar .items .item .info p:nth-child(2) {
+        font-size: clamp(.5rem, 4vw, 3rem);
+    }
+    .dash .bar .items .item:not(:last-child)::before {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 90%;
+        bottom: 0%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .dash .bar .items .item:last-child:before {
+        content: '';
+        position: absolute;
+        height: 1px;
+        background-color: var(--color2);
+        width: 90%;
+        bottom: 0%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .dash .bar .items .item i {
+        font-size: clamp(.5rem, 7vw, 3rem);
+    }
+
+    /* -------------------- */
+
+    .dash .account, .dash .myorders, .dash .whish {
+        width: 100%;
+        height: auto;
+        overflow-x: hidden;
+    }
+    .dash .account > .title h1 {
+        font-size: clamp(.5rem, 7vw, 3rem);
+    }
+    .dash .account > .title p {
+        font-size: clamp(.5rem, 5vw, 3rem);
+        line-height: 25px;
+    }
+    .dash .account .carts {
+        justify-content: center;
+        width: 100%;
+    }
+    .dash .account .carts .card {
+        width: 50% ;
+    }
+    .dash .account .carts .card p {
+        font-size: clamp(.5rem, 5vw, 3rem);
+    }
+    .dash .account .carts .card p span {
+        font-size: clamp(.5rem, 6vw, 3rem);
+    }
+    .dash .account >h2, .dash .myorders >h2 {
+        font-size: clamp(.5rem, 6vw, 3rem);
+    }
+
+
+    .dash .myorders .orders .order .all, .dash .account .orders .order .all {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 5px 40px;
+    }
+    .dash .account .orders .order .side1, .dash .myorders .orders .order .side1 {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        height: 80px;
+        gap: 0;
+    }
+    .account .orders .order .side1 p, .dash .myorders .orders .order .side1 p {
+        flex-direction: column;
+        font-size: clamp(.5rem, 4vw, 3rem);
+    }
+    .dash .account .orders .order .side1 .no, .dash .myorders .orders .order .side1 .no {
+        font-size: clamp(.5rem, 5vw, 3rem);
+        text-align: center;
+    }
+    .dash .account .orders .order .side1 p, .dash .myorders .orders .order .side1 p {
+        font-size: clamp(.5rem, 4vw, 3rem);
+    }
+    .dash .account .orders .order .side2, .dash .myorders .orders .order .side2 {
+        width: 100%;
+        gap: 20px;
+    }
+    .dash .account .orders .order .side2 .title, .dash .myorders .orders .order .side2 .title {
+        width: 90%;
+        align-self: center;
+    }
+    .dash .account .orders .order .side2 .title p:nth-child(1), .dash .myorders .orders .order .side2 .title p:nth-child(1) {
+        font-size: clamp(.5rem, 4vw, 3rem);
+    }
+    .dash .account .orders .order .side2 .title p:nth-child(2), .dash .myorders .orders .order .side2 .title p:nth-child(2) {
+        font-size: clamp(.5rem, 4vw, 3rem);
+    }
+    .dash .account .orders .order .side2 .status, .dash .myorders .orders .order .side2 .status {
+        width: 100%;
+    }
+    .dash .account .orders .order .side2 .status .statu i, .dash .myorders .orders .order .side2 .status .statu i {
+        width: 10vw;
+        height: 10vw;
+        font-size: clamp(.5rem, 5vw, 3rem);
+    
+    }
+    .dash .account .orders .order .side2 .status .statu p, .dash .myorders .orders .order .side2 .status .statu p {
+        font-size: clamp(.5rem, 3vw, 3rem);
+    }
+    .dash .account .orders .order .side2 .sticky, .dash .myorders .orders .order .side2 .sticky {
+        position: absolute;
+        top: 122%;
+        right: -1%;
+        transform: translateY(-50%);
+    }
+    /* ---------------- */
+    
+
+    .dash .myorders .orders .order .info, .dash .account .orders .order .info {
+    flex-direction: column-reverse;
+    }
+    .dash .myorders .orders .order .info.active, .dash .account .orders .order .info.active {
+        height: 420px;
+        gap: 20px;
+        padding-top: 20px;
+    }
+    .dash .myorders .orders .order .info img, .dash .account .orders .order .info img {
+        width: 40vw;
+        height: 40vw;
+        padding: 20px;
+    }
+    .dash .myorders .orders .order .info .det, .dash .account .orders .order .info .det {
+        width: 100%;
+        gap: 30px;
+    }
+    .dash .myorders .orders .order .info .det .infos, .dash .account .orders .order .info .det .infos {
+        gap: 10px;
+        width: 100%;
+    }
+    .dash .myorders .orders .order .info .det .infos .name, .dash .account .orders .order .info .det .infos .name {
+        font-size: clamp(.5rem, 6vw, 3rem);
+        width: 100%;
+    }
+    .dash .myorders .orders .order .info .det .infos > p:nth-child(2), .dash .account .orders .order .info .det .infos > p:nth-child(2) {
+        font-size: clamp(.5rem, 5vw, 3rem);
+        width: 100%;
+    }
+    .dash .myorders .orders .order .info .det .infos > p:nth-child(3), .dash .account .orders .order .info .det .infos > p:nth-child(3) {
+        font-size: clamp(.5rem, 5vw, 3rem);
+        width: 100%;
+    }
+    .dash .myorders .orders .order .info .det .infos > p:nth-child(4), .dash .account .orders .order .info .det .infos > p:nth-child(4) {
+        font-size: clamp(.5rem, 5vw, 3rem);
+        width: 100%;
+    }
+    .dash .myorders .orders .order .info .det >div:nth-child(2), .dash .account .orders .order .info .det >div:nth-child(2) {
+        width: 100%;
+    }
+    .dash .myorders .orders .order .info .det >div:nth-child(2) > p, .dash .account .orders .order .info .det >div:nth-child(2) > p {
+        padding: 2vw;
+        font-size: clamp(.5rem, 4vw, 3rem);
+    }
+    /* ------------------------------------------ */
+    .dash .myorders {
+        padding-block: 5%;
+    }
+    /* ------------------------------------------ */
+    .dash .whish > p {
+        font-size: clamp(.5rem, 6vw, 3rem);
+    }
+    .dash .whish .witem {
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        justify-content: center;
+        gap: 20px;
+    }
+    .dash .whish .witem img {
+        width: 30vw;
+        height: 30vw;
+        order: 1;
+    }
+    .dash .whish .witem .info {
+        width: 100%;
+        order: 2;
+        gap: 10px;
+    }
+    .dash .whish .witem .info h2 {
+        font-size: clamp(.5rem, 6vw, 3rem);
+        width: 100%;
+        text-align: left;
+    }
+    .dash .whish .witem .info .stars i {
+        font-size: clamp(.5rem, 4vw, 2rem);
+    }
+    .dash .whish .witem .info ul {
+        justify-content: space-evenly;
+        gap: 10px;
+    }
+    .dash .whish .witem .info ul li {
+        color: var(--color2);
+        font-family: var(--font2);
+        font-size: clamp(.5rem, 4vw, 3rem);
+        width: 40%;
+        text-align: left;
+    }
+    .dash .whish .witem .info ul li:last-child{
+        width: 89%;
+    }
+    .dash .whish .witem .info2 {
+    width: 100%;
+    order: 3;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    }
+    .dash .whish .witem .info2 p:nth-child(1),
+    .dash .whish .witem .info2 p:nth-child(2) {
+        font-size: 20px;
+        width: 100%;
+        order: 1;
+    }
+    .dash .whish .witem .info2 button, .dash .whish .witem .info2 a {
+        width: 30vw;
+        height: 8vw;
+        font-size: clamp(.5rem, 4vw, 3rem);
+        order: 3;
+    }
+    .dash .whish .witem .info2 label {
+        font-size: clamp(.5rem, 4vw, 2rem);
+        order: 2;
+    }
+    /* ------------------ */
+    .dash .profile {
+        width: 100%;
+        flex-direction: column;
+    }
+    .dash .profile .pic {
+        width: 100%;
+        gap: 20px;
+        padding-bottom: 10px;
+    }
+    .dash .profile .pic .title, .dash .profile .details .title {
+        font-size: clamp(.5rem, 6vw, 3rem);
+    }
+    .dash .profile .pic .content {
+        gap: 10px;
+    }
+    .dash .profile .pic .content img {
+        width: 40vw;
+        height: 40vw;
+    }
+    .dash .profile .pic .content span {
+        font-size: clamp(.5rem, 4vw, 2rem);
+    }
+    .dash .profile .pic .content label input {
+        font-size: clamp(.5rem, 4vw, 3rem);
+    }
+    .dash .profile .details {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    .dash .profile .details form {
+        height: 70vh;
+    }
+    .dash .profile .details form .input {
+    gap: 5px;
+    }
+    .dash .profile .details form .input label {
+        font-size: clamp(.5rem, 4vw, 3rem);
+    }
+    .dash .profile .details form .input span {
+        
+        font-size: clamp(.5rem, 3vw, 3rem);
+        width: 100%;
+    }
+    .dash .profile .details >input {
+        padding: 2vw 5vw;
+        font-size: clamp(.5rem, 3vw, 3rem);
+    }
 }

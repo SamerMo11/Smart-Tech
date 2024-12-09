@@ -18,14 +18,14 @@
 // ---------------------------------------------------
 // ---------------------------------------------------
 // ---------------------------------------------------
-let searchIcon = document.getElementById("searchIcon");
+// let searchIcon = document.getElementById("searchIcon");
 
-searchIcon.addEventListener("click", function () {
+// searchIcon.addEventListener("click", function () {
 
-    qsearch.classList.add("show");
-    qsearch.classList.remove("hide");
-    searchIcon.classList.add("color");
-});
+//     qsearch.classList.add("show");
+//     qsearch.classList.remove("hide");
+//     searchIcon.classList.add("color");
+// });
 // ---------------------------------------------------
 // ---------------------------------------------------
 // ---------------------------------------------------

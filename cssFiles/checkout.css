@@ -52,14 +52,7 @@ body {
     gap: 10vh;
     padding-top: 15vh;
 }
-nav{
-    height: 10vh;
-    width: 100%;
-    border-bottom: 1px solid var(--color1);
-    position: fixed;
-    top: 0;
-    left: 0;
-}
+
 .checkout {
     width: 90%;
     height: 100%;
