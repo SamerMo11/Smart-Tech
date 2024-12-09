@@ -127,9 +127,10 @@ function displayProductsCard(products) {
   itemsContainer.innerHTML = "";
   let html = "";
   products.forEach((item) => {
-    const { id, name, description, price, image, rating, quantity } = item;
-    html += `<div class="item" itemId =${id} >
-            <i class="fa-solid fa-heart fav"></i>
+    const { id, name, description, price, image, rating, quantity, isfav } =
+      item;
+    html += `<div class="item"  >
+            <i class="fa-solid fa-heart fav" isfav = ${isfav} itemId =${id}></i>
             <div class="img">
                 <img src="../products/product4/1.png" alt="">
             </div>
@@ -158,6 +159,23 @@ function displayProductsCard(products) {
         </div>`;
   });
   itemsContainer.insertAdjacentHTML("beforeend", html);
+
+  const favBtns = Array.from(document.querySelectorAll(".items .fav"));
+  console.log(favBtns);
+  async function fav() {
+    this.removeEventListener("click", fav);
+
+    handleFavBtn({
+      isfav: this.getAttribute("isfav"),
+      itemId: this.getAttribute("itemId"),
+    }).then(() => {
+      this.addEventListener("click", fav);
+      if (this.getAttribute("isfav") == "true")
+        this.setAttribute("isfav", "false");
+      else this.setAttribute("isfav", "true");
+    });
+  }
+  favBtns.forEach((btn, i) => btn.addEventListener("click", fav));
   document
     .querySelectorAll(".item .info .div")
     .forEach((card) => handleQuantityInput(card));
@@ -170,3 +188,11 @@ const priceRange = document.querySelector("#rangeInput");
 priceRange.addEventListener("mouseup", (e) => {
   getDate({ price: e.target.value });
 });
+async function handleFavBtn(obj) {
+  console.log(obj);
+  const req = await fetch("https://jsonplaceholder.typicoddde.com/posts", {
+    method: "POST",
+    body: JSON.stringify(obj),
+  });
+  return await req.json();
+}
