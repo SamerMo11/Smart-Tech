@@ -1,5 +1,5 @@
-// let secondrecognition;
-// let secondisRecording = false;
+let secondrecognition;
+let secondisRecording = false;
 
 // التحقق من دعم المتصفح لميزة التعرف على الصوت وإنشاء كائن recognition
 if ("webkitSpeechRecognition" in window) {
