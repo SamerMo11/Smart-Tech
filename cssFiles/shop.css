@@ -47,6 +47,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation-name: top;
+    animation-duration: 1s;
+    animation-delay: .2s;
+    animation-timing-function: linear; 
+    animation-fill-mode: forwards;
+    opacity: 0;
 }
 .head .search .input{
     width: 90%;
@@ -125,7 +131,23 @@ body {
     background-color: var(--color4);
     box-shadow: 0px 2px 4px 0px #00000040,
                 0px 2px 4px 0px #00000040;
-                
+    opacity: 0;
+    animation-name: bar;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-delay: .3s;
+}
+@keyframes bar {
+    from{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+        opacity: 0;
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        opacity: 1;
+    }
 }
 
 .content .filter h1{
@@ -334,6 +356,24 @@ body {
     border-radius: 10px;
     box-shadow: 0px 2px 4px 0px #00000040,
                 0px 2px 4px 0px #00000040;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    opacity: 0 ;
+    animation-name: items;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: .3s;
+
+}
+@keyframes items {
+    from{
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+        opacity: 0 ;
+    }
+    to{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        opacity: 1 ;
+    }
 }
 .content .items > *{
     scroll-snap-align: end;

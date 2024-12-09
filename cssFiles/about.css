@@ -45,13 +45,28 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 68% 100%, 0 90%);
-
-
+    /* clip-path: polygon(50% 0, 50% 0, 50% 90%, 50% 90%, 50% 90%); */
     position: relative;
     gap: 3vh;
+    opacity: 0;
+    animation-name: clipy;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: .3s;
 }
+@keyframes clipy {
+    from{
+        clip-path: polygon(50% 0, 50% 0, 50% 90%, 50% 90%, 50% 90%);
+        opacity: 0;
 
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 68% 100%, 0 90%);
+        opacity: 1;
+
+    }
+}
 
 .hero span:nth-child(3) {
     position: absolute;

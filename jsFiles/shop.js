@@ -1,22 +1,22 @@
-let recognition;
-let isRecording = false;
+let secondrecognition;
+let secondisRecording = false;
 
 // التحقق من دعم المتصفح لميزة التعرف على الصوت وإنشاء كائن recognition
 if ("webkitSpeechRecognition" in window) {
-  recognition = new webkitSpeechRecognition();
-  recognition.lang = "en-US"; // تعيين اللغة إلى الإنجليزية
-  recognition.interimResults = false;
-  recognition.maxAlternatives = 1;
+  secondrecognition = new webkitSpeechRecognition();
+  secondrecognition.lang = "en-US"; // تعيين اللغة إلى الإنجليزية
+  secondrecognition.interimResults = false;
+  secondrecognition.maxAlternatives = 1;
 
   // التعامل مع النتيجة النهائية للنص
-  recognition.onresult = function (event) {
+  secondrecognition.onresult = function (event) {
     const transcript = event.results[0][0].transcript;
-    document.getElementById("textInput").value = transcript;
+    document.getElementById("secondtextInput").value = transcript;
     console.log("Recognized text:", transcript);
   };
 
   // معالجة الخطأ أثناء التسجيل
-  recognition.onerror = function (event) {
+  secondrecognition.onerror = function (event) {
     console.error("Recognition error:", event.error);
   };
 } else {
@@ -24,36 +24,29 @@ if ("webkitSpeechRecognition" in window) {
 }
 
 // بدء التسجيل
-function startRecording() {
-  if (recognition && !isRecording) {
-    recognition.start();
-    isRecording = true;
+function secondstartRecording() {
+  if (secondrecognition && !secondisRecording) {
+    secondrecognition.start();
+    secondisRecording = true;
     console.log("Recording started...");
-    document.getElementById("startButton").style.display = "none";
-    document.getElementById("stopButton").style.display = "flex";
+    document.getElementById("secondstartButton").style.display = "none";
+    document.getElementById("secondstopButton").style.display = "flex";
   }
 }
 
 // إنهاء التسجيل
-function stopRecording() {
-  if (recognition && isRecording) {
-    recognition.stop();
-    isRecording = false;
+function secondstopRecording() {
+  if (secondrecognition && secondisRecording) {
+    secondrecognition.stop();
+    secondisRecording = false;
     console.log("Recording stopped.");
-    document.getElementById("startButton").style.display = "flex";
-    document.getElementById("stopButton").style.display = "none";
+    document.getElementById("secondstartButton").style.display = "flex";
+    document.getElementById("secondstopButton").style.display = "none";
   }
 }
 
-function hideQsearch() {
-  const qsearch = document.getElementById("qsearch");
-  qsearch.classList.add("hide");
-  qsearch.classList.remove("show");
 
-  setTimeout(() => {
-    qsearch.style.display = "none";
-  }, 10);
-}
+
 
 // ------------------------------------------------
 // ------------------------------------------------
