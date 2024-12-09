@@ -156,7 +156,7 @@ function displayProductsCard(products) {
     this.removeEventListener("click", fav);
 
     handleFavBtn({
-      isfav: this.getAttribute("isfav"),
+      isfav: this.getAttribute("isfav") == "false" ? "true" : "false",
       itemId: this.getAttribute("itemId"),
     }).then(() => {
       this.addEventListener("click", fav);
@@ -171,11 +171,15 @@ function displayProductsCard(products) {
     this.removeEventListener("click", fav);
     handleAddToCart({
       itemId: this.getAttribute("itemId"),
-    }).then((data) => {
-      const cart = document.querySelector("nav a[href='cart.html'] span");
-      cart.innerHTML = data.num;
-      console.log(cart);
-    });
+    })
+      .then((data) => {
+        this.addEventListener("click", addToCart);
+
+        const cart = document.querySelector("nav a[href='cart.html'] span");
+        cart.innerHTML = data.num;
+        console.log(cart);
+      })
+      .catch((e) => this.addEventListener("click", addToCart));
   }
   favBtns.forEach((btn, i) => btn.addEventListener("click", fav));
   const addToCartBtns = Array.from(document.querySelectorAll(".item button"));
