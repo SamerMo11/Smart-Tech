@@ -143,7 +143,7 @@ function displayProductsCard(products) {
                         <i class="fa-sharp fa-solid fa-star"></i>
                         <i class="fa-sharp fa-solid fa-star"></i>
                     </div>
-                    <button  isfav = ${isfav} itemId =${id}>add to cart</button>
+                    <button  itemId =${id}>add to cart</button>
                 </div>
             </div>
         </div>`;
@@ -198,14 +198,14 @@ priceRange.addEventListener("mouseup", (e) => {
 });
 async function handleFavBtn(obj) {
   console.log(obj);
-  const req = await fetch("https://jsonplaceholder.typicoddde.com/posts", {
+  const req = await fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "POST",
     body: JSON.stringify(obj),
   });
   return await req.json();
 }
 async function handleAddToCart(obj) {
-  const req = await fetch("https://jsonplaceholder.typicoddde.com/posts", {
+  const req = await fetch("https://jsonplaceholder.typicode.com/", {
     method: "POST",
     body: JSON.stringify(obj),
   });
