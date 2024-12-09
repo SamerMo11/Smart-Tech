@@ -60,6 +60,7 @@ async function getData() {
 getData().then((data) => {
   console.log(data);
   displayProducts(data.cartProducts);
+  displayOffersProducts(data.cartOffers);
 });
 
 function displayProducts(cartProducts) {
@@ -99,6 +100,51 @@ function displayProducts(cartProducts) {
         `;
     productContainer.insertAdjacentElement("beforeend", div);
     handleQuantityInput(div, variantId, quantity);
+    handeleRemoveBtn(div);
+    console.log(productContainer);
+  });
+}
+function displayOffersProducts(cartProducts) {
+  const productContainer = document.querySelector(".main .content");
+  console.log(productContainer);
+
+  cartProducts.forEach((product) => {
+    const {
+      cartDetailId,
+      offerId,
+      img1,
+      img2,
+      title1,
+      title2,
+      quantityInCart,
+      price,
+    } = product;
+    const div = document.createElement("div");
+    div.classList.add("coll", "card");
+    div.setAttribute("productId", offerId);
+    div.innerHTML = `
+            <div class="coll card">
+            <i class="fa-solid fa-xmark remove"></i>
+            <div class="imgs">
+            <img src="../products/product1/2.png" alt="productimg" loading="lazy">
+            <span>+</span>
+            <img src="../products/product4/1.png" alt="productimg" loading="lazy">
+            </div>
+            <p><span class="price">${price}</span> le</p>
+            <div class="quantity">
+                <div class="qty">
+                    <span class="num">1</span>
+                    <div class="arrows">
+                        <i class="fa-solid fa-angle-up increace"></i>
+                        <i class="fa-solid fa-angle-down decreace"></i>
+                    </div>
+                </div>
+            </div>
+            <p><span class="total">${price}</span> le</p>
+        </div>
+        `;
+    productContainer.insertAdjacentElement("beforeend", div);
+    handleQuantityInput(div, offerId, quantityInCart);
     handeleRemoveBtn(div);
     console.log(productContainer);
   });
