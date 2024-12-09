@@ -20,8 +20,10 @@ function handleQuantityInput(card, currentQuantity, productId) {
 
   decreaseBtn.addEventListener("click", () => {
     if (quantity > 1) {
-      quantity--;
-      updatePrice();
+      updateQuantity(productId, currentQuantity).then(() => {
+        quantity--;
+        updatePrice();
+      });
     }
   });
 
