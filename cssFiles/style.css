@@ -707,9 +707,7 @@ footer .copy span{
 /* -------------------- */
 /* -------------------- */
 @media  (max-width:767px) {
-    footer{
-        display: none;
-    }
+    
     nav{
         padding-inline: 2% 5%;
     }
@@ -839,5 +837,82 @@ footer .copy span{
         transform: rotate(-45deg);
         position: absolute;
         top: 10px;
+    }
+    /* ------------------------ */
+    footer{
+        overflow: hidden;
+        height: auto;
+        gap: 20px;
+    }
+    footer .div1 {
+        padding-inline: 2%;
+    }
+    footer .div1 .logo {
+        width: 50%;
+    }
+    footer .div1 .logo img {
+        width: 25%;
+        height: 100%;
+        object-fit: contain;
+    }
+    footer .div1 p {
+        font-size: clamp(.5rem, 6vw, 3rem);
+    }
+    footer .div1 .accs {
+        width: 45%;
+    }
+    footer .div1 .accs i {
+        width: 10vw;
+        height: 10vw;
+        font-size: clamp(.5rem, 5vw, 3rem);
+    }
+    footer .div2 {
+        flex-wrap: wrap;
+        padding-inline: 2%;
+        justify-content: center;
+        gap: 30px 0px;
+    }
+    footer .div2 .col {
+        width: 45%;
+        height: 100%;
+        gap: 20px;
+    }
+    footer .div2 .col:nth-child(4) {
+        width: 100%;
+    }
+    footer .div2 .col > p {
+        font-size: clamp(.5rem, 6vw, 2rem);
+    }
+    footer .div2 .col .links a {
+        font-size: clamp(.5rem, 4vw, 2rem);
+    }
+    footer .div2 .col .links p {
+        font-size: clamp(.5rem, 4vw, 3rem);
+    }
+    footer .div2 .col .links p i {
+        font-size: clamp(.5rem, 5vw, 3rem);
+    }
+    footer .news p:nth-child(1) {
+        font-size: clamp(.5rem, 6vw, 3rem);
+    }
+    footer .news p:nth-child(2) {
+        font-size: clamp(.5rem, 4vw, 3rem);
+    }
+    footer .news input {
+        font-size: clamp(.5rem, 5vw, 3rem);
+        height: 10vw;
+    }
+    footer .news button {
+        font-size: clamp(.5rem, 5vw, 3rem);
+        height: 10vw;
+    }
+    footer .news {
+        width: 100%;
+    }
+    footer .copy{
+        width: 100%;
+        height: 15vw;
+        font-size: clamp(.5rem, 4vw, 3rem);
+        flex-direction: column;
     }
 }
