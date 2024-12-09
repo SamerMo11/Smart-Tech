@@ -30,13 +30,14 @@ function handleQuantityInput(card, currentQuantity, productId) {
     totalSpan.textContent = (quantity * unitPrice).toLocaleString();
   }
 }
-function handeleRemoveBtn(card) {
+function handeleRemoveBtn(card, type) {
   const closeBtn = card.querySelector(".remove");
 
   closeBtn.addEventListener("click", () => {
     const productId = card.getAttribute("productId");
     removeItem({
-      produtId: productId,
+      type: type,
+      id: productId,
     }).then(() => {
       card.classList.add("hide");
       setTimeout(() => {
@@ -100,7 +101,7 @@ function displayProducts(cartProducts) {
         `;
     productContainer.insertAdjacentElement("beforeend", div);
     handleQuantityInput(div, variantId, quantity);
-    handeleRemoveBtn(div);
+    handeleRemoveBtn(div, "product");
     console.log(productContainer);
   });
 }
@@ -145,7 +146,7 @@ function displayOffersProducts(cartProducts) {
         `;
     productContainer.insertAdjacentElement("beforeend", div);
     handleQuantityInput(div, offerId, quantityInCart);
-    handeleRemoveBtn(div);
+    handeleRemoveBtn(div, "offer");
     console.log(productContainer);
   });
 }
