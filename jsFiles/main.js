@@ -139,3 +139,32 @@ searchIcon.addEventListener("click", function () {
     qsearch.classList.remove("hide");
     searchIcon.classList.add("color");
 });
+
+
+// ----------------------------------------------------
+// ----------------------------------------------------
+// ----------------------------------------------------
+const tab = document.querySelector('.tab');
+const links = document.querySelector('.links');
+const navicons = document.querySelectorAll('.navicons');
+tab.addEventListener('click', () => {
+    tab.classList.toggle('active');
+    // التحكم في الـ links
+    if (links.classList.contains('show')) {
+        links.classList.remove('show');
+        links.classList.add('hide');
+    } else {
+        links.classList.remove('hide');
+        links.classList.add('show');
+    }
+    // التحكم في جميع عناصر navicons
+    navicons.forEach((icon) => {
+        if (icon.classList.contains('show')) {
+            icon.classList.remove('show');
+            icon.classList.add('hide');
+        } else {
+            icon.classList.remove('hide');
+            icon.classList.add('show');
+        }
+    });
+});
