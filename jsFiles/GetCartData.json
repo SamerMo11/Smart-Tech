@@ -1,1 +1,53 @@
-{"cartId":1,"cartProducts":[{"cartDetailId":15,"variantId":6,"imagePath":"1c2810fa-8d01-41a9-8b03-1c35971cf39a_1.png","price":4500,"quantity":19,"quantityInCart":1,"discount":10},{"cartDetailId":1014,"variantId":135,"imagePath":"775f60e0-1138-4160-8636-64342001b697_15.png","price":5000,"quantity":40,"quantityInCart":1,"discount":8},{"cartDetailId":1015,"variantId":128,"imagePath":"745e4e42-f8f0-489e-b57b-a3be5b37e368_1.png","price":23000,"quantity":40,"quantityInCart":2,"discount":8},{"cartDetailId":1016,"variantId":8,"imagePath":"2673c269-4fc9-437b-bcac-91e4c829501d_3.png","price":1200,"quantity":25,"quantityInCart":1,"discount":11}],"cartOffers":[{"cartDetailId":1018,"offerId":2,"img1":"1c2810fa-8d01-41a9-8b03-1c35971cf39a_1.png","img2":"a9bc8031-a9e6-4f9f-b6fe-cadfedd99eec_2.png","title1":"PlayStation Pulse 3D Wireless Headset","title2":"Boat Rockerz 518","quantityInCart":1,"price":5000}]}
+{
+  "cartId": 1,
+  "cartProducts": [
+    {
+      "cartDetailId": 15,
+      "variantId": 6,
+      "imagePath": "1c2810fa-8d01-41a9-8b03-1c35971cf39a_1.png",
+      "price": 4500,
+      "quantity": 19,
+      "quantityInCart": 1,
+      "discount": 10
+    },
+    {
+      "cartDetailId": 1014,
+      "variantId": 135,
+      "imagePath": "775f60e0-1138-4160-8636-64342001b697_15.png",
+      "price": 5000,
+      "quantity": 40,
+      "quantityInCart": 1,
+      "discount": 8
+    },
+    {
+      "cartDetailId": 1015,
+      "variantId": 128,
+      "imagePath": "745e4e42-f8f0-489e-b57b-a3be5b37e368_1.png",
+      "price": 23000,
+      "quantity": 40,
+      "quantityInCart": 2,
+      "discount": 8
+    },
+    {
+      "cartDetailId": 1016,
+      "variantId": 8,
+      "imagePath": "2673c269-4fc9-437b-bcac-91e4c829501d_3.png",
+      "price": 1200,
+      "quantity": 25,
+      "quantityInCart": 1,
+      "discount": 11
+    }
+  ],
+  "cartOffers": [
+    {
+      "cartDetailId": 1018,
+      "offerId": 2,
+      "img1": "1c2810fa-8d01-41a9-8b03-1c35971cf39a_1.png",
+      "img2": "a9bc8031-a9e6-4f9f-b6fe-cadfedd99eec_2.png",
+      "title1": "PlayStation Pulse 3D Wireless Headset",
+      "title2": "Boat Rockerz 518",
+      "quantityInCart": 1,
+      "price": 5000
+    }
+  ]
+}
