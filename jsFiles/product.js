@@ -490,12 +490,14 @@ function displayReviews(reviews) {
     displayRating(reviews[i].rateValue, undefined, stars);
   });
 }
+let userRating = 0;
 const reviewStars = document.querySelectorAll(".user--review .stars svg");
 console.log(reviewStars);
 reviewStars.forEach((stars, i) => {
   console.log(stars);
   stars.addEventListener("mousemove", (e) => {
     displayRating(i + 1, undefined, reviewStars);
+    userRating = i + 1;
   });
 });
 
@@ -545,4 +547,19 @@ function addToWishList() {
       );
     });
   });
+}
+const submitReview = document.querySelector("#submitReview");
+submitReview.addEventListener("click", () => {
+  const commentText = document.querySelector("#comment").value;
+  sendComment({
+    comment: commentText,
+    productId: productId,
+    rating: userRating,
+  });
+});
+
+async function sendComment(obj) {
+  console.log(obj);
+  const req = await fetch("./about.js");
+  return await req.json();
 }
