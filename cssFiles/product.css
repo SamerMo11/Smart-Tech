@@ -3,19 +3,19 @@ body {
   color: #fff !important;
 }
 @font-face {
-  font-family: "Arial Rounded MT Bold" ;
+  font-family: "Arial Rounded MT Bold";
   src: url(../font1/arialroundedmtbold.ttf);
 }
 
-:root{
-  --font1: "Arial Rounded MT Bold" ;
-  --font2: sans-serif ;
-  --color1: #30B6B9 ;
-  --color2: #fff ;
-  --color3: #000 ;
-  --color4:#2F8587;
-  --shadow1: 0 4px 4px #00000040 ;
-  --shadow2: 0 4px 4px #000 ;
+:root {
+  --font1: "Arial Rounded MT Bold";
+  --font2: sans-serif;
+  --color1: #30b6b9;
+  --color2: #fff;
+  --color3: #000;
+  --color4: #2f8587;
+  --shadow1: 0 4px 4px #00000040;
+  --shadow2: 0 4px 4px #000;
 }
 nav .links,
 .profile--actions svg {
@@ -327,6 +327,7 @@ nav .links,
         flex: 1;
         color: #fff;
       }
+
       button:nth-child(1) {
         border-radius: 5px 0px 0px 5px;
         border-right: 0;
@@ -348,6 +349,15 @@ nav .links,
       }
       button:hover {
         background-color: #2f8587;
+      }
+    }
+    .wishlist--btn svg {
+      transition: 100ms all;
+    }
+    .wishlist--btn[isfav="true"] {
+      svg {
+        fill: #2f8587;
+        stroke: #2f8587 !important;
       }
     }
     .buy--btn {

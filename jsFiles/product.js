@@ -6,17 +6,31 @@ console.log(zoomDiv);
 const productInfoDiv = document.querySelector(".product--info");
 const quickSpecifications = document.querySelector(".quick--specifications");
 const xZoom = 2;
-console.log(imgsListDiv);
 let allowZoom = true;
 let imgsArray = [];
 let activeImg = 0;
 let activeImgElement;
 let imgsArrayLength;
 const productSpecificSection = document.querySelector(".product--specific");
+const addToWishListBtn = document.querySelector(
+  ".product--info #addToWishlist"
+);
+
 window.addEventListener("load", () => {
   allowZoom = window.innerWidth >= 768;
 });
-
+const currQuantity = document.querySelector(".quantity input");
+function handleQuantityInput(e) {
+  if (e.target.classList.contains("dec")) {
+    if (currQuantity.value > 1) currQuantity.value = +currQuantity.value - 1;
+  } else if (e.target.classList.contains("inc")) {
+    currQuantity.value = +currQuantity.value + 1;
+  }
+}
+const qa = document.querySelector(".quantity");
+qa.addEventListener("click", (e) => {
+  handleQuantityInput(e);
+});
 function ProductImgs(product) {
   if (product && product.images) {
     return product.images.flatMap((obj) => obj.main);
@@ -97,21 +111,24 @@ async function getProduct() {
 }
 
 const productData = localStorage.getItem("product");
-
+let productId = 0;
 getProduct().then((data) => {
   product = data;
+  console.log(data);
   imgsArray = product.images;
-  console.log(product);
   display();
   productPath(product.category);
   productDetails(product);
   displayReviews(product.review);
-  console.log(product);
   displayRelatedProducts(product.realtedProducts);
   displaySpecifications(product.specifications);
   const activeImgContainer = document.querySelector("#img--slider");
   const mouseDiv = document.querySelector(".hover");
   const overlay = document.querySelector(".overlay");
+  productId = data.sendedId;
+  handleAddToCartClicked();
+  addToWishList();
+
   activeImgContainer.addEventListener("mouseenter", (e) => {
     if (!allowZoom) return;
     productInfoDiv.classList.add("active");
@@ -172,6 +189,7 @@ function productDetails(product) {
     document.querySelectorAll(".product--details .stars > *")
   );
   displayRating(details.totalRating, details.userCountRating, stars);
+  addToWishListBtn.setAttribute("isFav", details.isFavourite);
   displayColors(product.colors);
   relatedProductsSpecifations(product.combinedAttributes, product.details.id);
 }
@@ -255,31 +273,6 @@ function displaySpecifications(arr) {
   seeMoreBtn.addEventListener("click", handleSpecificationBtnClick);
   seeLessBtn.addEventListener("click", handleSpecificationBtnClick);
 }
-function scrollToElement(element, duration) {
-  const targetPosition = element.getBoundingClientRect().top + window.scrollY;
-  const startPosition = window.scrollY;
-  const distance = targetPosition - startPosition;
-  let startTime = null;
-
-  function animation(currentTime) {
-    if (!startTime) startTime = currentTime;
-    const timeElapsed = currentTime - startTime;
-    const run = ease(timeElapsed, startPosition, distance, duration);
-
-    window.scrollTo(0, run);
-
-    if (timeElapsed < duration) requestAnimationFrame(animation);
-  }
-
-  function ease(t, b, c, d) {
-    t /= d / 2;
-    if (t < 1) return (c / 2) * t * t + b;
-    t--;
-    return (-c / 2) * (t * (t - 2) - 1) + b;
-  }
-
-  requestAnimationFrame(animation);
-}
 
 function handleSpecificationBtnClick() {
   specificationContainer.setAttribute(
@@ -289,7 +282,6 @@ function handleSpecificationBtnClick() {
       : "false"
   );
   productSpecificSection.scrollIntoView({ behavior: "smooth" });
-  // scrollToElement(productSpecificSection, 500); // Scroll to Y position 1 with a 500ms duration
 }
 
 const relatedProductsContainer = document.querySelector(
@@ -297,7 +289,6 @@ const relatedProductsContainer = document.querySelector(
 );
 let allowScroll = false;
 
-console.log(relatedProductsContainer);
 function displayRelatedProducts(products) {
   console.log(products);
   let html = "";
@@ -499,7 +490,6 @@ function displayReviews(reviews) {
     displayRating(reviews[i].rateValue, undefined, stars);
   });
 }
-// displayRating(totalRating, ratingCounter, starsArr);
 const reviewStars = document.querySelectorAll(".user--review .stars svg");
 console.log(reviewStars);
 reviewStars.forEach((stars, i) => {
@@ -508,3 +498,50 @@ reviewStars.forEach((stars, i) => {
     displayRating(i + 1, undefined, reviewStars);
   });
 });
+async function handleFavBtn(obj) {
+  console.log(obj);
+  const req = await fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    body: JSON.stringify(obj),
+  });
+  return await req.json();
+}
+async function handleAddToCart(obj) {
+  console.log(obj);
+  const req = await fetch("https://jsonplaceholder.typicode.com/", {
+    method: "POST",
+    body: JSON.stringify(obj),
+  });
+  return await req.json();
+}
+function handleAddToCartClicked() {
+  const addToCartBtn = document.querySelector("#addToCart");
+  const quantity = document.querySelector(".quantity input").value;
+  addToCartBtn.addEventListener("click", () => {
+    handleAddToCart({ productId: productId, quantity: quantity });
+  });
+}
+function addToWishList() {
+  addToWishListBtn.addEventListener("click", (obj) => {
+    const currStat = addToWishListBtn.getAttribute("isFav");
+    const req = async (obj) => {
+      const req = await fetch("https://jsonplaceholder.typicode.com/", {
+        method: "POST",
+        body: JSON.stringify({}),
+      });
+      console.log(obj);
+      console.log(req);
+
+      return await req.json();
+    };
+    req({
+      productId: productId,
+      isFav: currStat == "false" ? "true" : "false",
+    }).then(() => {
+      addToWishListBtn.setAttribute(
+        "isFav",
+        currStat == "false" ? "true" : "false"
+      );
+    });
+  });
+}
