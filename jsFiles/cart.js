@@ -1,5 +1,5 @@
 // ------------------------------
-function handleQuantityInput(card, currentQuantity, productId, type) {
+function handleQuantityInput(card, productId, currentQuantity, type) {
   const increaseBtn = card.querySelector(".increace");
   const decreaseBtn = card.querySelector(".decreace");
   const quantitySpan = card.querySelector(".num");
@@ -11,19 +11,17 @@ function handleQuantityInput(card, currentQuantity, productId, type) {
 
   increaseBtn.addEventListener("click", () => {
     if (quantity + 1 <= currentQuantity) {
-      updateQuantity(productId, currentQuantity, type).then(() => {
-        quantity++;
-        updatePrice();
-      });
+      quantity++;
+      updatePrice();
+      updateQuantity(productId, quantity, type);
     }
   });
 
   decreaseBtn.addEventListener("click", () => {
     if (quantity > 1) {
-      updateQuantity(productId, currentQuantity).then(() => {
-        quantity--;
-        updatePrice();
-      });
+      quantity--;
+      updatePrice();
+      updateQuantity(productId, quantity, type);
     }
   });
 
@@ -148,6 +146,7 @@ function displayOffersProducts(cartProducts) {
         `;
     productContainer.insertAdjacentElement("beforeend", div);
     handleQuantityInput(div, offerId, quantityInCart, "offer");
+
     handeleRemoveBtn(div, "offer");
     console.log(productContainer);
   });
