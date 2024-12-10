@@ -1,5 +1,5 @@
 // ------------------------------
-function handleQuantityInput(card, currentQuantity, productId) {
+function handleQuantityInput(card, currentQuantity, productId, type) {
   const increaseBtn = card.querySelector(".increace");
   const decreaseBtn = card.querySelector(".decreace");
   const quantitySpan = card.querySelector(".num");
@@ -11,7 +11,7 @@ function handleQuantityInput(card, currentQuantity, productId) {
 
   increaseBtn.addEventListener("click", () => {
     if (quantity + 1 <= currentQuantity) {
-      updateQuantity(productId, currentQuantity).then(() => {
+      updateQuantity(productId, currentQuantity, type).then(() => {
         quantity++;
         updatePrice();
       });
@@ -102,7 +102,7 @@ function displayProducts(cartProducts) {
             <p><span class="total">${price * quantityInCart}</span> le</p>
         `;
     productContainer.insertAdjacentElement("beforeend", div);
-    handleQuantityInput(div, variantId, quantity);
+    handleQuantityInput(div, variantId, quantity, "product");
     handeleRemoveBtn(div, "product");
     console.log(productContainer);
   });
@@ -147,17 +147,19 @@ function displayOffersProducts(cartProducts) {
         </div>
         `;
     productContainer.insertAdjacentElement("beforeend", div);
-    handleQuantityInput(div, offerId, quantityInCart);
+    handleQuantityInput(div, offerId, quantityInCart, "offer");
     handeleRemoveBtn(div, "offer");
     console.log(productContainer);
   });
 }
-async function updateQuantity(productId, quantity) {
+async function updateQuantity(productId, quantity, type) {
+  console.log(productId, quantity, type);
   const req = await fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "POST",
     body: JSON.stringify({
-      productId: productId,
+      id: productId,
       quantity: quantity,
+      type: type,
     }),
   });
   return await req.json();
