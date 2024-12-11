@@ -198,7 +198,7 @@ categories.forEach((cat) =>
 );
 const priceRange = document.querySelector("#rangeInput");
 priceRange.addEventListener("mouseup", (e) => {
-  getDate({ price: e.target.value });
+  getDate({ price: e.target.value * 500 });
 });
 async function handleFavBtn(obj) {
   console.log(obj);
