@@ -714,7 +714,7 @@ footer .copy{
     color: var(--color2);
     /* background: linear-gradient(90deg, #0A2A2B 0%, #235E5E 50%, #0A2A2B 100%); */
     /* background: linear-gradient(268.79deg, #159b9d 20.86%, #2F8587 50%, #179092 79.14%); */
-    background-color: #0e6c6d;
+/*     background-color: #0e6c6d; */
     background: linear-gradient(50deg, #1c2129 43.97%, #323841 55.6%, #1c2129 67.23%);
 
 }
