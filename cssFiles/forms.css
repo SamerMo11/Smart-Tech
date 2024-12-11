@@ -28,13 +28,13 @@ body {
     align-items: center;
     flex-direction: column;
     background: linear-gradient(114.8deg, #323841 4.8%, #21252B 95.2%);
-    height: 100vh;
+    height: auto;
 }
 
 .form{
     width: 60%;
-    height: 80%;
-    margin-top: 5%;
+    height: 80vh;
+    margin-block: 15vh 5vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,6 +45,27 @@ body {
     position: relative;
     overflow: hidden;
     transition: all 1s ease;
+    transform: scale(.5);
+    opacity: 0;
+    animation-name: clipy;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: .3s;
+    position: relative;
+    gap: 3vh;
+}
+@keyframes clipy {
+    from{
+        opacity: 0;
+        transform: scale(.5);
+
+    }
+    to{
+        opacity: 1;
+    transform: scale(1);
+
+    }
 }
 
 .form .banner{
@@ -598,3 +619,150 @@ body {
 /* ----------------------- */
 /* ----------------------- */
 /* ----------------------- */
+@media (max-width : 767px) {
+    .form{
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+    }
+    .form .banner {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+        padding-block: 20px;
+
+    }
+    .form .banner p {
+        font-size: clamp(.5rem, 5vw, 2rem);
+        line-height: 25px;
+    }
+    .form .banner .robot {
+        height: 40vw;
+    }
+    .form .banner .robot img {
+        height: 90%;
+    }
+    .form .banner button {
+        padding: 1vw 8vw;
+        font-size: clamp(.5rem, 5vw, 2rem);
+    }
+    .form .sign, .form .login {
+        width: 100%;
+        height: auto;
+        gap: 25px;
+        padding-block: 22px;
+    }
+    .form .login p {
+        font-size: clamp(1rem, 6vw, 3rem);
+    }
+    .form .login .accs {
+    width: 50vw;
+    }
+    .form .login .accs i {
+        width: 8vw;
+        height: 8vw;
+        font-size: clamp(.5rem, 5vw, 2rem);
+    }
+    .form .login > span {
+        font-size: clamp(.5rem, 4vw, 2rem);
+    }
+    .form .login form > .input {
+        width: 100%;
+    }
+    .form .login .last {
+        padding-left: 0;
+        justify-content: space-between;
+    }
+    .form .login .forget {
+        width: 50%;
+        text-align: center;
+    }
+    .form .login .last .input label,
+    .form .login .forget {
+        font-size: clamp(.5rem, 3vw, 2rem);
+    }
+
+    .form .login .last .input::after {
+    width: 75%;
+    }
+    .form .login .forget::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+    }
+    .form .login .send .submit {
+        padding: 2vw 20vw;
+        font-size: clamp(1rem, 4vw, 2rem);
+    }
+    .form .login form {
+        gap: 20px;
+    }
+
+    /* ----------------------- */
+    /* --------active----------- */
+
+    .form.active .banner {
+        transform: translateY(150%);
+        height: 50vh;
+        margin-block: 15vh 15vh;
+    }
+    
+    
+    .form.active .sign {
+        transform: translateY(0%) ;
+        display: flex;
+        opacity: 1;
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+
+    }
+    .form.active .login {
+            transform: translateY(0%) translateX(0);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+    .form .login{
+        transform: translate(0);
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+        
+    }
+    .form .sign{
+        position: absolute;
+        transform: translateY(0%) translateX(0);
+
+        /* transform: translateY(67%); */
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+
+        }
+/* ------------------- */
+        .form .sign > p {
+            color: var(--color1);
+            text-transform: capitalize;
+            font-size: clamp(1rem, 7vw, 3rem);
+        }
+        .form .sign form {
+            gap: 30px 0px;
+        }
+        .form .sign form > .terms p {
+            font-size: clamp(.5rem, 3vw, 2rem);
+        }
+        .form .sign form .send .submit {
+            padding: 2vw 20vw;
+            font-size: clamp(1rem, 4vw, 2rem);
+        }
+        .form .sign .seperate p {
+            font-size: clamp(.5rem, 3vw, 2rem);
+        }
+        .form .sign .accs {
+            width: 50vw;
+            }
+            .form .sign .accs i {
+                width: 8vw;
+                height: 8vw;
+                font-size: clamp(.5rem, 5vw, 2rem);
+            }
+
+
+
+    /* .form .sign{
+        display: none;
+    } */
+}

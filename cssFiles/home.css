@@ -547,7 +547,6 @@ nav .icons a span{
     animation-delay: .3s;
     opacity: 0;
     animation-fill-mode: forwards;
-
 }
 .carousel .list .items{
     width: 100%;
@@ -923,7 +922,7 @@ nav .icons a span{
 }
 .adv2 img{
     width: 22%;
-    align-self: end;
+    /* align-self: end; */
     animation: advs 3s linear infinite alternate;
 }
 
@@ -979,7 +978,6 @@ nav .icons a span{
 }
 .deals .content .track {
     height: 100%;
-    
     width: 90%;
     display: flex;
     justify-content: space-between;
@@ -989,7 +987,7 @@ nav .icons a span{
     scrollbar-width: none;
     scroll-behavior: smooth;
     position: relative;
-    gap: 50px;
+    gap: 40px;
     transition: 1s;
     animation-name: bottom;
     animation-timing-function: linear;
@@ -1029,7 +1027,7 @@ nav .icons a span{
 }
 
 .deals .content .track .card{
-    flex: 0 0 25%;
+    flex: 0 0 32%;
     height: 90%;
     display: flex;
     justify-content: space-evenly;
@@ -1037,9 +1035,9 @@ nav .icons a span{
     /* flex-wrap: wrap; */
     flex-direction: column;
     background: linear-gradient(142deg, #21252B 8.07%, #323841 50%, #21252B 91.93%);
-    border-radius: 45px;
+    border-radius: 35px;
     padding: 2%;
-    box-shadow: 0px 4px 4px 0px #000;
+    box-shadow: 0px 2px 4px 0px #000000a8;
     transition: 1s;
         /* float: inline-start; */
 }
@@ -1378,7 +1376,7 @@ nav .icons a span{
     width: 26%;
     height: 55%;
     background-color: #21252B59;
-    box-shadow: 0 2px 4px var(--shadow2);
+    box-shadow: 0 2px 4px #00000081;
     padding: 40px 20px;
     border-radius: 15px;
     position: relative;
