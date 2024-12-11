@@ -2,7 +2,6 @@ const imgsListDiv = document.querySelector(".all--images");
 const imgSlider = document.querySelector(".img--slider .imgs");
 const zoomDiv = document.querySelector(".zoomDiv");
 let product;
-console.log(zoomDiv);
 const productInfoDiv = document.querySelector(".product--info");
 const quickSpecifications = document.querySelector(".quick--specifications");
 const xZoom = 2;
@@ -74,7 +73,6 @@ function display() {
 function handleImgClick(indx) {
   imgSlider.style.transform = `translateX(${100 * -indx}%)`;
   activeImg = indx;
-  console.log(activeImg);
   const img = document.querySelector(".img" + indx);
 
   setZoomImgSize(activeImg);
@@ -114,7 +112,6 @@ const productData = localStorage.getItem("product");
 let productId = 0;
 getProduct().then((data) => {
   product = data;
-  console.log(data);
   imgsArray = product.images;
   display();
   productPath(product.category);
@@ -143,7 +140,6 @@ getProduct().then((data) => {
   });
   activeImgContainer.addEventListener("mousemove", function mouseMoveHandle(e) {
     if (!allowZoom) return;
-    console.log(activeImg);
     const clientBounding = activeImgContainer.getBoundingClientRect();
     const imgBounding = imgSlider
       .querySelector(".img" + activeImg)
@@ -195,7 +191,6 @@ function productDetails(product) {
 }
 function displayRating(totalRating, ratingCounter, starsArr) {
   const parentElement = starsArr[0].parentElement.parentElement;
-  console.log(parentElement);
   for (let i = 0; i < 5; i++) {
     if (i < totalRating) {
       starsArr[i].style.fill = "#FFAD33";
@@ -232,15 +227,12 @@ function relatedProductsSpecifations(obj, activeId) {
   for (const [key, value] of Object.entries(obj)) {
     const div = productSpecificationDiv(key);
     quickSpecifications.appendChild(div);
-    function handleClick() {
-      console.log("clicked");
-    }
+
     for (let i = 0; i < value.length; i++) {
       const li = document.createElement("li");
       li.innerHTML = `<button href="?id=${value[i].id}">
                     ${value[i].value}
                   </button>`;
-      li.addEventListener("click", handleClick);
 
       div.appendChild(li);
     }
@@ -290,7 +282,6 @@ const relatedProductsContainer = document.querySelector(
 let allowScroll = false;
 
 function displayRelatedProducts(products) {
-  console.log(products);
   let html = "";
 
   for (let i = 0; i < products.length; i++) {
@@ -360,19 +351,14 @@ function displayRelatedProducts(products) {
     checkIsScroll(products.length);
   });
   btns.forEach((btn) => {
-    console.log(btn);
     if (!allowScroll) {
       btn.style.display = "none";
     }
     btn.addEventListener("click", (e) => {
-      console.log(e);
-      console.log("Sss");
       const width = div.getBoundingClientRect().width;
-      console.log(width);
       if (e.currentTarget.id == "nextProduct") {
         if (x == products.length - 1) return;
         x++;
-        console.log(x);
         relatedProductsContainer.style.transform = `translateX(${
           (-245 - 15) * x
         }px)`;
@@ -389,11 +375,9 @@ function displayRelatedProducts(products) {
   });
 }
 function checkIsScroll(i) {
-  console.log(i);
   const productWidth = 260;
   const gap = 15;
   const neededWidth = (productWidth + gap) * i;
-  console.log(neededWidth);
   const parentContainerWidth =
     relatedProductsContainer.parentElement.offsetWidth;
   allowScroll = neededWidth > parentContainerWidth;
@@ -482,19 +466,14 @@ function displayReviews(reviews) {
   });
   reviewsDiv.insertAdjacentHTML("beforeend", html);
   const starsDivs = reviewsDiv.querySelectorAll(".stars");
-  console.log(starsDivs);
   starsDivs.forEach((div, i) => {
-    console.log(div);
     const stars = div.querySelectorAll("svg");
-    console.log(stars);
     displayRating(reviews[i].rateValue, undefined, stars);
   });
 }
 let userRating = 0;
 const reviewStars = document.querySelectorAll(".user--review .stars svg");
-console.log(reviewStars);
 reviewStars.forEach((stars, i) => {
-  console.log(stars);
   stars.addEventListener("mousemove", (e) => {
     displayRating(i + 1, undefined, reviewStars);
     userRating = i + 1;
@@ -502,7 +481,6 @@ reviewStars.forEach((stars, i) => {
 });
 
 async function handleFavBtn(obj) {
-  console.log(obj);
   const req = await fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "POST",
     body: JSON.stringify(obj),
@@ -519,8 +497,9 @@ async function handleAddToCart(obj) {
 }
 function handleAddToCartClicked() {
   const addToCartBtn = document.querySelector("#addToCart");
-  const quantity = document.querySelector(".quantity input").value;
   addToCartBtn.addEventListener("click", () => {
+    const quantity = document.querySelector(".quantity input").value;
+
     handleAddToCart({ productId: productId, quantity: quantity });
   });
 }
@@ -528,12 +507,11 @@ function addToWishList() {
   addToWishListBtn.addEventListener("click", (obj) => {
     const currStat = addToWishListBtn.getAttribute("isFav");
     const req = async (obj) => {
+      console.log(obj);
       const req = await fetch("https://jsonplaceholder.typicode.com/", {
         method: "POST",
         body: JSON.stringify({}),
       });
-      console.log(obj);
-      console.log(req);
 
       return await req.json();
     };
@@ -559,7 +537,6 @@ submitReview.addEventListener("click", () => {
 });
 
 async function sendComment(obj) {
-  console.log(obj);
   const req = await fetch("./about.js");
   return await req.json();
 }

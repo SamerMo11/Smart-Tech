@@ -9,18 +9,42 @@
       href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
       rel="stylesheet"
     />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../cssFiles/normalize.css" />
     <link rel="stylesheet" href="../cssFiles/product.css" />
     <link rel="stylesheet" href="../cssFiles/style.css" />
@@ -31,17 +55,17 @@
   <body>
     <nav>
       <div class="logo">
-          <img src="../main/logo.png" alt="">
-          <p>smartTech</p>
+        <img src="../main/logo.png" alt="" />
+        <p>smartTech</p>
       </div>
       <div class="links">
           <a href="../index.html">home</a>
           <a href="about.html">about us</a>
           <a href="contact.html">contact us</a>
           <a href="shop.html">shop</a>
-          <a href="forms.html">login & sign</a>
-          <a class="admin" href="../dashboard/main.html">dasboard</a>
-
+          <!-- <a href="htmlFiles/checkout.html">FAQ</a> -->
+          <!-- <a href="htmlFiles/cart.html">cart</a> -->
+          <!-- <a href="htmlFiles/forms.html">login & sign</a> -->
       </div>
       <div class="icons">
 
@@ -51,159 +75,187 @@
               <span>5</span>
               <i class="fa-regular fa-cart-shopping"></i>
           </a>
-          <form action="" class="navicons">
-              <i class="fa-regular fa-arrow-right-from-bracket">
-                  <input type="submit" value="">
-              </i>
-          </form>
-
+          <div class="tab">
+              <span></span><span></span><span></span>
+          </div>
       </div>
-      <div class="tab">
-          <span></span><span></span><span></span>
-      </div>
-  </nav>
-  <!-- -------------------------------------------------------------------------- -->
-  <!-- -------------------------------------------------------------------------- -->
+    </nav>
+    <!-- -------------------------------------------------------------------------- -->
+    <!-- -------------------------------------------------------------------------- -->
 
+    <!-- -----------------Search Div----------- -->
+    <div class="qsearch" id="qsearch">
+      <div class="content">
+        <i class="fa-solid fa-x" onclick="hideQsearch()"></i>
 
-<!-- -----------------Search Div----------- -->
-<div class="qsearch" id="qsearch">
-  <div class="content">
-      <i class="fa-solid fa-x" onclick="hideQsearch()"></i>
-  
-      <div class="search">
+        <div class="search">
           <div class="input">
-              <input type="text" name="" id="textInput" placeholder="search">
-              <i class="fa-regular fa-magnifying-glass"></i>
+            <input type="text" name="" id="textInput" placeholder="search" />
+            <i class="fa-regular fa-magnifying-glass"></i>
           </div>
-          <i class="fa-solid fa-microphone" id="startButton" onclick="startRecording()"></i>
-          <i class="fa-solid fa-microphone-slash" id="stopButton" onclick="stopRecording()" style="display: none;"></i>
-      </div>
-  
-      <div class="recent">
+          <i
+            class="fa-solid fa-microphone"
+            id="startButton"
+            onclick="startRecording()"
+          ></i>
+          <i
+            class="fa-solid fa-microphone-slash"
+            id="stopButton"
+            onclick="stopRecording()"
+            style="display: none"
+          ></i>
+        </div>
+
+        <div class="recent">
           <p>recent searchs</p>
-  
+
           <div class="recents">
-              <div class="rec">
-                  <p>laptops</p>
-                  <i class="fa-solid fa-x"></i>
-              </div>
-              <div class="rec">
-                  <p>laptops</p>
-                  <i class="fa-solid fa-x"></i>
-              </div>
-              <div class="rec">
-                  <p>laptops</p>
-                  <i class="fa-solid fa-x"></i>
-              </div>
-              <div class="rec">
-                  <p>laptops</p>
-                  <i class="fa-solid fa-x"></i>
-              </div>
+            <div class="rec">
+              <p>laptops</p>
+              <i class="fa-solid fa-x"></i>
+            </div>
+            <div class="rec">
+              <p>laptops</p>
+              <i class="fa-solid fa-x"></i>
+            </div>
+            <div class="rec">
+              <p>laptops</p>
+              <i class="fa-solid fa-x"></i>
+            </div>
+            <div class="rec">
+              <p>laptops</p>
+              <i class="fa-solid fa-x"></i>
+            </div>
           </div>
-          
+        </div>
+
+        <div class="prods">
+          <div class="prod">
+            <img
+              src="products/product1/4.png"
+              alt="productImg"
+              loading="lazy"
+            />
+            <div class="info">
+              <p class="title">smart watch 1</p>
+              <p>Lorem Ipsum has been the industry's standard.</p>
+              <p class="price">price: <span>1000 l.e</span></p>
+            </div>
+          </div>
+          <div class="prod">
+            <img
+              src="../products/product2/3.png"
+              alt="productImg"
+              loading="lazy"
+            />
+            <div class="info">
+              <p class="title">smart watch 1</p>
+              <p>Lorem Ipsum has been the industry's standard.</p>
+              <p class="price">price: <span>1000 l.e</span></p>
+            </div>
+          </div>
+          <div class="prod">
+            <img
+              src="../products/product3/7.png"
+              alt="productImg"
+              loading="lazy"
+            />
+            <div class="info">
+              <p class="title">smart watch 1</p>
+              <p>Lorem Ipsum has been the industry's standard.</p>
+              <p class="price">price: <span>1000 l.e</span></p>
+            </div>
+          </div>
+          <div class="prod">
+            <img
+              src="../products/product4/1.png"
+              alt="productImg"
+              loading="lazy"
+            />
+            <div class="info">
+              <p class="title">smart watch 1</p>
+              <p>Lorem Ipsum has been the industry's standard.</p>
+              <p class="price">price: <span>1000 l.e</span></p>
+            </div>
+          </div>
+          <div class="prod">
+            <img
+              src="../products/product5/1.png"
+              alt="productImg"
+              loading="lazy"
+            />
+            <div class="info">
+              <p class="title">smart watch 1</p>
+              <p>Lorem Ipsum has been the industry's standard.</p>
+              <p class="price">price: <span>1000 l.e</span></p>
+            </div>
+          </div>
+          <div class="prod">
+            <img
+              src="../products/product6/1.png"
+              alt="productImg"
+              loading="lazy"
+            />
+            <div class="info">
+              <p class="title">smart watch 1</p>
+              <p>Lorem Ipsum has been the industry's standard.</p>
+              <p class="price">price: <span>1000 l.e</span></p>
+            </div>
+          </div>
+          <div class="prod">
+            <img
+              src="../products/product7/1.png"
+              alt="productImg"
+              loading="lazy"
+            />
+            <div class="info">
+              <p class="title">smart watch 1</p>
+              <p>Lorem Ipsum has been the industry's standard.</p>
+              <p class="price">price: <span>1000 l.e</span></p>
+            </div>
+          </div>
+          <div class="prod">
+            <img
+              src="../products/product8/1.png"
+              alt="productImg"
+              loading="lazy"
+            />
+            <div class="info">
+              <p class="title">smart watch 1</p>
+              <p>Lorem Ipsum has been the industry's standard.</p>
+              <p class="price">price: <span>1000 l.e</span></p>
+            </div>
+          </div>
+        </div>
       </div>
-  
-  
-      <div class="prods">
-  
-          <div class="prod">
-              <img src="products/product1/4.png" alt="productImg" loading="lazy">
-              <div class="info">
-                  <p class="title">smart watch 1</p>
-                  <p>Lorem Ipsum has been the industry's standard.</p>
-                  <p class="price">price: <span>1000 l.e</span> </p>
-              </div>
-          </div>
-          <div class="prod">
-              <img src="../products/product2/3.png" alt="productImg" loading="lazy">
-              <div class="info">
-                  <p class="title">smart watch 1</p>
-                  <p>Lorem Ipsum has been the industry's standard.</p>
-                  <p class="price">price: <span>1000 l.e</span> </p>
-              </div>
-          </div>
-          <div class="prod">
-              <img src="../products/product3/7.png" alt="productImg" loading="lazy">
-              <div class="info">
-                  <p class="title">smart watch 1</p>
-                  <p>Lorem Ipsum has been the industry's standard.</p>
-                  <p class="price">price: <span>1000 l.e</span> </p>
-              </div>
-          </div>
-          <div class="prod">
-              <img src="../products/product4/1.png" alt="productImg" loading="lazy">
-              <div class="info">
-                  <p class="title">smart watch 1</p>
-                  <p>Lorem Ipsum has been the industry's standard.</p>
-                  <p class="price">price: <span>1000 l.e</span> </p>
-              </div>
-          </div>
-          <div class="prod">
-              <img src="../products/product5/1.png" alt="productImg" loading="lazy">
-              <div class="info">
-                  <p class="title">smart watch 1</p>
-                  <p>Lorem Ipsum has been the industry's standard.</p>
-                  <p class="price">price: <span>1000 l.e</span> </p>
-              </div>
-          </div>
-          <div class="prod">
-              <img src="../products/product6/1.png" alt="productImg" loading="lazy">
-              <div class="info">
-                  <p class="title">smart watch 1</p>
-                  <p>Lorem Ipsum has been the industry's standard.</p>
-                  <p class="price">price: <span>1000 l.e</span> </p>
-              </div>
-          </div>
-          <div class="prod">
-              <img src="../products/product7/1.png" alt="productImg" loading="lazy">
-              <div class="info">
-                  <p class="title">smart watch 1</p>
-                  <p>Lorem Ipsum has been the industry's standard.</p>
-                  <p class="price">price: <span>1000 l.e</span> </p>
-              </div>
-          </div>
-          <div class="prod">
-              <img src="../products/product8/1.png" alt="productImg" loading="lazy">
-              <div class="info">
-                  <p class="title">smart watch 1</p>
-                  <p>Lorem Ipsum has been the industry's standard.</p>
-                  <p class="price">price: <span>1000 l.e</span> </p>
-              </div>
-          </div>
-  
-      </div>
-  </div>
-  
-  
-  </div>
-  
-  <script>
+    </div>
+
+    <script>
       let recognition;
       let isRecording = false;
-  
+
       // التحقق من دعم المتصفح لميزة التعرف على الصوت وإنشاء كائن recognition
-      if ('webkitSpeechRecognition' in window) {
+      if ("webkitSpeechRecognition" in window) {
         recognition = new webkitSpeechRecognition();
-        recognition.lang = 'en-US'; // تعيين اللغة إلى الإنجليزية
+        recognition.lang = "en-US"; // تعيين اللغة إلى الإنجليزية
         recognition.interimResults = false;
         recognition.maxAlternatives = 1;
-  
+
         // التعامل مع النتيجة النهائية للنص
-        recognition.onresult = function(event) {
+        recognition.onresult = function (event) {
           const transcript = event.results[0][0].transcript;
           document.getElementById("textInput").value = transcript;
           console.log("Recognized text:", transcript);
         };
-  
+
         // معالجة الخطأ أثناء التسجيل
-        recognition.onerror = function(event) {
+        recognition.onerror = function (event) {
           console.error("Recognition error:", event.error);
         };
       } else {
         alert("Sorry, your browser does not support speech recognition.");
       }
-  
+
       // بدء التسجيل
       function startRecording() {
         if (recognition && !isRecording) {
@@ -214,32 +266,27 @@
           document.getElementById("stopButton").style.display = "flex";
         }
       }
-  
+
       // إنهاء التسجيل
       function stopRecording() {
         if (recognition && isRecording) {
           recognition.stop();
           isRecording = false;
           console.log("Recording stopped.");
-                  document.getElementById("startButton").style.display = "flex";
+          document.getElementById("startButton").style.display = "flex";
           document.getElementById("stopButton").style.display = "none";
         }
       }
-  
-  
+
       function hideQsearch() {
-      const qsearch = document.getElementById("qsearch");
-      qsearch.classList.add("hide");
-      qsearch.classList.remove("show");
-      searchIcon.classList.remove("color");
-  
-  }
-  
-  </script>
-  
-  
-  
-  <!-- -------------------------------------- -->
+        const qsearch = document.getElementById("qsearch");
+        qsearch.classList.add("hide");
+        qsearch.classList.remove("show");
+        searchIcon.classList.remove("color");
+      }
+    </script>
+
+    <!-- -------------------------------------- -->
     <main>
       <section class="product--section">
         <div class="container">
@@ -373,17 +420,28 @@
               <div class="controllers">
                 <div class="quantity">
                   <button class="dec"><i class="fa-solid fa-minus"></i></button>
-                  <input type="text" name="quantity" id="" value="1"/>
+                  <input type="text" name="quantity" id="" />
                   <button class="inc"><i class="fa-solid fa-plus"></i></button>
                 </div>
 
                 <button id="addToCart" class="buy--btn">Add To Cart</button>
 
                 <button id="addToWishlist" class="wishlist--btn">
-                <svg width="22" height="20" viewBox="0 0 22 20" stroke="#fff" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6 1C3.239 1 1 3.216 1 5.95C1 8.157 1.875 13.395 10.488 18.69C10.6423 18.7839 10.8194 18.8335 11 18.8335C11.1806 18.8335 11.3577 18.7839 11.512 18.69C20.125 13.395 21 8.157 21 5.95C21 3.216 18.761 1 16 1C13.239 1 11 4 11 4C11 4 8.761 1 6 1Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
+                  <svg
+                    width="22"
+                    height="20"
+                    viewBox="0 0 22 20"
+                    stroke="#fff"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6 1C3.239 1 1 3.216 1 5.95C1 8.157 1.875 13.395 10.488 18.69C10.6423 18.7839 10.8194 18.8335 11 18.8335C11.1806 18.8335 11.3577 18.7839 11.512 18.69C20.125 13.395 21 8.157 21 5.95C21 3.216 18.761 1 16 1C13.239 1 11 4 11 4C11 4 8.761 1 6 1Z"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                 </button>
               </div>
               <div class="offers">
@@ -583,84 +641,76 @@
 
       <div class="overlay"></div>
     </main>
-<!-- ------------------------ -->
-<footer>
-  <div class="div1">
-      <div class="logo">
-          <img src="../main/logo.png" alt="logoImg" loading="lazy">
+    <!-- ------------------------ -->
+    <footer>
+      <div class="div1">
+        <div class="logo">
+          <img src="../main/logo.png" alt="logoImg" loading="lazy" />
           <p>smartTech</p>
-      </div>
-      <div class="accs">
+        </div>
+        <div class="accs">
           <i class="fa-brands fa-facebook-f"></i>
           <i class="fa-brands fa-twitter"></i>
           <i class="fa-brands fa-instagram"></i>
           <i class="fa-brands fa-telegram"></i>
+        </div>
       </div>
-  </div>
-  
-  
-  <div class="div2">
-    <div class="col">
-      <p>links</p>
-      <div class="links">
-          <a href="../index.html">home</a>
-      <a href="./about.html">about us</a>
-      <a href="./shop.html">shop</a>
-      </div>
-  </div>
-  <div class="col">
-      <p>help</p>
-      <div class="links">
-          <a href="./contact.html">contact</a>
-      <a href="#">our services</a>
-      <a href="#">privacy</a>
-      </div>
-  </div>
-  <div class="col">
-      <p>support</p>
-      <div class="links">
-          <a href="./userDash.html">help center</a>
-      <a href="./userDash.html">my account</a>
-      <a href="./contact.html">contact us</a>
-      </div>
-  </div>
-      <div class="col">
+
+      <div class="div2">
+        <div class="col">
+          <p>links</p>
+          <div class="links">
+            <a href="../index.html">home</a>
+            <a href="./about.html">about us</a>
+            <a href="./shop.html">shop</a>
+          </div>
+        </div>
+        <div class="col">
+          <p>help</p>
+          <div class="links">
+            <a href="./contact.html">contact</a>
+            <a href="#">our services</a>
+            <a href="#">privacy</a>
+          </div>
+        </div>
+        <div class="col">
+          <p>support</p>
+          <div class="links">
+            <a href="./userDash.html">help center</a>
+            <a href="./userDash.html">my account</a>
+            <a href="./contact.html">contact us</a>
+          </div>
+        </div>
+        <div class="col">
           <p>contact us</p>
           <div class="links">
-              <p>
-                  <i class="fa-solid fa-envelope"></i>
-                  roanoke698@gamil.com
-              </p>
-              <p>
-                  <i class="fa-solid fa-phone"></i>
-                  +20 236 733 567 25
-              </p>
+            <p>
+              <i class="fa-solid fa-envelope"></i>
+              roanoke698@gamil.com
+            </p>
+            <p>
+              <i class="fa-solid fa-phone"></i>
+              +20 236 733 567 25
+            </p>
           </div>
-      </div>
-  
-      <form class="news">
+        </div>
+
+        <form class="news">
           <p>newsletter</p>
           <p>Get exclusive deals by signing up to our Newsletter.</p>
-          <input type="email" name="" id="" placeholder="Email">
+          <input type="email" name="" id="" placeholder="Email" />
           <button>
-              <i class="fa-light fa-envelope"></i>
-              sign up
+            <i class="fa-light fa-envelope"></i>
+            sign up
           </button>
-      </form>
-  
-  
-  </div>
-  
-  <p class="copy">
-      CopyRight @ All Rights Reserved Created By  <span> SmartTech</span>
-  </p>
-  </footer>
-<!-- ------------------------ -->
+        </form>
+      </div>
 
-
-
-
-
+      <p class="copy">
+        CopyRight @ All Rights Reserved Created By <span> SmartTech</span>
+      </p>
+    </footer>
+    <!-- ------------------------ -->
 
     <script
       src="https://kit.fontawesome.com/8004158925.js"
