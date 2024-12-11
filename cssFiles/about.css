@@ -340,7 +340,7 @@ body {
     width: 45%;
     height: 35vh;
     background: linear-gradient(249.59deg, #21252B 22.52%, #323841 50%, #21252B 77.48%);
-    box-shadow: var(--shadow2);
+    box-shadow: 0 2px 4px #00000081;
     border-radius: 15px;
     overflow: hidden;
     position: relative;
