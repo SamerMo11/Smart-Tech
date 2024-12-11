@@ -38,8 +38,10 @@ function handeleRemoveBtn(card, type) {
     removeItem({
       type: type,
       id: productId,
-    }).then(() => {
+    }).then((data) => {
       card.classList.add("hide");
+      const cart = document.querySelector("nav a[href='cart.html'] span");
+      cart.innerHTML = data;
       setTimeout(() => {
         card.remove();
       }, 1000);

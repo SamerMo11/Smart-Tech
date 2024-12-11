@@ -139,9 +139,11 @@ searchIcon.addEventListener("click", function () {
 function displaySearchProducts(products) {
   searchProductContainer.innerHTML = "";
   products.forEach((product) => {
-    const div = document.createElement("div");
-    div.classList.add("prod");
-    div.innerHTML = `
+    console.log(product);
+    const a = document.createElement("a");
+    a.href = `../htmlFiles/product.html?variantId=${product.variantId}&mainId=${product.mainId}`;
+    a.classList.add("prod");
+    a.innerHTML = `
             <img src="./products/product1/4.png" alt="productImg" loading="lazy">
             <div class="info">
                 <p class="title">smart watch 1</p>
@@ -149,7 +151,7 @@ function displaySearchProducts(products) {
                 <p class="price">price: <span>1000 l.e</span> </p>
             </div>
      `;
-    searchProductContainer.appendChild(div);
+    searchProductContainer.appendChild(a);
   });
 }
 const searchInput = document.querySelector("#textInput");

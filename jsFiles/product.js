@@ -500,7 +500,12 @@ function handleAddToCartClicked() {
   addToCartBtn.addEventListener("click", () => {
     const quantity = document.querySelector(".quantity input").value;
 
-    handleAddToCart({ productId: productId, quantity: quantity });
+    handleAddToCart({ productId: productId, quantity: quantity }).then(
+      (data) => {
+        const cart = document.querySelector("nav a[href='cart.html'] span");
+        cart.innerHTML = data;
+      }
+    );
   });
 }
 function addToWishList() {

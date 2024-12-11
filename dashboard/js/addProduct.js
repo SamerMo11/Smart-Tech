@@ -29,22 +29,18 @@ async function getCategoriesAttributes(cat) {
 Form.addEventListener("submit", (e) => {
   e.preventDefault();
   const inputs = Form.querySelectorAll("input");
-  const productInfo = new FormData();
+  const productInfo = {};
+  productInfo["images"] = [];
   inputs.forEach((input) => {
-    console.log(productInfo.has([input.getAttribute("name")]));
-
-    productInfo.append([input.getAttribute("name")], input.value);
-    console.log(productInfo.has([input.getAttribute("name")]));
-
-    productInfo.has([input.getAttribute("name")]);
+    productInfo[input.getAttribute("name")] = input.value;
   });
 
-  Array.from(uploadBtn.files).forEach((file) => {
-    productInfo.append("images", file);
+  Array.from(uploadBtn.files).forEach((file, i) => {
+    productInfo.images.push(URL.createObjectURL(file));
   });
+  console.log(productInfo);
 
   sendProductInfo(productInfo);
-  console.log(productInfo);
 });
 async function getCategories() {
   try {
