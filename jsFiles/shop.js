@@ -211,5 +211,22 @@ async function handleAddToCart(obj) {
   });
   return await req.json();
 }
-
-console.log(cart);
+let searchText = "";
+async function search() {
+  //    method: "POST",
+  // body: JSON.stringify({text :searchText }),
+  const req = await fetch("../jsFiles/getsearchProduct.json");
+  const data = await req.json();
+  displaySearchProducts(data);
+  return data;
+}
+let searchTimeOut;
+const searchInput = document.querySelector("#secondtextInput");
+searchInput.addEventListener("input", (e) => {
+  searchText = e.target.value;
+  if (searchTimeOut) clearTimeout(searchTimeOut);
+  if (searchText !== "")
+    searchTimeOut = setTimeout(() => {
+      getDate({ text: searchText });
+    }, 1000);
+});
