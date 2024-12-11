@@ -122,10 +122,14 @@ function displayProductsCard(products) {
     html += `<div class="item"  >
             <i class="fa-solid fa-heart fav" isfav = ${isfav} itemId =${id}></i>
             <div class="img">
+                <a href="product.html">
                 <img src="../products/product4/1.png" alt="">
+                </a>
             </div>
             <div class="info">
+                <a href="product.html">
                 <p class="name">${name}</p>
+                </a>
                 <span>${description}</span>
                 <div class="div">
                     <div class="qty">
