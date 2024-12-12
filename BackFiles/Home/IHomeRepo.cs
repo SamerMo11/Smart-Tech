@@ -1,4 +1,4 @@
-﻿using E_CommerceWeb.Models;
+using E_CommerceWeb.Models;
 using E_CommerceWeb.ViewModels.Home;
 using Stripe.Checkout;
 
@@ -10,17 +10,16 @@ namespace E_CommerceWeb.Repository.Interface
         string GetUserId();
 
 
-
-
+        #region Contact
         //Save Contact Fields in DB
         Task<bool> AddContactAsync(Contact model);
+        #endregion
 
 
 
-
+        #region Home & Cart
         //Method for Count of items in the cart ===> according to Specific User
         Task<int> GetCartCountAsync();
-
 
 
 
@@ -30,12 +29,8 @@ namespace E_CommerceWeb.Repository.Interface
 
 
 
-
         //Method for Adding Offer to Cart
         Task<int> AddOfferAsync(int offerid, int quantity = 1);
-
-
-
 
 
 
@@ -44,14 +39,8 @@ namespace E_CommerceWeb.Repository.Interface
 
 
 
-
-
-
-
         //Method for Deleting Offer form Cart
         Task<int> DeleteOfferAsync(int Offerid);
-
-
 
 
 
@@ -60,16 +49,53 @@ namespace E_CommerceWeb.Repository.Interface
 
 
 
-
-
         //Delete All Offer From Cart Details
         Task<bool> DeleteAllOfferAsync(int OfferId);
 
 
 
+        //Get Data In The Home Page
+        Task<dynamic> GetHomeDataAsync();
 
 
 
+        //Last Searches For User
+        Task<dynamic> GetLastSearchesAsync();
+
+
+
+        //Return Suggested Products
+        Task<dynamic> GetSearchProductAsync(string text);
+
+
+
+
+        //Delete Search Result from Search Model At {Home}
+        Task<bool> DeleteSearchResultAsync(int SearchId);
+
+
+
+        //Data in Shopping Cart
+        Task<dynamic> GetCartDataAsync();
+
+
+
+
+
+
+        //Method For Add Or Remove Product From His Favorite List
+        Task AddOrRemoveFavoriteProductAsync(int productId, bool isChecked);
+
+
+
+
+
+        //update Quantity
+        Task<int> UpdateItemQuantityAsync(int productvariantid, int offerId, int quantity);
+        #endregion
+
+
+        #region product View
         //Get Data in product View ==> {Details - define MainAttribute - Related Product}
         Task<dynamic> GetProductAsync(int mainProductId, int? variantId);
 
@@ -77,24 +103,32 @@ namespace E_CommerceWeb.Repository.Interface
 
 
 
+        //Check Validation To allow making CheckOut
+        Task<dynamic> CheckReviewValidationAsync(int productId);
 
 
 
+
+        //Make Review 
+        Task<dynamic> MakeReviewAsync(string Message, int RateValue, int VariantId);
+        #endregion
+
+
+
+        #region Shop
+        //Return The Shop data
+        Task<dynamic> GetShopDataAsync(ShopFilter filter);
+        #endregion
+
+
+        #region Check Out
         //Get All Cart Details Data
         Task<ShoppingCartVM> GetCartDetailsAsync();
 
 
 
-
-
-
-
-
         // View And Keep Data in Check Out Page And Make The Whole Model 
         Task<CheckOutVM> GetCheckOutDataAsync();
-
-
-
 
 
 
@@ -105,21 +139,10 @@ namespace E_CommerceWeb.Repository.Interface
 
 
 
-
-
-
         //Check that Code Is Valid (Check Out Page)
         Task<decimal> CheckCodeValidationAndGetDiscountAsync(string code);
         // Check Existing Code Only
         Task<bool> CheckCodeValidationAsync(string code);
-
-
-
-
-
-
-
-
 
 
 
@@ -130,17 +153,13 @@ namespace E_CommerceWeb.Repository.Interface
 
 
 
-
         //make checkout and move to stripe web
         Task<SessionCreateOptions> CheckOutAsync(string code);
 
 
 
-
-
-
-
         // Get DiscountCode By Name and update IsUsed To ===> TRUE
         Task GetDiscountCodeByCodeAsync(string code);
+        #endregion
     }
 }
