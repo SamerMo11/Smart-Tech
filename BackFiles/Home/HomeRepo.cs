@@ -1,11 +1,15 @@
-﻿using E_CommerceWeb.Data;
+using E_CommerceWeb.Data;
 using E_CommerceWeb.Models;
 using E_CommerceWeb.Repository.Interface;
 using E_CommerceWeb.ViewModels.Email;
 using E_CommerceWeb.ViewModels.Home;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
+using Newtonsoft.Json;
 using Stripe.Checkout;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace E_CommerceWeb.Repository
 {
@@ -33,7 +37,7 @@ namespace E_CommerceWeb.Repository
             return UserId;
         }
 
-
+        #region Contact
         //Save Contact Fields in DB
         public async Task<bool> AddContactAsync(Contact model)
         {
@@ -58,7 +62,7 @@ namespace E_CommerceWeb.Repository
                 return false;
             }
         }
-
+        #endregion
 
 
 
@@ -76,7 +80,7 @@ namespace E_CommerceWeb.Repository
 
 
 
-
+        #region Home And Cart
         //Method for Count of items in the cart ===> according to Specific User
         public async Task<int> GetCartCountAsync()
         {
@@ -88,6 +92,97 @@ namespace E_CommerceWeb.Repository
                        select new { d.Quantity };
             return cart.Count();
         }
+
+
+
+
+        //update Quantity
+        public async Task<int> UpdateItemQuantityAsync(int productvariantid, int offerId, int quantity)
+        {
+            using var transiant = _context.Database.BeginTransaction();
+            try
+            {
+                //Update ProductVariant Qty
+                if(productvariantid != 0)
+                {
+                    var productIn = await _context.Variants.FindAsync(productvariantid);
+                    var userId = GetUserId();
+                    if (userId == null)
+                        throw new Exception("User Not Exist ....");
+                    var cart = await GetShoppingCartByUserId(userId);
+                    if (cart == null)
+                    {
+                        cart = new ShoppingCart
+                        {
+                            User_Id = userId
+                        };
+                        await _context.ShoppingCarts.AddAsync(cart);
+                        await _context.SaveChangesAsync();
+                    }
+
+                    var cartDetails = await _context.CartDetails.Where(x => x.ShoppingCart_Id == cart.Id && x.ProductIn_Id == productvariantid).FirstOrDefaultAsync();
+                    if (cartDetails == null)
+                    {
+                        cartDetails = new CartDetails
+                        {
+                            ProductIn_Id = productvariantid,
+                            ShoppingCart_Id = cart.Id,
+                            Quantity = quantity,
+                            UnitPrice = productIn.Discount == 0 ? productIn.Price : Math.Round(productIn.Price * (1 - ((double)productIn.Discount / 100)), 2)
+                        };
+                        await _context.CartDetails.AddAsync(cartDetails);
+                    }
+                    else
+                    {
+                        if (productIn.Quantity > cartDetails.Quantity)
+                            cartDetails.Quantity = quantity;
+                    }
+                    await _context.SaveChangesAsync();
+                    transiant.Commit();
+                }
+                else
+                {
+                    //Update Offer Qty
+                    var Offer = await _context.Offers.FindAsync(offerId);
+                    var userid = GetUserId();
+                    if (userid == null)
+                        throw new Exception("User Not Exist ....");
+                    var Cart = await GetShoppingCartByUserId(userid);
+                    if (Cart == null)
+                    {
+                        Cart = new ShoppingCart
+                        {
+                            User_Id = userid
+                        };
+                        await _context.ShoppingCarts.AddAsync(Cart);
+                        await _context.SaveChangesAsync();
+                    }
+
+                    var CartDetails = await _context.CartDetails.Where(x => x.ShoppingCart_Id == Cart.Id && x.OfferId == offerId).FirstOrDefaultAsync();
+                    if (CartDetails == null)
+                    {
+                        CartDetails = new CartDetails
+                        {
+                            OfferId = offerId,
+                            ShoppingCart_Id = Cart.Id,
+                            Quantity = quantity,
+                            UnitPrice = Offer.Price,
+                        };
+                        await _context.CartDetails.AddAsync(CartDetails);
+                    }
+                    else
+                    {
+                        CartDetails.Quantity = quantity;
+                    }
+                    await _context.SaveChangesAsync();
+                    transiant.Commit();
+                }
+                
+            }
+            catch (Exception ex) { }
+            return await GetCartCountAsync();
+        }
+
 
 
 
@@ -305,9 +400,293 @@ namespace E_CommerceWeb.Repository
 
 
 
-        
+
+        //Get Data In The Home Page
+        public async Task<dynamic> GetHomeDataAsync()
+        {
+            //var Variants = await _context.Variants.AsSplitQuery().AsNoTrackingWithIdentityResolution().Include(x => x.Product).ToListAsync();
+
+            //Best Sales
+            var BestSales = await _context.Variants.AsSplitQuery().AsNoTrackingWithIdentityResolution().Include(x => x.Product)
+                .OrderByDescending(x => x.TotalRating == 0 ? 1 : x.TotalRating / x.UserCountRating == 0 ? 1 : x.UserCountRating).Take(10).Select(a => new
+                                    {
+                                        MainId = a.Product_Id,
+                                        variantId = a.Id,
+                                        img = a.ImagePath,
+                                        title = a.Product.Name
+                                    }).ToListAsync();
+
+            //deals of the day
+            var Deals = await _context.Variants.AsSplitQuery().AsNoTrackingWithIdentityResolution().Include(x => x.Product).OrderBy(x => Guid.NewGuid()).Take(15)
+                        .Select(a => new
+                        {
+                            MainId = a.Product_Id,
+                            id = a.Id,
+                            title = a.Product.Name,
+                            img = a.ImagePath,
+                            rating = a.TotalRating == 0 ? 1 : a.TotalRating / a.UserCountRating == 0 ? 1 : a.UserCountRating,
+                            description = a.Product.Description,
+                            originalPrice = a.Price,
+                            discount =a.Discount,
+                        }).ToListAsync();
 
 
+            //special collection offers
+            var Offers = await _context.Offers.Include(x => x.OfferProducts).ToListAsync();
+
+            List<dynamic> collection = new List<dynamic>();
+
+            foreach (var Offer in Offers)
+            {
+                var OfferProducts = await _context.OfferProducts.AsSplitQuery().AsNoTrackingWithIdentityResolution().Include(op => op.ProductVariant).ThenInclude(pv => pv.Product).Where(x => x.OfferId == Offer.Id).ToListAsync();
+                var offerdetails = new
+                {
+                    offerId = Offer.Id,
+                    img1 = OfferProducts[0].ProductVariant.ImagePath,
+                    img2 = OfferProducts[1].ProductVariant.ImagePath,
+                    title1 = OfferProducts[0].ProductVariant.Product.Name,
+                    title2 = OfferProducts[1].ProductVariant.Product.Name,
+                    price = Offer.Price,
+                };
+                collection.Add(offerdetails);
+            }
+
+            var obj = new
+            {
+                BestSales = BestSales,
+                dealsoftheday = Deals,
+                Offers = collection
+            };
+
+            return obj;
+        }
+
+
+
+        //Last Searches For User
+        public async Task<dynamic> GetLastSearchesAsync()
+        {
+            var UserId = GetUserId();
+            if (UserId != null)
+            {
+                var Searches = await _context.Searches.Where(x => x.UserId == UserId).Select(a => new
+                {
+                    searchId = a.Id,
+                    SearchText = a.SearchText
+                }).Take(5).ToListAsync();
+                return Searches;
+            }
+            return new { searchId = 0 , SearchText = "" };
+        }
+
+
+
+
+
+        //Return Suggested Products
+        public async Task<dynamic> GetSearchProductAsync(string text)
+        {
+            var products = await _context.Variants.AsSplitQuery().AsNoTrackingWithIdentityResolution().Include(x => x.Product)
+                                                  .Where(x => x.Product.Name.ToLower().Contains(text.ToLower())).Select(a => new
+                                                  {
+                                                      MainId = a.Product.Id,
+                                                      VariantId = a.Id,
+                                                      Name = a.Product.Name,
+                                                      Image = a.ImagePath,
+                                                      description = a.Product.Description,
+                                                      Price = a.Price
+                                                  }).OrderBy(x => Guid.NewGuid()).Take(8).ToListAsync();
+
+            return products;
+        }
+
+
+
+
+        //Delete Search Result from Search Model At {Home}
+        public async Task<bool> DeleteSearchResultAsync(int SearchId)
+        {
+            var item = await _context.Searches.FindAsync(SearchId);
+            if (item == null) return false;
+
+            _context.Searches.Remove(item);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+
+
+
+
+        //Data in Shopping Cart
+        public async Task<dynamic> GetCartDataAsync()
+        {
+            var UserId = GetUserId();
+            if (UserId != null)
+            {
+                var Cart = await _context.ShoppingCarts.FirstOrDefaultAsync(x => x.User_Id == UserId);
+                var CartDetails = await _context.CartDetails.Where(x => x.ShoppingCart_Id == Cart.Id).ToListAsync();
+
+
+                List<dynamic> CartProducts = new List<dynamic>();
+                List<dynamic> CartOffers = new List<dynamic>();
+
+                foreach (var item in CartDetails)
+                {
+                    var ProductIn = await _context.Variants.FirstOrDefaultAsync(x => x.Id == item.ProductIn_Id);
+                    var Offer = await _context.Offers.AsSplitQuery().Include(x => x.OfferProducts).FirstOrDefaultAsync(x => x.Id == item.OfferId);
+                    if (ProductIn != null)
+                    {
+                        var obj = new 
+                        {
+                            CartDetailId = item.Id,
+                            VariantId = ProductIn.Id,
+                            //Color = ProductIn.Color,
+                            ImagePath = ProductIn.ImagePath,
+                            Price = ProductIn.Price,
+                            Quantity = ProductIn.Quantity,
+                            QuantityInCart = item.Quantity,
+                            Discount = ProductIn.Discount
+                        };
+                        CartProducts.Add(obj);
+                    }
+                    if (Offer != null)
+                    {
+                        var OfferProducts = await _context.OfferProducts.AsSplitQuery().Include(x => x.ProductVariant).ThenInclude(pv => pv.Product).Where(x => x.OfferId == Offer.Id).ToListAsync();
+                        var obj = new 
+                        {
+                            
+                            CartDetailId = item.Id,
+                            OfferId = Offer.Id,
+                            img1 = OfferProducts[0].ProductVariant.ImagePath,
+                            img2 = OfferProducts[1].ProductVariant.ImagePath,
+                            title1 = OfferProducts[0].ProductVariant.Product.Name,
+                            title2 = OfferProducts[1].ProductVariant.Product.Name,
+                            QuantityInCart = item.Quantity,
+                            price = Offer.Price,
+                        };
+                        CartOffers.Add(obj);
+                    }
+                }
+
+                var model = new
+                {
+                    CartId = Cart.Id,
+                    CartProducts = CartProducts,
+                    CartOffers = CartOffers
+                };
+                return model;
+            }
+            return null;
+        }
+
+
+
+
+
+
+
+        // Private method Return the Favorite Product For Particular User
+        private async Task<List<int>> FavoriteProductsAsync(string UserId)
+        {
+            var FavoriteProduct = new List<int>();
+            var products = await _context.Favourites.Where(x => x.User_Id == UserId).Join(_context.Variants, x => x.ProductIn_Id, y => y.Id, (x, y) => new
+            {
+                y.Id
+            }).ToListAsync();
+            foreach (var item in products)
+            {
+                FavoriteProduct.Add(item.Id);
+            }
+            return FavoriteProduct;
+        }
+
+
+        //Method For Add Or Remove Product From His Favorite List
+        public async Task AddOrRemoveFavoriteProductAsync(int productId, bool isChecked)
+        {
+            var productVariant = await _context.Variants.FindAsync(productId);
+            var userid = GetUserId();
+            var FavoriteProduct = await FavoriteProductsAsync(userid);
+            if (userid != null)
+            {
+                if (FavoriteProduct.Any(x => x == productVariant.Id) && !isChecked)
+                {
+                    //Remove
+                    var model = await _context.Favourites.FirstOrDefaultAsync(x => x.ProductIn_Id == productId);
+                    _context.Favourites.Remove(model);
+                    await _context.SaveChangesAsync();
+                }
+                else if (!FavoriteProduct.Any(x => x == productVariant.Id) && isChecked)
+                {
+                    //Add
+                    var model = new Favourite { User_Id = userid, ProductIn_Id = productVariant.Id };
+                    await _context.Favourites.AddAsync(model);
+                    await _context.SaveChangesAsync();
+                }
+            }
+        }
+        #endregion
+
+
+
+
+
+        #region Shop
+
+        //Return The Shop data
+        public async Task<dynamic> GetShopDataAsync(ShopFilter filter)
+        {
+            //user favourite 
+            List<int> userfav = new List<int>();
+            var userid = GetUserId();
+            if(userid != null)
+            {
+                userfav = await FavoriteProductsAsync(userid);
+            }
+
+            var variants = await _context.Variants.AsSplitQuery().Include(x => x.Product).Select(a => new
+            {
+                MainId=a.Product_Id,
+                id = a.Id,
+                name = a.Product.Name,
+                description = a.Product.Description,
+                price = a.Price,
+                currency = "LE",
+                image = "/images/"+a.ImagePath,
+                rating = a.UserCountRating == 0? 0 : Math.Round((decimal)(a.TotalRating / a.UserCountRating),1),
+                quantity = a.Quantity,
+                catId = a.Product.Category_Id,
+                isfav = userfav.Count == 0? false: userfav.Any(x => x == a.Id)
+                //isfav = true
+            }).OrderBy(x => Guid.NewGuid()).ToListAsync();
+
+            if(filter.text!= null)
+            {
+                variants = variants.Where(x => x.name.ToLower().Contains(filter.text.ToLower())).ToList();
+            }
+
+            if (filter.category != null)
+            {
+                var cat = await _context.categories.FirstOrDefaultAsync(x => x.Name.ToLower() == filter.category.ToLower());
+                variants = variants.Where(x => x.catId == cat.Id).ToList();
+            }
+
+            if (filter.price != 0)
+            {
+
+                variants = variants.Where(x => x.price >= 500 && x.price <= (double)filter.price).ToList();
+            }
+
+            return variants;
+        }
+
+        #endregion
+
+
+
+
+        #region product View
         //Get Data in product View ==> {Details - define MainAttribute - Related Product - Reviews}
         public async Task<dynamic> GetProductAsync(int mainProductId, int? variantId)
         {
@@ -320,6 +699,7 @@ namespace E_CommerceWeb.Repository
                 Variant = await _context.Variants.FirstOrDefaultAsync();
 
             var ImagesList = await _context.VariantImages.Where(x => x.ProductVariant_Id == Variant.Id).Select(a => a.ImagePath).ToListAsync();
+            Images.Add(Variant.ImagePath);
             Images.AddRange(ImagesList);
 
 
@@ -331,7 +711,7 @@ namespace E_CommerceWeb.Repository
             }).FirstOrDefaultAsync(x => x.Id == MainProduct.Category_Id);
 
 
-            var Variants = await _context.Variants.AsNoTracking().Where(x => x.Product_Id == mainProductId).ToListAsync();
+            var Variants = await _context.Variants.AsNoTracking().Where(x => x.Product_Id == mainProductId).OrderBy(x => Guid.NewGuid()).ToListAsync();
             var Specific = await _context.ProductAttributes.Include(x => x.CategoryAttribute).Where(x => x.Product_Id == mainProductId).ToListAsync();
 
 
@@ -377,8 +757,17 @@ namespace E_CommerceWeb.Repository
             }
 
 
+
+            //UserId And his Fav
+            var UserId = GetUserId();
+            List<int> userFav = new List<int>();
+            if(UserId != null)
+            {
+                userFav = await FavoriteProductsAsync(UserId);
+            }
+
             List<dynamic> RelatedVariants = new List<dynamic>();
-            var RelatedMainProduct = await _context.Products.Where(x => x.Category_Id == Category.Id).ToListAsync();
+            var RelatedMainProduct = await _context.Products.Where(x => x.Category_Id == Category.Id).OrderBy(x => Guid.NewGuid()).ToListAsync();
             foreach (var item in RelatedMainProduct)
             {
                 var data = await _context.Variants.Where(x => x.Product_Id == item.Id).Select(a => new 
@@ -390,7 +779,7 @@ namespace E_CommerceWeb.Repository
                     Image = a.ImagePath,
                     TotalRating = a.TotalRating,
                     UserCountRating = a.TotalRating,
-                    IsFavorite = a.IsFavorite,
+                    IsFavorite = userFav.Count == 0? false : userFav.Any(z => z == a.Id),
                 }).ToListAsync();
                 RelatedVariants.AddRange(data);
             }
@@ -420,7 +809,7 @@ namespace E_CommerceWeb.Repository
                     Color = Variant.Color,
                     Price = Variant.Price,
                     Discount = Variant.Discount,
-                    IsFavourite = Variant.IsFavorite,
+                    IsFavourite = userFav.Count == 0 ? false : userFav.Any(z => z == Variant.Id),
                     Quantity = Variant.Quantity,
                     TotalRating = Variant.TotalRating,
                     UserCountRating = Variant.UserCountRating
@@ -429,6 +818,7 @@ namespace E_CommerceWeb.Repository
                 Images = Images,
                 Colors = Variants.Select(a => new
                 {
+                    MainColorId = a.Product_Id,
                     Id = a.Id,
                     Color = a.Color,
                 }).ToList(),
@@ -447,8 +837,99 @@ namespace E_CommerceWeb.Repository
 
 
 
+        //Check Validation To allow making CheckOut
+        public async Task<dynamic> CheckReviewValidationAsync(int productId)
+        {
+            //Not Logined
+            var UserId = GetUserId();
+            if (UserId == null)
+            {
+                var model = new
+                {
+                    result = false,
+                    error = "You must login..."
+                };
+                return model;
+            }
 
 
+            //There is no Orders
+            var UserOrders = await _context.OrderDetails.AsSingleQuery().Include(x => x.Order).Where(x => x.Order.User_Id == UserId).ToListAsync();
+            if (UserOrders == null)
+            {
+                var model = new
+                {
+                    result = false,
+                    error = "you did not buy any thing yet...."
+                };
+                return model;
+            }
+
+
+
+            //Check from existing
+            var result = UserOrders.Any(x => x.ProductIn_Id == productId);
+            if (!result) 
+            {
+                var model = new
+                {
+                    result = false,
+                    error = "you did not buy this product yet...."
+                };
+                return model;
+            }
+
+
+            //Vaild 
+            var Valid = new
+            {
+                result = true,
+                error = "you allowed to make review"
+            };
+            return Valid;
+
+        }
+
+
+
+
+        //Make Review 
+        public async Task<dynamic> MakeReviewAsync(string Message, int RateValue, int VariantId)
+        {
+
+            var Variant = await _context.Variants.FindAsync(VariantId);
+            if (Variant == null)
+                return new {result = false};
+
+            Variant.UserCountRating++;
+            Variant.TotalRating += RateValue;
+
+            _context.Variants.Update(Variant);
+            await _context.SaveChangesAsync();
+
+
+
+            var UserId = GetUserId();
+            var review = new Review 
+            {
+                CreatedAt = DateTime.Now,
+                Message  = Message,
+                productVariantId = VariantId,
+                RateValue = RateValue,
+                UserId = UserId
+            };
+
+            await _context.Reviews.AddAsync(review);
+            await _context.SaveChangesAsync();
+
+            return new { result = true ,VariantId = VariantId,MainId = Variant.Product_Id };
+        }
+        #endregion
+
+
+
+
+        #region Check Out
         //Get All Cart Details Data
         public async Task<ShoppingCartVM> GetCartDetailsAsync()
         {
@@ -556,8 +1037,7 @@ namespace E_CommerceWeb.Repository
         //Check that Code Is Valid (Check Out Page)
         public async Task<decimal> CheckCodeValidationAndGetDiscountAsync(string code)
         {
-            var coderow = await _context.DiscountCodes.FirstOrDefaultAsync(x => x.Code == code);
-
+            var coderow = await _context.DiscountCodes.Include(x => x.User).FirstOrDefaultAsync(x => x.Code == code && x.User.Id == GetUserId());
             if (coderow == null) return 0;
             var result = coderow.IsUsed;
             if (result == false)
@@ -805,6 +1285,6 @@ namespace E_CommerceWeb.Repository
                 await _context.SaveChangesAsync();
             }
         }
-
+        #endregion
     }
 }
