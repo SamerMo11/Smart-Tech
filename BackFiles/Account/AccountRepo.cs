@@ -1,10 +1,11 @@
-﻿using E_CommerceWeb.Data;
+using E_CommerceWeb.Data;
 using E_CommerceWeb.Models;
 using E_CommerceWeb.Repository.Interface;
 using E_CommerceWeb.ViewModels.Account;
 using E_CommerceWeb.ViewModels.Account.DashData;
 using E_CommerceWeb.ViewModels.Email;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 
@@ -18,18 +19,21 @@ namespace E_CommerceWeb.Repository
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly AppDbContext _context;
         private readonly IHttpContextAccessor _httpContext;
+        private readonly IDashboardRepo _dashboardRepo;
 
         public AccountRepo(UserManager<ApplicationUser> userManager,
                            IEmailRepo emailRepo,
                            SignInManager<ApplicationUser> signInManager,
                            AppDbContext context,
-                           IHttpContextAccessor httpContext)
+                           IHttpContextAccessor httpContext,
+                           IDashboardRepo dashboardRepo)
         {
             _userManager = userManager;
             _emailRepo = emailRepo;
             _signInManager = signInManager;
             _context = context;
             _httpContext = httpContext;
+            _dashboardRepo = dashboardRepo;
         }
 
 
@@ -74,6 +78,7 @@ namespace E_CommerceWeb.Repository
             var result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
+                await _userManager.AddToRoleAsync(user,"user");
                 await GenerateEmailConfirmationTokenAsync(user);
             }
             return result;
@@ -133,10 +138,10 @@ namespace E_CommerceWeb.Repository
 
 
         //Accept login 
-        public async Task<SignInResult> LoginAsync(LoginVM model)
+        public async Task<Microsoft.AspNetCore.Identity.SignInResult> LoginAsync(LoginVM model)
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
-            if (user == null) return SignInResult.NotAllowed;
+            if (user == null) return Microsoft.AspNetCore.Identity.SignInResult.NotAllowed;
             var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
             return result;
         }
@@ -256,6 +261,7 @@ namespace E_CommerceWeb.Repository
                                                    IsFavorite = true,
                                                    Price = y.Price,
                                                    ProductName = _context.Products.FirstOrDefault(z => z.Id == x.ProductVariant.Product.Id).Name,
+                                                   ProductId = y.Product_Id,
                                                    ProductDescription = _context.Products.FirstOrDefault(z => z.Id == x.ProductVariant.Product.Id).Description,
                                                    Category = _context.Products.AsSplitQuery().Include(z => z.category).FirstOrDefault(z => z.Id == x.ProductVariant.Product.Id).category.Name
                                                }).ToListAsync();
@@ -311,6 +317,56 @@ namespace E_CommerceWeb.Repository
             };
 
             return Model;
+        }
+
+
+
+
+
+
+
+
+
+        //Update User Image 
+        public async Task<dynamic> UpdateUserImageAsync(IFormFile file)
+        {
+            var userId = GetUserId();
+            if (userId == null) return new {result = false , erroe = "UserId Not Found"};
+
+            var user = await _userManager.FindByIdAsync(userId);
+
+            user.ImagePath = await _dashboardRepo.SaveAndGetImagePath(file);
+
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
+
+            return new { result = true, imagepath = user.ImagePath };
+
+        }
+
+
+
+
+
+
+
+        //update User Info
+        public async Task UpdateUserData(string FirstName, string LastName, string Email, string Phone)
+        {
+            var userId = GetUserId();
+            if (userId != null)
+            {
+                var user = await _context.Users.FindAsync(userId);
+                user.FirstName = FirstName;
+                user.LastName = LastName;
+                user.Email = Email;
+                user.NormalizedEmail = Email.ToUpper();
+                user.PhoneNumber = Phone;
+
+                _context.Users.Update(user);
+                await _context.SaveChangesAsync();
+            }
+
         }
 
     }

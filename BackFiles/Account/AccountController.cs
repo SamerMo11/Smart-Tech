@@ -1,7 +1,8 @@
-﻿using E_CommerceWeb.Models;
+using E_CommerceWeb.Models;
 using E_CommerceWeb.Repository.Interface;
 using E_CommerceWeb.ViewModels.Account;
 using E_CommerceWeb.ViewModels.Email;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,20 +21,10 @@ namespace E_CommerceWeb.Controllers
         }
 
 
-        /// <summary>
-        ///         //asp-route-returnUrl="@Context.Request.Path"     ====>>       In Login Link
-        /// </summary>
-        /// <returns></returns>
+        
 
 
-
-
-        //Return the User Dashboard Page
-        public IActionResult UserDash()
-        {
-            return View();
-        }
-
+        
 
         //Method For Register View GET
         [HttpGet]
@@ -287,6 +278,27 @@ namespace E_CommerceWeb.Controllers
 
 
 
+
+
+
+
+        #region User Dashboard
+
+        //Return the User Dashboard Page
+        [Authorize]
+        public async Task<IActionResult> UserDash()
+        {
+            var model = new
+            {
+                ProfileData = await _accountRepo.GetAccountDataAsync(),
+                WishListData = await _accountRepo.GetWishListDataAsync(),
+                OrderData = await _accountRepo.GetOrderAndDetailsAsync(),
+                AccountData = await _accountRepo.GetUserDataAsync()
+            };
+            return View(model);
+        }
+
+
         //  Data In User Dashboard  === Main Page   {Account}
         public async Task<IActionResult> Profile()
         {
@@ -323,7 +335,31 @@ namespace E_CommerceWeb.Controllers
             var model = await _accountRepo.GetUserDataAsync();
             return Json(model);
         }
+        #endregion
 
+        //update user image 
+        public async Task<IActionResult> ChangeUserImage(IFormFile file)
+        {
+            var result = await _accountRepo.UpdateUserImageAsync(file);
+            if(result.result == false) return Json(new { success = false, message = result.erroe });
+
+            return Json(new { success = true, imageUrl = result.imagepath });
+        }
+
+
+
+
+
+
+        //update User Info
+        public async Task<IActionResult> UpdateUserData(string FirstName, string LastName, string Email, string Phone)
+        {
+            if(Email != null)
+            {
+                await _accountRepo.UpdateUserData(FirstName, LastName, Email, Phone);
+            }
+            return RedirectToAction("UserDash", "Account");
+        }
 
     }
 }
