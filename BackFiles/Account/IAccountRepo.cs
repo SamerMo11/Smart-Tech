@@ -1,4 +1,4 @@
-﻿using E_CommerceWeb.Models;
+using E_CommerceWeb.Models;
 using E_CommerceWeb.ViewModels.Account;
 using E_CommerceWeb.ViewModels.Account.DashData;
 using Microsoft.AspNetCore.Identity;
@@ -67,5 +67,19 @@ namespace E_CommerceWeb.Repository.Interface
         //Get User Dashboard Data ==> User Data {Fourth Page}
 
         Task<dynamic> GetUserDataAsync();
+
+
+
+
+        //Update User Image 
+        Task<dynamic> UpdateUserImageAsync(IFormFile file);
+
+
+
+
+        //update User Info
+        Task UpdateUserData(string FirstName, string LastName, string Email, string Phone);
+
+
     }
 }
