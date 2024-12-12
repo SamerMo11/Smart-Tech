@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Stripe.Checkout;
 
 namespace E_CommerceWeb.Controllers
@@ -79,6 +80,15 @@ namespace E_CommerceWeb.Controllers
 
 
 
+
+        //Return The Cart Page
+        public IActionResult Cart()
+        {
+            return View();
+        }
+
+
+
         //Return The CheckOut Page
         public async Task<IActionResult> CheckOut()
         {
@@ -99,7 +109,7 @@ namespace E_CommerceWeb.Controllers
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+        #region Contact
         //Save Info from Contact Page
         public async Task<IActionResult> SaveContact(Contact model)
         {
@@ -116,21 +126,48 @@ namespace E_CommerceWeb.Controllers
             }
             return View(nameof(Contact), model);
         }
+        #endregion
 
 
 
 
+        #region Shop
 
-        // Add Item to Cart
-        public async Task<IActionResult> AddItem(int productid, int quantity = 1)
+        //Return Shop Data
+        public async Task<IActionResult> GetShopData(string filter)
         {
-            if (quantity < 0 || productid == 0)
-                return NotFound();
-            var count = await _homeRepo.AddItemAsync(productid, quantity);
-            return Json(count);
+            var result = JsonConvert.DeserializeObject<ShopFilter>(filter);
+            var model = await _homeRepo.GetShopDataAsync(result);
+            return Json(model);
         }
 
 
+
+        //Add Item To Favourite
+        public async Task<IActionResult> AddOrRemoveItemFromFav(string obj)
+        {
+            if (obj == null)
+                return Json(false);
+            var result = JsonConvert.DeserializeObject<FavModelVM>(obj);
+            await _homeRepo.AddOrRemoveFavoriteProductAsync(result.itemId, result.isfav);
+            return Json(true);
+        }
+
+        #endregion
+
+
+
+
+        #region Home
+        // Add Item to Cart
+        public async Task<IActionResult> AddItem(int productid, int quantity)
+        {
+            if (productid == 0)
+                return NotFound();
+            if (quantity == 0) quantity = 1;
+            var count = await _homeRepo.AddItemAsync(productid, quantity);
+            return Json(count);
+        }
 
 
 
@@ -146,9 +183,6 @@ namespace E_CommerceWeb.Controllers
 
 
 
-
-
-
         // Delete Item from Cart
         public async Task<IActionResult> DeleteItem(int productid)
         {
@@ -157,8 +191,6 @@ namespace E_CommerceWeb.Controllers
             var count = await _homeRepo.DeleteItemAsync(productid);
             return Ok(count);
         }
-
-
 
 
 
@@ -176,6 +208,47 @@ namespace E_CommerceWeb.Controllers
 
 
 
+        //Determine the Id ==> {productIn - Offer}
+        public async Task<IActionResult> DeleteAll(string type , int id)
+        {
+            if(type == null || id == 0) return Json(false);
+
+            if(type == "offer")
+            {
+                var result = await _homeRepo.DeleteAllOfferAsync(id);
+                if (result == false)
+                    return Json(false);
+            }
+            if (type == "product")
+            {
+                var result = await _homeRepo.DeleteAllItemAsync(id);
+                if (result == false)
+                    return Json(false);
+            }
+            
+            return Json(await _homeRepo.GetCartCountAsync());
+        }
+
+
+
+
+
+
+
+        //Update Item , Offer Quantity
+        public async Task<IActionResult> UpdateItemQuantity( int id ,int quantity ,string type)
+        {
+            int result = 0;
+            if (type == "product")
+            {
+                result = await _homeRepo.UpdateItemQuantityAsync(id,0,quantity);
+            }
+            else
+            {
+                result = await _homeRepo.UpdateItemQuantityAsync(0,id,quantity);
+            }
+            return Json(result);
+        }
 
         //Delete All Item From Cart Details
         public async Task<IActionResult> DeleteAllItemAsync(int productid)
@@ -191,6 +264,11 @@ namespace E_CommerceWeb.Controllers
 
 
 
+        //Get The Cart Number 
+        public async Task<IActionResult> GetCartNumber()
+        {
+            return Json(await _homeRepo.GetCartCountAsync());
+        }
 
 
         //Delete All offer From Cart Details
@@ -207,11 +285,80 @@ namespace E_CommerceWeb.Controllers
 
 
 
+        //Get Data In The Home Page
+        public async Task<IActionResult> GetHomeData()
+        {
+            var model = await _homeRepo.GetHomeDataAsync();
+            return Json(model);
+        }
+
+
+
+        #region Search
+        //Last Searches For User
+        public async Task<IActionResult> GetLastSearches()
+        {
+            var model = await _homeRepo.GetLastSearchesAsync();
+            return Json(model);
+        }
+
+
+
+        //Return Suggested Products
+        public async Task<IActionResult> GetSearchProduct(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return Json(null);
+            var model = await _homeRepo.GetSearchProductAsync(text);
+            return Json(model);
+        }
+
+
+
+        //Delete Search Result 
+        public async Task<IActionResult> DeleteSearchResult(int id)
+        {
+            if (id == 0) return Json(false);
+            var result = await _homeRepo.DeleteSearchResultAsync(id);
+            if (result) return Json(true);
+            return Json(null);
+        }
+
+        #endregion
 
 
 
 
+        //Add Item to Favorites
+        [HttpPost]
+        public async Task<IActionResult> AddProductToFavorite(int productId, bool isChecked)
+        {
+            if (productId != 0)
+            {
+                await _homeRepo.AddOrRemoveFavoriteProductAsync(productId, isChecked);
+                return Json(true);
+            }
+            return Json(false);
 
+        }
+
+        #endregion
+
+
+        #region Cart
+
+        //Get Cart Details ==> Data
+        public async Task<IActionResult> GetCartData()
+        {
+            var model = await _homeRepo.GetCartDataAsync();
+            if(model == null) return Json(null);
+            return Json(model);
+        }
+        #endregion
+
+
+
+        #region product View
         //Get Data in product View ==> {Details - define MainAttribute - Related Product}
         public async Task<IActionResult> GetProduct(int mainProductId, int? variantId)
         {
@@ -222,6 +369,30 @@ namespace E_CommerceWeb.Controllers
 
 
 
+        //Check Validation To allow making CheckOut
+        public async Task<IActionResult> CheckReviewValidation(int productId)
+        {
+            var model = await _homeRepo.CheckReviewValidationAsync(productId);
+            return Json(model);
+        }
+
+
+
+
+
+        //Make Review
+        public async Task<IActionResult> MakeReview(string Message, string RateValue, int VariantId)
+        {
+            var result = await _homeRepo.MakeReviewAsync(Message, int.Parse(RateValue), VariantId);
+            if (!result.result) return Json(false);
+
+            return Json(true);
+        }
+        #endregion
+
+
+
+        #region CheckOut
         // Get Cites By State_ID  ====> Return Json <====
         [HttpGet]
         public async Task<IActionResult> GetCities(int stateId)
@@ -235,9 +406,6 @@ namespace E_CommerceWeb.Controllers
 
 
 
-
-
-
         // Send Discount Code To User
         public async Task<IActionResult> SendDiscountCode()
         {
@@ -246,7 +414,6 @@ namespace E_CommerceWeb.Controllers
             ViewBag.codesended = true;
             return RedirectToAction("CheckOut");
         }
-
 
 
 
@@ -379,6 +546,7 @@ namespace E_CommerceWeb.Controllers
                 if (Code != "null")
                     await _homeRepo.GetDiscountCodeByCodeAsync(Code);
                 await _homeRepo.MakeOrderOnLineAsync(PaymentMethod, phone, address, cityId, session.Id, session.PaymentIntentId, Code != "null" ? true : false);
+                Debug.WriteLine("MakeOrderOnLineAsync done");
                 ViewBag.success = true;
                 return RedirectToAction("Home", "Home");
             }
@@ -388,9 +556,7 @@ namespace E_CommerceWeb.Controllers
                 return RedirectToAction("checkOut");
             }
         }
-
-
-
+        #endregion
 
 
 
