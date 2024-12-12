@@ -273,9 +273,8 @@ body {
     background: linear-gradient(88.75deg, #373D47 0.93%, #3D4550 50%, #373D47 99.07%);
     padding: 10px 3%;
     border-radius: 10px;
-    box-shadow: 0px 4px 4px 0px #000;
-
-
+    /* box-shadow: 0px 4px 4px 0px #000; */
+    box-shadow: 0 2px 4px #00000081;
 }
 .dash .account .orders .order .side1,
 .dash .myorders .orders .order .side1{
@@ -328,7 +327,7 @@ body {
     font-family: var(--font1);
     font-size: 15px;
     border-radius: 5px;
-    box-shadow: 0px 4px 4px 0px #000;
+    box-shadow: 0 2px 4px #00000081;
     transition: 1s;
     border: 1px solid transparent;
     cursor: pointer;
@@ -474,7 +473,8 @@ body {
     /* flex-direction: column; */
     width: 100%;
     height: 170px;
-    box-shadow: 0px 2px 4px 0px #1f1f1f;
+    /* box-shadow: 0px 2px 4px 0px #1f1f1f; */
+    box-shadow: 0 2px 4px #00000081;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -483,7 +483,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 4px 4px 0px #00000040;
+    /* box-shadow: 0px 4px 4px 0px #00000040; */
+    box-shadow: 0 2px 4px #00000081;
     background: #51596659;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -521,8 +522,7 @@ body {
     padding: 30px;
     /* height: 90%; */
     border-radius: 10px;
-    box-shadow: 0px 4px 4px 0px #000;
-
+    box-shadow: 0 4px 4px #00000081;
 }
 .dash .myorders .orders .order .info .det,
 .dash .account .orders .order .info .det{
@@ -778,7 +778,8 @@ body {
     height: 200px;
     padding: 10px 5%;
     border-radius: 10px;
-    box-shadow:  0px 4px 4px 0px #000;
+    /* box-shadow:  0px 4px 4px 0px #000; */
+    box-shadow: 0 2px 4px #00000081;
     display: flex;
     justify-content: space-between;
     align-items: center;
