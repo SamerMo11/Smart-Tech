@@ -70,7 +70,7 @@ body {
 }
 
 .form .banner{
-    width: 40%;
+    width: 41.5%;
     height: 100%;
     padding-inline: 25px;
     display: flex;
@@ -91,7 +91,7 @@ body {
     font-family: var(--font1);
     position: relative;
     text-transform: capitalize;
-    width: 100%;
+    width: 105%;
     text-align: center;
     line-height: 38px;
 }
