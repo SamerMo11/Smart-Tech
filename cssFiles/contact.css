@@ -105,10 +105,7 @@ body {
     align-items: center;
     background-image: linear-gradient(to right, #21252b, #323841, #21252b);
     border-radius: 30px;
-    box-shadow: 0px 4px 4px 0px #00000040,
-                0px 4px 4px 0px #00000040,
-                0px 4px 4px 0px #00000040,
-                0px 4px 4px 0px #00000040;
+    box-shadow: 0 2px 4px #00000081;
     overflow: hidden;
 }
 .content .left{
