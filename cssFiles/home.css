@@ -987,7 +987,7 @@ nav .icons a span{
     scrollbar-width: none;
     scroll-behavior: smooth;
     position: relative;
-    gap: 40px;
+    gap: 20px;
     transition: 1s;
     animation-name: bottom;
     animation-timing-function: linear;
