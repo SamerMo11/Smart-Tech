@@ -11,10 +11,10 @@
 [ Documentation Tasks ](https://drive.google.com/drive/folders/1pd6QnX6YEaUWuzu0SMdjbPqlWdSQf3I7)
  | | | 
 [ Website Live Preview  ](https://samermo11.github.io/Smart-Tech/)
+
+
+
 -----------------
-
-
-
 |    pages      |  Home       |  About       |   Contact Us   |  Forms       |  Shop       | Product     |       Cart       |    Chect Out     |  UserDash        | AdminDash  |
 | ------------- | ----------- | ------------ | ---------------| ------------ | ----------- | ----------- | ---------------- | ---------------  | ---------------- | ---------- |
 | UI & UX       |    Done     |    Done      |    Done        |     Done     |   Done      |    Done     |       Done       |      Done        |     Done         |    ----    |
