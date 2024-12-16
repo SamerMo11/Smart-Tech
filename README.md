@@ -7,7 +7,7 @@
 | 3     | IT           | مصطفي ماهر بلال       |
 -----------------
 <a href="https://www.figma.com/design/a67UQHjQ9paWjeCbw3KxGI/my-e-commerce?node-id=0-1&node-type=canvas&t=OGxMJVdHbt12qqxk-0" style="color: red; text-decoration: none;">UI & UX Design Link</a>
-[ UI & Ux Design Link ](https://www.figma.com/design/a67UQHjQ9paWjeCbw3KxGI/my-e-commerce?node-id=0-1&node-type=canvas&t=OGxMJVdHbt12qqxk-0) 
+<hr>
 [ Documentation Tasks ](https://drive.google.com/drive/folders/1pd6QnX6YEaUWuzu0SMdjbPqlWdSQf3I7)
 [ Website Live Preview  ](https://samermo11.github.io/Smart-Tech/)
 -----------------
