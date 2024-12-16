@@ -10,7 +10,7 @@
                        | | | 
 [ Documentation Tasks ](https://drive.google.com/drive/folders/1pd6QnX6YEaUWuzu0SMdjbPqlWdSQf3I7)
                        | | | 
-[ Website Live Preview  ](https://samermo11.github.io/Smart-Tech/)
+[ Website Live Preview (As Front end work)  ](https://samermo11.github.io/Smart-Tech/)
 
 
 
