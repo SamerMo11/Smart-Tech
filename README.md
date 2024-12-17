@@ -1,4 +1,4 @@
-| أعضاء الفريق                    | القسم          | سكشن | الرولز                        | للتواصل                                                                                          |
+| Team Members                    | Department          | Section | Roles                        | Contact                                                                                          |
 |---------------------------------|----------------|-------|--------------------------------|--------------------------------------------------------------------------------------------------|
 | أحمد مدحت فؤاد                 | IT             | 1     | Back End Developer             | <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/ahmed-mdht-968a74278/">Ahmed Medhat</a>      |
 | ابراهيم محمد عبد المطلب         | IT             | 1     | Front End Developer            | <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/ibrahim-mohammed-b76548210/">Ibrahim Mohamed</a> |
