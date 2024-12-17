@@ -33,8 +33,9 @@ This project aims to develop an e-commerce platform specializing in electronics,
 ### Responsive Design:
 - **The site's response to being displayed on screens smaller than possible laptop screens, such as (phones, tablets, etc.)**.
   
-## User Experience ( UX ) 
 ***
+## User Experience ( UX ) 
+
 ### Home Page :
 - **Hero Section.
 - **Best Sellers Section.
@@ -66,9 +67,9 @@ This project aims to develop an e-commerce platform specializing in electronics,
 - **Allow users to modify item quantities, save items for later, and remove items without reloading the page.
 - 
 ### Checkout Page :
-- **Payment is allowed online or cash on delivery.
+- **Payment is allowed online or cash on delivery.**
 - **Payment Options:** credit cards.
-- 
+  
 ### User Account Page :
 - **Allow modification of personal data.**
 - **Wishlist:** Enable users to create a wishlist and save favorite products for future reference.
