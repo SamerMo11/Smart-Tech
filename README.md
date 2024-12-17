@@ -18,69 +18,69 @@ This project aims to develop an e-commerce platform specializing in electronics,
 
 ***
 
-## User Interface ( UI )
+# User Interface ( UI )
 
-### Visual Design: 
+## Visual Design: 
 - **CONSISTENT BRANDING:** We use a consistent color, typography, and icon scheme across the site to enhance your brand identity.
 - **High-quality images:** Use optimized, high-resolution images of products, banners, and icons.
 - **Use white space:** Make sure items are well-spaced out with enough white space to avoid a cluttered appearance and promote readability.
 - **Clear printing:** We use easy-to-read fonts and consistent sizes.
 - **Accessible color contrast:** Make sure contrast is accessible for text over images or colored backgrounds for easy reading.
 
-### Navigation and Layout:
+## Navigation and Layout:
 - **Intuitive Navigation:** Implement a clear and simple navigation bar that includes primary categories, search, cart, and user account links.
 - **Search Icon:** helps the user search for a specific product by searching using text or voice.
   
-### Responsive Design:
+## Responsive Design:
 - **The site's response to being displayed on screens smaller than possible laptop screens, such as (phones, tablets, etc.)**.
   
 ***
-## User Experience ( UX ) 
+# User Experience ( UX ) 
 
-### Home Page :
-- **Hero Section.
-- **Best Sellers Section.
-- **Deals of the day.
-- **Special collection offers.
-- **Our Services.
+## Home Page :
+- **Hero Section.**
+- **Best Sellers Section.**
+- **Deals of the day.**
+- **Special collection offers.**
+- **Our Services.**
   
-### About Us Page :
+## About Us Page :
 - **Our Story.**
 - **Our Team.**
   
-### Contact Us Page :
+## Contact Us Page :
 - **To help you contact us to solve a problem or anything.**
   
-### Log-in & Sign-Up Page.
+## Log-in & Sign-Up Page.
 
-### Shop Page :
+## Shop Page :
 - **Predictive Search:** Implement predictive text and autosuggestions as users type in the search bar.
 - **Filter and Sort Options:** Allow users to filter by attributes like price, color, and category.
 
-### Product Page :
+## Product Page :
 - **Detailed Product Information:** Include all relevant product details, such as specifications, price, size, color options, reviews, and availability.
 - **Easy-to-Use Add-to-Cart Button:** Make the "Add to Cart" button prominent and accessible.
 - **Related Products:** Show related or recommended products to encourage additional purchases.
 - **Product Reviews and Ratings:** Display customer reviews and star ratings to build trust and inform purchase decisions.
 
-### Shopping Cart Page :
-- **Ensure the cart contents are saved even if users leave the site and return later.
-- **Allow users to modify item quantities, save items for later, and remove items without reloading the page.
+## Shopping Cart Page :
+- **Ensure the cart contents are saved even if users leave the site and return later.**
+- **Allow users to modify item quantities, save items for later, and remove items without reloading the page.**
   
-### Checkout Page :
+## Checkout Page :
 - **Payment is allowed online or cash on delivery.**
 - **Payment Options:** credit cards.
   
-### User Account Page :
+## User Account Page :
 - **Allow modification of personal data.**
 - **Wishlist:** Enable users to create a wishlist and save favorite products for future reference.
 ***
-## Front-End Requirements
+# Front-End Requirements
 - **HTML5.**
 - **CSS3 & CSS Framework (Bootstrap).**
 - **JavaScript.**
 ***
-## Back-End Requirements
+# Back-End Requirements
 - **C#**
 - **Asp.net MVC**
 - **Stripe Payment**
