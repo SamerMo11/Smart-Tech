@@ -18,20 +18,22 @@ This project aims to develop an e-commerce platform specializing in electronics,
 
 ***
 
-# User Interface ( UI )
+# User Interface ( UI ) 
 
-## <span style="color:red;">Visual Design:</span>
+## Visual Design :
+![Visual Design](https://img.shields.io/badge/Visual_Design-%232F8587?style=flat-square&background-color=black)
+
 - **CONSISTENT BRANDING:** We use a consistent color, typography, and icon scheme across the site to enhance your brand identity.
 - **High-quality images:** Use optimized, high-resolution images of products, banners, and icons.
 - **Use white space:** Make sure items are well-spaced out with enough white space to avoid a cluttered appearance and promote readability.
 - **Clear printing:** We use easy-to-read fonts and consistent sizes.
 - **Accessible color contrast:** Make sure contrast is accessible for text over images or colored backgrounds for easy reading.
 
-## Navigation and Layout:
+## Navigation and Layout :
 - **Intuitive Navigation:** Implement a clear and simple navigation bar that includes primary categories, search, cart, and user account links.
 - **Search Icon:** helps the user search for a specific product by searching using text or voice.
   
-## Responsive Design:
+## Responsive Design :
 - **The site's response to being displayed on screens smaller than possible laptop screens, such as (phones, tablets, etc.)**.
   
 ***
