@@ -1,10 +1,46 @@
-| للتواصل                                                                                          | سكشن | القسم          | أعضاء الفريق                    |
-|--------------------------------------------------------------------------------------------------|-------|----------------|---------------------------------|
-| <a style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/ahmed-mdht-968a74278/">Linked IN</a>      | 1     | IT             | أحمد مدحت فؤاد                 |
-| <a style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/ibrahim-mohammed-b76548210/">Linked IN</a> | 1     | IT             | ابراهيم محمد عبد المطلب         |
-| <a style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/reem-tawfik-a5a176264/">Linked IN</a>      | 2     | IT             | ريم توفيق توفيق عبد التواب     |
-| <a style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/samer-mohamed-5b2586280/">Linked IN</a>    | 2     | IT             | سامر محمد محمد العبد           |
-| <a style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/mostafa-belal-3b0406264/">Linked IN</a>    | 3     | IT             | مصطفي ماهر بلال                |
+<table>
+  <thead>
+    <tr>
+      <th>للتواصل</th>
+      <th>سكشن</th>
+      <th>القسم</th>
+      <th>أعضاء الفريق</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://www.linkedin.com/in/ahmed-mdht-968a74278/" style="color: #30B6B9; text-decoration: none;">Linked IN</a></td>
+      <td>1</td>
+      <td>IT</td>
+      <td>أحمد مدحت فؤاد</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.linkedin.com/in/ibrahim-mohammed-b76548210/" style="color: #30B6B9; text-decoration: none;">Linked IN</a></td>
+      <td>1</td>
+      <td>IT</td>
+      <td>ابراهيم محمد عبد المطلب</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.linkedin.com/in/reem-tawfik-a5a176264/" style="color: #30B6B9; text-decoration: none;">Linked IN</a></td>
+      <td>2</td>
+      <td>IT</td>
+      <td>ريم توفيق توفيق عبد التواب</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.linkedin.com/in/samer-mohamed-5b2586280/" style="color: #30B6B9; text-decoration: none;">Linked IN</a></td>
+      <td>2</td>
+      <td>IT</td>
+      <td>سامر محمد محمد العبد</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.linkedin.com/in/mostafa-belal-3b0406264/" style="color: #30B6B9; text-decoration: none;">Linked IN</a></td>
+      <td>3</td>
+      <td>IT</td>
+      <td>مصطفي ماهر بلال</td>
+    </tr>
+  </tbody>
+</table>
+
 
 -----------------
 
