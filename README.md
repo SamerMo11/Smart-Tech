@@ -1,45 +1,11 @@
-<table>
-  <thead>
-    <tr>
-      <th>للتواصل</th>
-      <th>سكشن</th>
-      <th>القسم</th>
-      <th>أعضاء الفريق</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://www.linkedin.com/in/ahmed-mdht-968a74278/" style="color: #30B6B9; text-decoration: none;">Linked IN</a></td>
-      <td>1</td>
-      <td>IT</td>
-      <td>أحمد مدحت فؤاد</td>
-    </tr>
-    <tr>
-      <td><a href="https://www.linkedin.com/in/ibrahim-mohammed-b76548210/" style="color: #30B6B9; text-decoration: none;">Linked IN</a></td>
-      <td>1</td>
-      <td>IT</td>
-      <td>ابراهيم محمد عبد المطلب</td>
-    </tr>
-    <tr>
-      <td><a href="https://www.linkedin.com/in/reem-tawfik-a5a176264/" style="color: #30B6B9; text-decoration: none;">Linked IN</a></td>
-      <td>2</td>
-      <td>IT</td>
-      <td>ريم توفيق توفيق عبد التواب</td>
-    </tr>
-    <tr>
-      <td><a href="https://www.linkedin.com/in/samer-mohamed-5b2586280/" style="color: #30B6B9; text-decoration: none;">Linked IN</a></td>
-      <td>2</td>
-      <td>IT</td>
-      <td>سامر محمد محمد العبد</td>
-    </tr>
-    <tr>
-      <td><a href="https://www.linkedin.com/in/mostafa-belal-3b0406264/" style="color: #30B6B9; text-decoration: none;">Linked IN</a></td>
-      <td>3</td>
-      <td>IT</td>
-      <td>مصطفي ماهر بلال</td>
-    </tr>
-  </tbody>
-</table>
+| للتواصل                                                                                          | سكشن | القسم          | أعضاء الفريق                    |
+|--------------------------------------------------------------------------------------------------|-------|----------------|---------------------------------|
+| <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/ahmed-mdht-968a74278/">Ahmed Medhat</a>      | 1     | IT             | أحمد مدحت فؤاد                 |
+| <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/ibrahim-mohammed-b76548210/">Ibrahim Mohamed</a> | 1     | IT             | ابراهيم محمد عبد المطلب         |
+| <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/reem-tawfik-a5a176264/">Reem Tawfik</a>      | 2     | IT             | ريم توفيق توفيق عبد التواب     |
+| <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/samer-mohamed-5b2586280/">Samer Mohamed</a>    | 2     | IT             | سامر محمد محمد العبد           |
+| <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/mostafa-belal-3b0406264/">Mostafa Belal</a>    | 3     | IT             | مصطفي ماهر بلال                |
+
 
 
 -----------------
