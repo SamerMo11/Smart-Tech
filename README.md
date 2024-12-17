@@ -1,10 +1,10 @@
 للتواصل  | سكشن | القسم          | أعضاء الفريق                          |
 |-------|-----------------|--------------------------------| 
-|| 1     | IT           | أحمد مدحت فؤاد              |
-|| 1     | IT        | ابراهيم محمد عبد المطلب           |
-|| 2     | IT           | ريم توفيق توفيق عبد التواب       |
-|<a href="www.linkedin.com/in/samer-mohamed-5b2586280"></a>| 2     | IT           | سامر محمد محمد العبد      |
-|| 3     | IT           | مصطفي ماهر بلال       |
+|<a href="https://www.linkedin.com/in/ahmed-mdht-968a74278/">Linked IN</a>      | 1     | IT           | أحمد مدحت فؤاد         |
+|<a href="https://www.linkedin.com/in/ibrahim-mohammed-b76548210/">Linked IN</a>| 1     | IT           | ابراهيم محمد عبد المطلب   |
+|<a href="https://www.linkedin.com/in/reem-tawfik-a5a176264/">Linked IN</a>     | 2     | IT           | ريم توفيق توفيق عبد التواب |
+|<a style="color: blue; text-decoration: none;"  href="https://www.linkedin.com/in/samer-mohamed-5b2586280/">Linked IN</a>   | 2     | IT           | سامر محمد محمد العبد     |
+|<a href="https://www.linkedin.com/in/mostafa-belal-3b0406264/">Linked IN</a>   | 3     | IT           | مصطفي ماهر بلال        |
 -----------------
 
 <h2 align="left">About The Project</h2>
