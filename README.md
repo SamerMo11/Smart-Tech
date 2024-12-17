@@ -11,7 +11,7 @@
 
 -----------------
 
-<h2 align="left">About  Project</h2>
+<h2 align="left" style="color:red;">About  Project</h2>
 <p align="left">
 This project aims to develop an e-commerce platform specializing in electronics, providing a streamlined, user-friendly online shopping experience for a wide variety of electronic products, including smartphones, laptops, home appliances, accessories, and more. The platform will offer advanced product search, filtering, and comparison options, along with secure payment methods and reliable order tracking. By prioritizing seamless user navigation and efficient operations, the project intends to capture a significant share of the electronics market by catering to the needs users..
 </p>
@@ -21,8 +21,6 @@ This project aims to develop an e-commerce platform specializing in electronics,
 # User Interface ( UI ) 
 
 ## Visual Design :
-![Visual Design](https://img.shields.io/badge/Visual_Design-%232F8587?style=plastic&background-color=black)
-
 
 - **CONSISTENT BRANDING:** We use a consistent color, typography, and icon scheme across the site to enhance your brand identity.
 - **High-quality images:** Use optimized, high-resolution images of products, banners, and icons.
