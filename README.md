@@ -16,7 +16,8 @@
 This project aims to develop an e-commerce platform specializing in electronics, providing a streamlined, user-friendly online shopping experience for a wide variety of electronic products, including smartphones, laptops, home appliances, accessories, and more. The platform will offer advanced product search, filtering, and comparison options, along with secure payment methods and reliable order tracking. By prioritizing seamless user navigation and efficient operations, the project intends to capture a significant share of the electronics market by catering to the needs users..
 </p>
 
-###
+***
+
 ## User Interface ( UI )
 
 ### Visual Design: 
@@ -46,9 +47,9 @@ This project aims to develop an e-commerce platform specializing in electronics,
 ### About Us Page :
 - **Our Story.**
 - **Our Team.**
-- 
+  
 ### Contact Us Page :
-- **To help you contact us to solve a problem or anything.
+- **To help you contact us to solve a problem or anything.**
   
 ### Log-in & Sign-Up Page.
 
@@ -65,7 +66,7 @@ This project aims to develop an e-commerce platform specializing in electronics,
 ### Shopping Cart Page :
 - **Ensure the cart contents are saved even if users leave the site and return later.
 - **Allow users to modify item quantities, save items for later, and remove items without reloading the page.
-- 
+  
 ### Checkout Page :
 - **Payment is allowed online or cash on delivery.**
 - **Payment Options:** credit cards.
