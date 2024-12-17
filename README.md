@@ -15,9 +15,10 @@
 <p align="left">
 This project aims to develop an e-commerce platform specializing in electronics, providing a streamlined, user-friendly online shopping experience for a wide variety of electronic products, including smartphones, laptops, home appliances, accessories, and more. The platform will offer advanced product search, filtering, and comparison options, along with secure payment methods and reliable order tracking. By prioritizing seamless user navigation and efficient operations, the project intends to capture a significant share of the electronics market by catering to the needs users..
 </p>
-[UI & UX Design Link](https://www.figma.com/design/a67UQHjQ9paWjeCbw3KxGI/my-e-commerce?node-id=0-1&node-type=canvas&t=OGxMJVdHbt12qqxk-0) | | |
-[Documentation Tasks](https://drive.google.com/drive/folders/1pd6QnX6YEaUWuzu0SMdjbPqlWdSQf3I7) | | |
-[Website Live Preview (As Front end work)](https://samermo11.github.io/Smart-Tech/)
+<a href="https://www.figma.com/design/a67UQHjQ9paWjeCbw3KxGI/my-e-commerce?node-id=0-1&node-type=canvas&t=OGxMJVdHbt12qqxk-0" style="color:#30B6B9; text-decoration:none;">UI & UX Design Link</a> | | |
+<a href="https://drive.google.com/drive/folders/1pd6QnX6YEaUWuzu0SMdjbPqlWdSQf3I7" style="color:#30B6B9; text-decoration:none;">Documentation Tasks</a> | | |
+<a href="https://samermo11.github.io/Smart-Tech/" style="color:#30B6B9; text-decoration:none;">Website Live Preview (As Front end work)</a>
+
 
 ***
 
