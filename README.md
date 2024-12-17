@@ -1,11 +1,19 @@
-| سكشن | القسم          | أعضاء الفريق                          |
+للتواصل  | سكشن | القسم          | أعضاء الفريق                          |
 |-------|-----------------|--------------------------------| 
-| 1     | IT           | أحمد مدحت فؤاد              |
-| 1     | IT        | ابراهيم محمد عبد المطلب           |
-| 2     | IT           | ريم توفيق توفيق عبد التواب       |
-| 2     | IT           | سامر محمد محمد العبد      |
-| 3     | IT           | مصطفي ماهر بلال       |
+|| 1     | IT           | أحمد مدحت فؤاد              |
+|| 1     | IT        | ابراهيم محمد عبد المطلب           |
+|| 2     | IT           | ريم توفيق توفيق عبد التواب       |
+|<a href="www.linkedin.com/in/samer-mohamed-5b2586280"></a>| 2     | IT           | سامر محمد محمد العبد      |
+|| 3     | IT           | مصطفي ماهر بلال       |
 -----------------
+
+<h2 align="left">About The Project</h2>
+
+###
+
+<p align="left"></p>
+
+###
 [ UI & UX Design Link ](https://www.figma.com/design/a67UQHjQ9paWjeCbw3KxGI/my-e-commerce?node-id=0-1&node-type=canvas&t=OGxMJVdHbt12qqxk-0)
                        | | | 
 [ Documentation Tasks ](https://drive.google.com/drive/folders/1pd6QnX6YEaUWuzu0SMdjbPqlWdSQf3I7)
