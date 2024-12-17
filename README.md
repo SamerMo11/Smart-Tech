@@ -1,10 +1,11 @@
-| للتواصل                                                                                          | سكشن | القسم          | أعضاء الفريق                    |
-|--------------------------------------------------------------------------------------------------|-------|----------------|---------------------------------|
-| <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/ahmed-mdht-968a74278/">Ahmed Medhat</a>      | 1     | IT             | أحمد مدحت فؤاد                 |
-| <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/ibrahim-mohammed-b76548210/">Ibrahim Mohamed</a> | 1     | IT             | ابراهيم محمد عبد المطلب         |
-| <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/reem-tawfik-a5a176264/">Reem Tawfik</a>      | 2     | IT             | ريم توفيق توفيق عبد التواب     |
-| <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/samer-mohamed-5b2586280/">Samer Mohamed</a>    | 2     | IT             | سامر محمد محمد العبد           |
-| <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/mostafa-belal-3b0406264/">Mostafa Belal</a>    | 3     | IT             | مصطفي ماهر بلال                |
+| سكشن | الرولز                        | للتواصل                                                                                          | القسم          | أعضاء الفريق                    |
+|-------|--------------------------------|--------------------------------------------------------------------------------------------------|----------------|---------------------------------|
+| 1     | Back End Developer             | <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/ahmed-mdht-968a74278/">Ahmed Medhat</a>      | IT             | أحمد مدحت فؤاد                 |
+| 1     | Front End Developer            | <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/ibrahim-mohammed-b76548210/">Ibrahim Mohamed</a> | IT             | ابراهيم محمد عبد المطلب         |
+| 2     | Front End Developer, UI/UX Designer | <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/reem-tawfik-a5a176264/">Reem Tawfik</a>      | IT             | ريم توفيق توفيق عبد التواب     |
+| 2     | Front End Developer            | <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/samer-mohamed-5b2586280/">Samer Mohamed</a>    | IT             | سامر محمد محمد العبد           |
+| 3     | Back End Developer             | <a target="_blank" style="color: #30B6B9; text-decoration: none;" href="https://www.linkedin.com/in/mostafa-belal-3b0406264/">Mostafa Belal</a>    | IT             | مصطفي ماهر بلال                |
+
 
 
 
