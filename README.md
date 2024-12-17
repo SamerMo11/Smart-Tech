@@ -17,15 +17,15 @@ This project aims to develop an e-commerce platform specializing in electronics,
 </p>
 
 ###
-<h3 align="left">User Interface ( UI )</h3>
-<p align="left">
-  .1.1 Visual Design: <br>
- CONSISTENT BRANDING: WE USE A CONSISTENT COLOR, TYPOGRAPHY, AND ICON SCHEME ACROSS THE SITE TO ENHANCE YOUR BRAND IDENTITY
- High-quality images: Use optimized, high-resolution images of products, banners, and icons.
- Use white space: Make sure items are well-spaced out with enough white space to avoid a cluttered appearance and promote readability.
- Clear printing: We use easy-to-read fonts and consistent sizes.
- Accessible color contrast: Make sure contrast is accessible for text over images or colored backgrounds for easy reading
-</p>
+## User Interface ( UI )
+
+### Visual Design: 
+- **CONSISTENT BRANDING:** WE USE A CONSISTENT COLOR, TYPOGRAPHY, AND ICON SCHEME ACROSS THE SITE TO ENHANCE YOUR BRAND IDENTITY
+- **High-quality images:** Use optimized, high-resolution images of products, banners, and icons.
+- **Use white space:** Make sure items are well-spaced out with enough white space to avoid a cluttered appearance and promote readability.
+- **Clear printing:** We use easy-to-read fonts and consistent sizes.
+- **Accessible color contrast:** Make sure contrast is accessible for text over images or colored backgrounds for easy reading
+
 
 ###
 [ UI & UX Design Link ](https://www.figma.com/design/a67UQHjQ9paWjeCbw3KxGI/my-e-commerce?node-id=0-1&node-type=canvas&t=OGxMJVdHbt12qqxk-0)
