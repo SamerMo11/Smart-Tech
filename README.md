@@ -20,7 +20,7 @@ This project aims to develop an e-commerce platform specializing in electronics,
 
 # User Interface ( UI )
 
-## <span style="color:#30B6B9;">Visual Design:</span>
+## <span style="color:red;">Visual Design:</span>
 - **CONSISTENT BRANDING:** We use a consistent color, typography, and icon scheme across the site to enhance your brand identity.
 - **High-quality images:** Use optimized, high-resolution images of products, banners, and icons.
 - **Use white space:** Make sure items are well-spaced out with enough white space to avoid a cluttered appearance and promote readability.
